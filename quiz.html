@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Opening Readiness Score — Ready to Open</title>
+<meta name="description" content="Opening an office, shop or showroom abroad? 12 Yes/No questions across the four stages of an opening, 3 minutes. Your score, your two biggest gaps and the support that fits.">
+<meta property="og:title" content="Opening Readiness Score — Ready to Open">
+<meta property="og:description" content="Opening abroad? How ready is your project? Find out in 3 minutes.">
+<meta property="og:url" content="https://nextplaces.netlify.app/quiz.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--navy:#0A1628;--navy-2:#0F2D52;--gold:#C5A050;--gold-2:#D4B470;--gold-soft:#F7F0DF;--gold-line:#EADBB4;--ink:#0A1628;--muted:#5A6476;--line:#E6E9EF;--red:#C0392B;--amber:#E07B39;--green:#2D6A4F}
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{font-family:'DM Sans',system-ui,sans-serif;background:#fff;color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;min-height:100vh}
+a{color:inherit}
+h1,h2,h3{font-family:'Playfair Display',Georgia,serif;line-height:1.12;color:var(--navy)}
+h1 em,h2 em,h3 em{font-style:normal;color:var(--gold)}
+button{font-family:inherit}
+nav.top{position:sticky;top:0;z-index:50;background:#fff;box-shadow:0 1px 0 var(--line),0 6px 20px rgba(10,22,40,.04)}
+nav.top .wrap{display:flex;align-items:center;justify-content:space-between;height:72px;gap:16px;max-width:1160px;margin:0 auto;padding:0 20px}
+.logo{text-decoration:none;line-height:1.05}
+.logo b{display:block;font-family:'Playfair Display',serif;font-weight:900;font-size:1.25rem;color:var(--navy)}
+.logo b span{color:var(--gold)}
+.logo small{display:block;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:15px 26px;border-radius:999px;font-weight:700;font-size:1rem;text-decoration:none;cursor:pointer;border:0;transition:transform .15s,background .2s,opacity .2s}
+.btn:hover{transform:translateY(-1px)}
+.btn:disabled{opacity:.35;cursor:not-allowed;transform:none}
+.btn-navy{background:var(--navy);color:#fff;box-shadow:0 8px 22px rgba(10,22,40,.18)}
+.btn-gold{background:var(--gold);color:var(--navy);box-shadow:0 8px 22px rgba(197,160,80,.28)}
+.btn-line{background:#fff;color:var(--navy);border:1.5px solid var(--navy)}
+.btn-sm{padding:10px 18px;font-size:.9rem}
+.pill{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--navy-2);background:var(--gold-soft);border:1px solid var(--gold-line);padding:7px 14px;border-radius:999px}
+.screen{display:none}.screen.active{display:block}
+.inner{max-width:720px;margin:0 auto;padding:44px 20px 80px}
+.inner-sm{max-width:520px;margin:0 auto;padding:52px 20px 80px}
+
+/* LANDING */
+.landing{max-width:1080px;margin:0 auto;padding:64px 20px 80px;display:grid;grid-template-columns:1.15fr 1fr;gap:48px;align-items:center}
+.landing h1{font-size:clamp(2.2rem,5vw,3.6rem);margin:18px 0}
+.landing .sub{color:var(--muted);font-size:1.12rem;margin-bottom:28px;max-width:540px}
+.land-note{margin-top:16px;color:var(--muted);font-size:.9rem}
+.getbox{background:var(--navy);border-radius:22px;padding:28px;color:#fff;box-shadow:0 24px 60px rgba(10,22,40,.2)}
+.getbox .t{font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+.getrow{display:flex;gap:14px;align-items:flex-start;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.1)}
+.getrow:last-child{border:0}
+.getrow i{font-style:normal;font-family:'Playfair Display',serif;font-weight:800;color:var(--gold-2);font-size:1.3rem;width:22px;flex:none}
+.getrow b{display:block}
+.getrow span{color:rgba(255,255,255,.7);font-size:.92rem}
+@media (max-width:860px){.landing{grid-template-columns:1fr;padding-top:40px}}
+
+/* QUESTIONS */
+.qhead{margin-bottom:20px}
+.qhead h2{font-size:clamp(1.3rem,3.2vw,1.8rem);margin:12px 0 4px}
+.qhead p{color:var(--muted);font-size:.95rem}
+.meta{display:flex;justify-content:space-between;font-size:.8rem;color:var(--muted);margin-bottom:8px}
+.meta b{color:var(--navy);letter-spacing:.06em;text-transform:uppercase;font-size:.78rem}
+.pbar-bg{height:4px;background:var(--line);border-radius:2px;margin-bottom:28px;overflow:hidden}
+.pbar-fill{height:100%;background:var(--gold);transition:width .3s}
+.qtext{font-family:'Playfair Display',serif;font-size:clamp(1.3rem,3vw,1.7rem);line-height:1.3;color:var(--navy);margin-bottom:24px;min-height:3.2em}
+.aopts{display:flex;gap:14px}
+.abtn{flex:1;display:flex;align-items:center;justify-content:center;gap:10px;padding:20px 16px;border:1.5px solid var(--line);border-radius:16px;background:#fff;font-size:1.05rem;font-weight:600;color:var(--navy);cursor:pointer;transition:all .15s}
+.abtn:hover{border-color:var(--gold)}
+.abtn.sel{border-color:var(--navy);background:var(--navy);color:#fff}
+.adot{width:28px;height:28px;border-radius:50%;display:grid;place-items:center;font-size:.9rem;background:var(--gold-soft);color:var(--navy)}
+.abtn.sel .adot{background:var(--gold)}
+.olist{display:grid;gap:10px}
+.obtn{display:block;width:100%;text-align:left;padding:16px 18px;border:1.5px solid var(--line);border-radius:14px;background:#fff;font-size:1rem;color:var(--ink);cursor:pointer;transition:all .15s}
+.obtn:hover{border-color:var(--gold)}
+.obtn.sel{border-color:var(--navy);background:var(--navy);color:#fff}
+.obtn small{display:block;font-size:.85rem;opacity:.7;margin-top:2px}
+.qnav{display:flex;justify-content:space-between;gap:12px;margin-top:30px}
+textarea,input,select{font:inherit;font-size:1rem;color:var(--ink);border:1px solid #D5DAE3;border-radius:12px;padding:13px 14px;background:#fff;width:100%}
+textarea{min-height:96px;resize:vertical}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--gold);border-color:var(--gold)}
+
+/* GATE */
+.srbox{background:var(--navy);color:#fff;border-radius:22px;padding:26px;text-align:center;margin-bottom:26px}
+.srbox .t{font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
+.srblur{font-family:'Playfair Display',serif;font-size:3.6rem;font-weight:900;color:var(--gold-2);filter:blur(9px);user-select:none;margin:4px 0}
+.srbox .u{color:rgba(255,255,255,.7);font-size:.92rem}
+.gate h2{font-size:1.65rem;margin-bottom:10px;text-align:center}
+.gate .p{color:var(--muted);text-align:center;margin-bottom:22px}
+.gform{display:grid;gap:12px}
+.gform label{font-weight:600;font-size:.88rem;color:var(--navy);display:block;margin-bottom:5px}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.enote{font-size:.84rem;color:var(--muted);text-align:center;margin-top:14px}
+.hp{position:absolute;left:-9999px}
+@media (max-width:560px){.g2{grid-template-columns:1fr}}
+
+/* RESULTS */
+.rtop{background:var(--navy);color:#fff;border-radius:24px;padding:34px 26px;text-align:center;margin-bottom:22px}
+.rtop .lbl{font-size:.72rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--gold)}
+.ring{width:170px;height:170px;border-radius:50%;margin:16px auto 18px;display:grid;place-items:center}
+.ring .in{width:132px;height:132px;border-radius:50%;background:var(--navy);display:flex;flex-direction:column;align-items:center;justify-content:center}
+.ring .num{font-family:'Playfair Display',serif;font-size:3rem;font-weight:900;line-height:1}
+.ring .of{font-size:.72rem;letter-spacing:.12em;color:rgba(255,255,255,.55);margin-top:4px}
+.rtop h2{color:#fff;font-size:clamp(1.45rem,3.6vw,2rem);max-width:560px;margin:0 auto 10px}
+.rtop p{color:rgba(255,255,255,.75);max-width:540px;margin:0 auto}
+.ladder{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:22px auto 0;max-width:520px}
+.rung{border:1px solid rgba(255,255,255,.16);border-radius:12px;padding:10px 6px;color:rgba(255,255,255,.45);font-size:.8rem;font-weight:600}
+.rung b{display:block;font-family:'Playfair Display',serif;font-size:1.05rem}
+.rung.on{border-color:var(--gold);background:rgba(197,160,80,.16);color:#fff}
+.sec{margin-bottom:22px}
+.sec h3{font-size:1.35rem;margin-bottom:12px}
+.bars{border:1px solid var(--line);border-radius:16px;padding:8px 20px}
+.barrow{padding:12px 0;border-bottom:1px solid var(--line)}
+.barrow:last-child{border:0}
+.barrow .h{display:flex;justify-content:space-between;font-weight:600;font-size:.95rem;margin-bottom:6px}
+.track{height:7px;background:var(--line);border-radius:4px;overflow:hidden}
+.track div{height:100%;border-radius:4px;transition:width .8s}
+.gap{border:1px solid var(--gold-line);background:var(--gold-soft);border-radius:16px;padding:18px 20px;margin-bottom:10px}
+.gap b{display:block;color:var(--navy);margin-bottom:4px}
+.gap p{color:var(--muted);font-size:.95rem}
+.plan{border:2px solid var(--navy);border-radius:22px;padding:26px;position:relative}
+.plan .tag{position:absolute;top:-13px;left:24px;background:var(--gold);color:var(--navy);font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:5px 12px;border-radius:999px}
+.plan h3{font-size:1.7rem;margin:6px 0 2px}
+.plan .price{font-family:'Playfair Display',serif;font-weight:800;font-size:1.5rem;color:var(--navy);margin-bottom:10px}
+.plan .what{color:var(--muted);margin-bottom:14px}
+.plan ul{list-style:none;margin-bottom:20px}
+.plan li{padding:6px 0 6px 26px;position:relative;font-size:.96rem}
+.plan li::before{content:"";position:absolute;left:0;top:12px;width:13px;height:7px;border-left:2px solid var(--gold);border-bottom:2px solid var(--gold);transform:rotate(-45deg)}
+.plan .btn{width:100%}
+.plan .alt{display:block;text-align:center;margin-top:12px;font-size:.88rem;color:var(--muted)}
+.bk{border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.bk summary{cursor:pointer;list-style:none;padding:16px 20px;font-weight:700;color:var(--navy);display:flex;justify-content:space-between}
+.bk summary::-webkit-details-marker{display:none}
+.bkrow{display:flex;justify-content:space-between;gap:14px;padding:11px 20px;border-top:1px solid var(--line);font-size:.92rem}
+.bksc{flex:none;font-weight:700;font-size:.76rem;padding:3px 10px;border-radius:999px;height:fit-content;white-space:nowrap}
+.sch{background:#E8F3EC;color:var(--green)}.scl{background:#FDF0EE;color:var(--red)}
+.rbtns{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:22px}
+@media (max-width:560px){.rbtns{grid-template-columns:1fr}}
+footer{border-top:1px solid var(--line);padding:26px 20px;text-align:center;color:var(--muted);font-size:.86rem}
+footer a{text-decoration:none;color:var(--navy);font-weight:600}
+</style>
+</head>
+<body>
+
+<nav class="top">
+  <div class="wrap">
+    <a href="/" class="logo"><b>Ready to Open<span>.</span></b></a>
+    <a href="/#book" class="btn btn-navy btn-sm">Free 45-min call</a>
+  </div>
+</nav>
+
+
+
+<!-- Netlify form registration for quiz leads -->
+<form name="ready-to-open-quiz" data-netlify="true" netlify-honeypot="bot-field" hidden style="display:none" aria-hidden="true"><input type="hidden" name="source"><input type="hidden" name="subject"><input type="hidden" name="plan"><input type="hidden" name="project"><input type="hidden" name="name"><input type="hidden" name="company"><input type="hidden" name="email"><input type="hidden" name="phone"><input type="hidden" name="location"><input type="hidden" name="comments"><input type="hidden" name="score"><input type="hidden" name="level"><input type="hidden" name="recommended-plan"><input type="hidden" name="define"><input type="hidden" name="find-assess"><input type="hidden" name="prepare-procure"><input type="hidden" name="deliver-handover"><input type="hidden" name="opening-type"><input type="hidden" name="stage"><input type="hidden" name="timeline"><input type="hidden" name="support"><input type="hidden" name="answers"><input name="bot-field" tabindex="-1" autocomplete="off"></form>
+<!-- LANDING -->
+<div id="screen-landing" class="screen active">
+  <div class="landing">
+    <div>
+      <span class="pill">Free · 3 minutes</span>
+      <h1>Opening abroad? <em>How ready is your project?</em></h1>
+      <p class="sub">Answer 12 Yes/No questions about your planned office, shop or showroom — scored on the four stages of an opening — and 4 about your situation. Get your Opening Readiness Score, your two biggest gaps and the support that fits.</p>
+      <button class="btn btn-navy" onclick="start()">Start the score →</button>
+      <p class="land-note">Your score on screen straight away · No obligation</p>
+    </div>
+    <div class="getbox">
+      <div class="t">What you get</div>
+      <div class="getrow"><i>1</i><div><b>Your score out of 100</b><span>At risk, Exposed or Ready.</span></div></div>
+      <div class="getrow"><i>2</i><div><b>Your two biggest gaps</b><span>Across the four stages — define, find &amp; assess, prepare &amp; procure, deliver &amp; hand over — with the first move for each.</span></div></div>
+      <div class="getrow"><i>3</i><div><b>Your recommended support</b><span>Project Review, Project Coordination or Full Project Management — based on your opening.</span></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- QUESTIONS -->
+<div id="screen-quiz" class="screen">
+  <div class="inner">
+    <div class="meta"><b id="sec-name"></b><span id="prog-txt"></span></div>
+    <div class="pbar-bg"><div class="pbar-fill" id="pbar"></div></div>
+    <div id="qcon"></div>
+    <div class="qnav">
+      <button class="btn btn-line" id="bprev" onclick="prev()">← Back</button>
+      <button class="btn btn-navy" id="bnext" onclick="next()" disabled>Continue →</button>
+    </div>
+  </div>
+</div>
+
+<!-- RESULTS -->
+<div id="screen-results" class="screen">
+  <div class="inner">
+    <div class="rtop">
+      <div class="lbl">Your Opening Readiness Score · Four stages</div>
+      <div class="ring" id="ring"><div class="in"><div class="num" id="rnum"></div><div class="of">OUT OF 100</div></div></div>
+      <h2 id="rhead"></h2>
+      <p id="rdesc"></p>
+      <div class="ladder" id="ladder"></div>
+    </div>
+
+    <div id="rgate" class="sec gate">
+      <h3>Get your full <em>breakdown</em></h3>
+      <p class="p">Your two biggest gaps with the first move for each, your score on each of the four stages, and the support that fits your opening.</p>
+      <form class="gform" onsubmit="subGate(event)">
+        <p class="hp" hidden style="display:none" aria-hidden="true"><label>Leave empty: <input id="gbot" tabindex="-1" autocomplete="off"></label></p>
+        <div class="g2">
+          <div><label for="gn">Your name *</label><input id="gn" autocomplete="name" required></div>
+          <div><label for="gc">Company *</label><input id="gc" autocomplete="organization" required></div>
+        </div>
+        <div class="g2">
+          <div><label for="ge">Work email *</label><input id="ge" type="email" autocomplete="email" required></div>
+          <div><label for="gp">Phone <span style="font-weight:400;color:var(--muted)">(optional)</span></label><input id="gp" type="tel" autocomplete="tel" placeholder="If you prefer a call back"></div>
+        </div>
+        <div><label for="gl">Location</label><input id="gl" placeholder="City, country"></div>
+        <div><label for="gm">Anything we should know? <span style="font-weight:400;color:var(--muted)">(optional)</span></label><textarea id="gm" placeholder="City you are opening in, a lease or partner question…"></textarea></div>
+        <button type="submit" class="btn btn-navy" id="gbtn">Show my full breakdown →</button>
+      </form>
+      <p class="enote">We may contact you once about your result. No newsletters. <a href="/privacy.html" style="color:var(--navy)">Privacy</a></p>
+    </div>
+
+    <div id="rfull" hidden>
+
+    <div class="sec">
+      <h3>Your recommended support</h3>
+      <div class="plan" id="plan"></div>
+    </div>
+
+    <div class="sec">
+      <h3 id="gaps-h">Your two biggest <em>gaps</em></h3>
+      <div id="gaps"></div>
+    </div>
+
+    <div class="sec">
+      <h3>Your score on the <em>four stages</em></h3>
+      <div class="bars" id="bars"></div>
+    </div>
+
+    <details class="bk"><summary>Your answers at a glance <span>+</span></summary><div id="bklist"></div></details>
+    </div>
+
+    <div style="text-align:center;margin-top:22px"><button class="btn btn-line" onclick="start()">↺ Retake the score</button></div>
+  </div>
+</div>
+
+<footer><a href="/">Ready to Open</a> · Your move. Your project. One person keeping it together. · <a href="/privacy.html">Privacy</a></footer>
+
+<script>
+const AREAS=[
+ {name:'DEFINE',sub:'Brief, budget & date',col:'#0F2D52',
+  gap:'The brief is not nailed down yet.',move:'Write one page: space needs, budget range, target opening date and decision criteria — and name one person accountable for the date.'},
+ {name:'FIND & ASSESS',sub:'Options & lease terms',col:'#C5A050',
+  gap:'Options and lease terms are not being tested.',move:'Compare at least three options on the same criteria, and have the lease — fit-out allowance, landlord works, handover condition — reviewed before you sign.'},
+ {name:'PREPARE & PROCURE',sub:'Design, quotes & plan',col:'#2D6A4F',
+  gap:'Design and contractor choices are not on solid ground.',move:'Appoint the architect on a written brief, get comparable quotes on the same scope, and fix a delivery plan with permits and long-lead items.'},
+ {name:'DELIVER & HAND OVER',sub:'Works, changes & handover',col:'#C0392B',
+  gap:'You may hear about delays and extras late.',move:'Before works start, set a weekly progress, cost and change report — and an independent site inspection rhythm.'}];
+// 12 Yes/No questions, 3 per stage. neg=true: "No" is the good answer.
+const Q=[
+ {a:0,t:'Do you have a written brief — space needs, budget and target opening date — agreed internally?'},
+ {a:0,t:'Is one person on your side accountable for the opening date and the budget?'},
+ {a:0,t:'Are your criteria for choosing a location agreed — area, access, image, cost?'},
+ {a:1,t:'Have you compared at least three options side by side, on the same criteria?'},
+ {a:1,t:'Has someone who knows local practice reviewed the lease terms — fit-out allowance, landlord works, handover condition?'},
+ {a:1,t:'Are you relying on a single broker\'s shortlist?',neg:true},
+ {a:2,t:'Is the architect or designer appointed on a written brief, scope and fee?'},
+ {a:2,t:'Do you have, or plan to get, at least three comparable contractor quotes on the same scope?'},
+ {a:2,t:'Is there a delivery plan with key dates, permits and long-lead items identified?'},
+ {a:3,t:'Will you receive a weekly report on progress, cost and changes?'},
+ {a:3,t:'Will someone independent of the contractor inspect the works on site?'},
+ {a:3,t:'Would the opening date slip if one key person on your team were away for two weeks?',neg:true}];
+// 4 routing questions
+const R=[
+ {k:'opening-type',t:'What are you opening?',o:['One office','One shop or showroom','Several sites or countries']},
+ {k:'stage',t:'Where are you today?',o:['Still deciding where','Space found — lease not signed','Lease signed — design or works next','Works already under way']},
+ {k:'timeline',t:'When do you need to open?',o:['Within 3 months','3 – 6 months','6 – 12 months','Not fixed yet']},
+ {k:'support',t:'What kind of support do you want?',o:['Advice on one question — we run it ourselves','Someone to coordinate partners, stage by stage','Someone to manage it from brief to keys','Not sure yet'],
+  sub:['A written plan, risks and next steps','Brokers, architect and contractors coordinated, weekly reporting','All four stages managed, local supervision scoped','We will decide after the call']}];
+const PLANS={
+ review:{name:'Project Review',price:'from €500 incl. VAT · one-off',opt:'Project Review — from €500',
+  what:'One defined relocation or set-up question, answered — with a written plan you can run yourself.',
+  inc:['Your needs, location, budget and timing reviewed','Key risks for your date and budget','Lease, quotes or plan checked, if you have them','A written plan: who does what, in which order']},
+ coordination:{name:'Project Coordination',price:'monthly · by stage',opt:'Project Coordination — monthly',
+  what:'Your project representative, stage by stage — coordinating brokers, architect and contractors.',
+  inc:['Everything in Project Review','Brokers, architect and contractors coordinated','Quotations obtained and compared','Weekly progress, cost and change report']},
+ full:{name:'Full Project Management',price:'quote · per project',opt:'Full Project Management — quote',
+  what:'From brief to keys, for one space or a rollout — all four stages managed for you.',
+  inc:['All four stages, managed for you','Local supervision and visits, explicitly scoped','Contractor contracts and cost control','Snagging, handover and move-in']}};
+const LEVELS=[
+ {min:0,max:39,name:'At risk',col:'#C0392B',h:'Your opening is running on hope.',
+  b:'Key decisions on the brief, the space or the partners are still open. That is normal early on — but each open item is a risk to your date and budget.'},
+ {min:40,max:69,name:'Exposed',col:'#E07B39',h:'The basics are there. The gaps could cost you weeks.',
+  b:'Some stages are under control, others not yet. The gaps usually show up as a lease surprise, a quote that grows, or an opening date that slips.'},
+ {min:70,max:100,name:'Ready',col:'#2D6A4F',h:'Your opening is on solid ground. Keep it that way.',
+  b:'Brief, options and partners are largely in place. The risk now is delivery — changes, inspections and handover.'}];
+
+const N=Q.length+R.length;
+let i=0,ans=new Array(Q.length).fill(null),rt=new Array(R.length).fill(null),lead={};
+
+function ss(id){document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));document.getElementById('screen-'+id).classList.add('active');window.scrollTo(0,0);}
+function ok(k){const v=ans[k];if(v===null)return 0;return Q[k].neg?(v===0?1:0):(v===1?1:0);}
+function areaS(a){const ks=Q.map((q,k)=>k).filter(k=>Q[k].a===a);return Math.round(ks.reduce((s,k)=>s+ok(k),0)/ks.length*100);}
+function score(){return Math.round(Q.reduce((s,q,k)=>s+ok(k),0)/Q.length*100);}
+function level(s){return LEVELS.find(l=>s>=l.min&&s<=l.max);}
+function esc(t){return String(t).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));}
+
+function planKey(){
+  const t=rt[0],st=rt[1],sup=rt[3];
+  if(t===2||sup===2)return 'full';
+  if(sup===1)return 'coordination';
+  if(sup===0)return (score()<40&&st>=2)?'coordination':'review';
+  return st>=2?'coordination':'review';
+}
+function planWhy(k){
+  const why=[];
+  if(k==='full'){
+    if(rt[0]===2)why.push('you are opening several sites or countries');
+    if(rt[3]===2)why.push('you want the opening managed from brief to keys');
+  }else if(k==='coordination'){
+    if(rt[3]===1)why.push('you want partners coordinated stage by stage');
+    if(rt[1]>=2)why.push('design or works are next, so coordination matters most now');
+    if(rt[3]===0&&score()<40)why.push('your score suggests more than one question needs attention');
+  }else{
+    why.push(rt[3]===0?'you want advice on one question and to run the project yourselves':'a review is the simplest way to start before committing');
+    if(rt[1]<=1)why.push('you are still at the search stage');
+  }
+  if(rt[2]===0)why.push('opening within 3 months — raise the timeline on the call');
+  return why;
+}
+
+function start(){i=0;ans=new Array(Q.length).fill(null);rt=new Array(R.length).fill(null);render();ss('quiz');}
+function render(){
+  const isQ=i<Q.length,el=document.getElementById('qcon');
+  document.getElementById('sec-name').textContent=isQ?(AREAS[Q[i].a].name+' · '+AREAS[Q[i].a].sub):'Your situation';
+  document.getElementById('prog-txt').textContent=(i+1)+' of '+N;
+  document.getElementById('pbar').style.width=((i+1)/N*100)+'%';
+  document.getElementById('bprev').style.visibility=i===0?'hidden':'visible';
+  const bn=document.getElementById('bnext');
+  if(isQ){
+    const v=ans[i];
+    el.innerHTML=`<div class="qtext">${Q[i].t}</div><div class="aopts">
+      <button class="abtn ${v===1?'sel':''}" onclick="pickQ(1)"><span class="adot">✓</span>Yes</button>
+      <button class="abtn ${v===0?'sel':''}" onclick="pickQ(0)"><span class="adot">✗</span>No</button></div>`;
+    bn.disabled=v===null;
+  }else{
+    const r=R[i-Q.length],v=rt[i-Q.length];
+    el.innerHTML=`<div class="qtext">${r.t}</div><div class="olist">${r.o.map((o,k)=>`<button class="obtn ${v===k?'sel':''}" onclick="pickR(${k})">${o}${r.sub?`<small>${r.sub[k]}</small>`:''}</button>`).join('')}</div>`;
+    bn.disabled=v===null;
+  }
+  bn.textContent=i===N-1?'See my score →':'Continue →';
+}
+function pickQ(v){ans[i]=v;render();setTimeout(next,250);}
+function pickR(v){rt[i-Q.length]=v;render();setTimeout(next,250);}
+function next(){
+  const done=i<Q.length?ans[i]!==null:rt[i-Q.length]!==null;if(!done)return;
+  if(i<N-1){i++;render();}else{showTop();}
+}
+function prev(){if(i>0){i--;render();}}
+
+function subGate(e){
+  e.preventDefault();if(document.getElementById('gbot').value)return;
+  lead={name:gn.value.trim(),company:gc.value.trim(),email:ge.value.trim(),phone:gp.value.trim(),location:gl.value.trim(),comments:gm.value.trim()};
+  const s=score(),pk=planKey();
+  const data={'form-name':'ready-to-open-quiz',source:'Opening Readiness Score',subject:'New lead — Ready to Open quiz — '+PLANS[pk].name+' — '+lead.name+' ('+lead.company+') — '+s+'/100',plan:PLANS[pk].opt,project:'(from quiz) '+R[0].o[rt[0]]+' · '+R[1].o[rt[1]]+' · open '+R[2].o[rt[2]],name:lead.name,company:lead.company,email:lead.email,phone:lead.phone,location:lead.location,comments:lead.comments,
+   score:s+'/100',level:level(s).name,'recommended-plan':PLANS[pk].name,
+   define:areaS(0)+'%','find-assess':areaS(1)+'%','prepare-procure':areaS(2)+'%','deliver-handover':areaS(3)+'%'};
+  R.forEach((r,k)=>data[r.k]=r.o[rt[k]]);
+  data.answers=Q.map((q,k)=>(k+1)+'. '+(ans[k]===1?'Yes':'No')+(ok(k)?'':'  <- GAP')+' — '+q.t).join('\n');
+  const b=document.getElementById('gbtn');b.disabled=true;b.textContent='One moment…';
+  fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams(data).toString()})
+   .catch(()=>{}).finally(()=>{b.disabled=false;b.textContent='Show my full breakdown →';showFull();});
+}
+
+function gapsIdx(){return AREAS.map((_,k)=>k).filter(k=>areaS(k)<100).sort((a,b)=>areaS(a)-areaS(b)).slice(0,2);}
+
+function showTop(){
+  const s=score(),L=level(s);
+  document.getElementById('rnum').textContent=s;
+  document.getElementById('ring').style.background=`conic-gradient(${L.col} 0% ${s}%, rgba(255,255,255,.12) ${s}% 100%)`;
+  document.getElementById('rhead').textContent=L.h;
+  document.getElementById('rdesc').textContent=L.b;
+  document.getElementById('ladder').innerHTML=LEVELS.map((l,k)=>`<div class="rung ${l===L?'on':''}"><b>${k+1}</b>${l.name}</div>`).join('');
+  document.getElementById('rgate').hidden=false;document.getElementById('rfull').hidden=true;
+  ss('results');
+}
+function showFull(){
+  const s=score(),L=level(s),pk=planKey(),P=PLANS[pk];
+  const first=(lead.name||'').split(' ')[0];
+  if(first)document.getElementById('rhead').textContent=first+' — '+L.h;
+  const why=planWhy(pk);
+  document.getElementById('plan').innerHTML=`<span class="tag">Recommended for you</span>
+    <h3>${P.name}</h3><div class="price">${P.price}</div><p class="what">${P.what}</p>
+    <ul>${P.inc.map(x=>`<li>${x}</li>`).join('')}</ul>
+    <p class="what"><b style="color:var(--navy)">Why:</b> ${esc(why.join('; '))}.</p>
+    <a class="btn btn-navy" href="/?plan=${pk}#book">Book your free 45-minute call →</a>
+    <span class="alt">We confirm the right support with you on the call. Scope and fee in writing before you start.</span>`;
+  const gi=gapsIdx();document.getElementById('gaps-h').innerHTML=gi.length===2?'Your two biggest <em>gaps</em>':gi.length===1?'Your one <em>gap</em>':'No <em>gaps</em> found';
+  document.getElementById('gaps').innerHTML=gi.length?gi.map(a=>`<div class="gap"><b>${AREAS[a].name} · ${AREAS[a].sub} — ${areaS(a)}%: ${AREAS[a].gap}</b><p><b style="display:inline;color:var(--navy)">First move:</b> ${AREAS[a].move}</p></div>`).join(''):`<div class="gap"><b>Every answer is in place.</b><p>The risk now is delivery — keep the same discipline on changes, inspections and handover.</p></div>`;
+  document.getElementById('bars').innerHTML=AREAS.map((a,k)=>`<div class="barrow"><div class="h"><span>${a.name} <span style="font-weight:400;color:var(--muted)">· ${a.sub}</span></span><span>${areaS(k)}%</span></div><div class="track"><div style="width:${areaS(k)}%;background:${a.col}"></div></div></div>`).join('');
+  document.getElementById('bklist').innerHTML=Q.map((q,k)=>`<div class="bkrow"><div>${q.t}</div><div class="bksc ${ok(k)?'sch':'scl'}">${ok(k)?'✓ In place':'✗ Gap'}</div></div>`).join('');
+  document.getElementById('rgate').hidden=true;document.getElementById('rfull').hidden=false;
+  document.getElementById('rfull').scrollIntoView({behavior:'smooth',block:'start'});
+}
+</script>
+</body>
+</html>
