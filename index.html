@@ -159,6 +159,8 @@ section{padding:92px 0}
 .math .us .fine{color:rgba(255,255,255,.65)}
 .badge{position:absolute;top:-14px;left:30px;background:var(--gold);color:var(--navy);font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:6px 14px;border-radius:999px}
 @media (max-width:900px){.math{grid-template-columns:1fr}}
+.math>*{min-width:0}
+@media (max-width:480px){.line .amt{white-space:normal;text-align:end;max-width:45%}.line .l{min-width:0}}
 
 /* PRICING */
 .plans{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:stretch}
@@ -235,6 +237,13 @@ section{padding:92px 0}
 .langs{max-width:900px;margin:30px auto 0;text-align:center}
 .langs b{display:block;font-family:'Playfair Display',serif;font-size:1.2rem;color:var(--navy);margin-bottom:14px}
 .langs .chips{justify-content:center}
+.langs-cap{font-size:.82rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:-4px 0 10px}
+a.lang{text-decoration:none;transition:background .2s,color .2s}
+a.lang.main{background:#fff;color:var(--navy);border-color:var(--navy)}
+a.lang.main:hover{background:var(--gold-soft)}
+a.lang.main.on{background:var(--navy);color:#fff}
+.flang{display:inline-flex;flex-wrap:wrap;gap:12px;margin-right:8px}
+.flang a.on{color:var(--gold-2)}
 @media (max-width:760px){.trio{grid-template-columns:1fr}}
 .field-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:28px}
 .field-strip figure{border-radius:14px;overflow:hidden;aspect-ratio:4/3;background:var(--line)}
@@ -362,12 +371,13 @@ footer a:hover{color:var(--gold-2)}
 @media (max-width:900px){.fivec ol.four{grid-template-columns:1fr 1fr}}
 @media (max-width:760px){.fivec ol.four{grid-template-columns:1fr}}
 </style>
+<link rel="alternate" hreflang="en" href="https://nextplaces.netlify.app/"><link rel="alternate" hreflang="es" href="https://nextplaces.netlify.app/es.html"><link rel="alternate" hreflang="fr" href="https://nextplaces.netlify.app/fr.html"><link rel="alternate" hreflang="it" href="https://nextplaces.netlify.app/it.html"><link rel="alternate" hreflang="zh" href="https://nextplaces.netlify.app/zh.html"><link rel="alternate" hreflang="ar" href="https://nextplaces.netlify.app/ar.html"><link rel="alternate" hreflang="el" href="https://nextplaces.netlify.app/el.html"><link rel="alternate" hreflang="x-default" href="https://nextplaces.netlify.app/">
 </head>
 <body>
 
 <nav class="top">
   <div class="wrap">
-    <a href="#" class="logo"><b>Ready to Open<span>.</span></b><small>by Contracks Global</small></a>
+    <a href="#" class="logo"><b>Ready to Open<span>.</span></b></a>
     <div class="links" id="menu">
       <a href="#how">How It Works</a>
       <a href="#services">Services</a>
@@ -392,6 +402,7 @@ footer a:hover{color:var(--gold-2)}
       </div>
       <p class="hero-note">For <b>companies and brands setting up or relocating</b> an office, shop or showroom in a new country — managed from your HQ, delivered on the ground.</p>
       <p class="hero-note"><b>Project Review from €500</b> · Scope and fee in writing before we start</p>
+      <p class="hero-note">Not sure where to start? <a href="/quiz.html" style="color:var(--navy);font-weight:700">Take the 3-minute Opening Readiness Score →</a></p>
     </div>
     <div class="math-card" aria-label="What you receive from your Project Review">
       <div class="tag">What you receive from your Project Review</div>
@@ -657,6 +668,25 @@ footer a:hover{color:var(--gold-2)}
   </div>
 </section>
 
+<!-- QUIZ -->
+<section class="quiz">
+  <div class="wrap">
+    <div class="quiz-box">
+      <div>
+        <span class="pill">Free · 3 minutes</span>
+        <h2>Not sure which support fits? <em>Score your opening first.</em></h2>
+        <p>Twelve Yes/No questions across the four stages — define, find &amp; assess, prepare &amp; procure, deliver &amp; hand over. Your Opening Readiness Score, your two biggest gaps and the support we'd recommend.</p>
+        <a href="/quiz.html" class="btn btn-gold">Take the Opening Readiness Score →</a>
+      </div>
+      <ol class="ladder" aria-label="Readiness levels">
+        <li><b>3</b><span>Ready</span></li>
+        <li><b>2</b><span>Exposed</span></li>
+        <li><b>1</b><span>At risk</span></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
 <!-- 8. FIRST MONTH -->
 <section class="alt">
   <div class="wrap">
@@ -680,7 +710,7 @@ footer a:hover{color:var(--gold-2)}
     <div class="head">
       <span class="pill">Who you work with</span>
       <h2>Named people. <em>On your side.</em></h2>
-      <p>Ready to Open is a service of Contracks Global. You know who's managing your opening — and you can call them.</p>
+      <p>You know who's managing your opening — and you can call them.</p>
     </div>
     <div class="card team">
       <img src="serguei-portrait.jpeg" alt="Serguei Poppeleer" loading="lazy">
@@ -699,8 +729,11 @@ footer a:hover{color:var(--gold-2)}
     </div>
     <div class="langs">
       <b>Working across borders, in your language.</b>
+      <p class="langs-cap">Read this page in</p>
       <div class="chips">
-        <span class="lang main">English</span><span class="lang main">Français</span><span class="lang main">Italiano</span>
+        <a class="lang main on" href="/" hreflang="en" lang="en" aria-current="page">English</a><a class="lang main" href="/es.html" hreflang="es" lang="es">Español</a><a class="lang main" href="/fr.html" hreflang="fr" lang="fr">Français</a><a class="lang main" href="/it.html" hreflang="it" lang="it">Italiano</a><a class="lang main" href="/zh.html" hreflang="zh" lang="zh">中文</a><a class="lang main" href="/ar.html" hreflang="ar" lang="ar">العربية</a><a class="lang main" href="/el.html" hreflang="el" lang="el">Ελληνικά</a>
+      </div>
+      <div class="chips" style="margin-top:10px">
         <span class="lang">Other languages on request, via partners</span>
         <span class="lang">Europe · Africa · Gulf</span>
         <span class="lang">Offices · Retail · Showrooms</span>
@@ -735,6 +768,7 @@ footer a:hover{color:var(--gold-2)}
       <span class="pill">Get started</span>
       <h2>Book your free <em>45-minute call.</em></h2>
       <p class="lead">Tell us where you're opening and what you need. We read every request and contact you within one business day to book your call. No documents needed.</p>
+      <p style="margin:-10px 0 22px;color:var(--muted)">Not sure which support fits? <a href="/quiz.html" style="color:var(--navy);font-weight:700">Take the 3-minute score first →</a></p>
       <b style="color:var(--navy)">What happens after you book</b>
       <ol class="after">
         <li>Send your details<span>Your company, where you're opening and the space you need.</span></li>
@@ -747,24 +781,24 @@ footer a:hover{color:var(--gold-2)}
       <input type="hidden" name="form-name" value="ready-to-open">
       <input type="hidden" name="subject" id="fsubj" value="New lead — Ready to Open">
       <input type="hidden" name="source" value="Booking form">
-      <p class="hp"><label>Don't fill this out: <input name="bot-field"></label></p>
+      <p class="hp" hidden style="display:none" aria-hidden="true"><label>Leave empty: <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
       <div class="fgrid">
         <div class="field"><label for="n">Your name *</label><input id="n" name="name" autocomplete="name" required></div>
         <div class="field"><label for="c">Company *</label><input id="c" name="company" autocomplete="organization" required></div>
         <div class="field"><label for="e">Email *</label><input id="e" name="email" type="email" autocomplete="email" required></div>
-        <div class="field"><label for="t">Phone *</label><input id="t" name="phone" type="tel" autocomplete="tel" placeholder="+32 …" required></div>
-        <div class="field"><label for="l">Your HQ / location *</label><input id="l" name="location" autocomplete="address-level2" placeholder="City, country" required></div>
+        <div class="field"><label for="t">Phone <span style="font-weight:400;color:var(--muted)">(optional)</span></label><input id="t" name="phone" type="tel" autocomplete="tel" placeholder="If you prefer a call back"></div>
+        <div class="field"><label for="l">Your HQ / location</label><input id="l" name="location" autocomplete="address-level2" placeholder="City, country"></div>
         <div class="field"><label for="w">Where are you opening? *</label><input id="w" name="target-location" placeholder="City, country" required></div>
         <div class="field"><label for="sp">Type of space</label>
-          <select id="sp" name="space-type"><option value="">Select</option><option>Office</option><option>Shop / retail</option><option>Showroom</option><option>Several sites</option><option>Other</option></select></div>
+          <select id="sp" name="space-type"><option value="">Select</option><option value="Office">Office</option><option value="Shop / retail">Shop / retail</option><option value="Showroom">Showroom</option><option value="Several sites">Several sites</option><option value="Other">Other</option></select></div>
         <div class="field"><label for="sz">Approximate size</label>
-          <select id="sz" name="size"><option value="">Select</option><option>Under 200 m²</option><option>200 – 1,000 m²</option><option>1,000 – 5,000 m²</option><option>Over 5,000 m²</option></select></div>
+          <select id="sz" name="size"><option value="">Select</option><option value="Under 200 m²">Under 200 m²</option><option value="200 – 1,000 m²">200 – 1,000 m²</option><option value="1,000 – 5,000 m²">1,000 – 5,000 m²</option><option value="Over 5,000 m²">Over 5,000 m²</option></select></div>
         <div class="field full"><label for="dt">Target opening</label>
-          <select id="dt" name="target-opening"><option value="">Select</option><option>Within 3 months</option><option>3 – 6 months</option><option>6 – 12 months</option><option>Not fixed yet</option></select></div>
+          <select id="dt" name="target-opening"><option value="">Select</option><option value="Within 3 months">Within 3 months</option><option value="3 – 6 months">3 – 6 months</option><option value="6 – 12 months">6 – 12 months</option><option value="Not fixed yet">Not fixed yet</option></select></div>
         <div class="field full"><label for="pr">About your project *</label><textarea id="pr" name="project" required placeholder="What you're opening, current stage (searching, lease signed, design, works…), anything we should know."></textarea></div>
         <div class="field full"><label for="m">Comments</label><textarea id="m" name="comments" placeholder="What's on your mind — timing, budget, partners already appointed, questions for us…"></textarea></div>
         <div class="field full"><label for="p">Plan you're interested in</label>
-          <select id="p" name="plan"><option>Not sure yet — review first</option><option>Project Review — from €500</option><option>Project Coordination — monthly</option><option>Full Project Management — quote</option></select></div>
+          <select id="p" name="plan"><option value="Not sure yet — review first">Not sure yet — review first</option><option value="Project Review — from €500">Project Review — from €500</option><option value="Project Coordination — monthly">Project Coordination — monthly</option><option value="Full Project Management — quote">Full Project Management — quote</option></select></div>
       </div>
       <button type="submit" class="btn btn-navy">Book my free 45-minute call →</button>
       <p class="form-foot">* Required. No documents needed. We contact you within one business day to book your call. <a href="/privacy.html" style="color:var(--navy)">Privacy</a></p>
@@ -794,12 +828,12 @@ footer a:hover{color:var(--gold-2)}
 <footer>
   <div class="wrap">
     <div class="fwrap">
-      <div class="flogo"><b>Ready to Open<span>.</span></b><br><span>A service of Contracks Global · Your move. Your project. One person keeping it together.</span></div>
+      <div class="flogo"><b>Ready to Open<span>.</span></b><br><span>Your move. Your project. One person keeping it together.</span></div>
       <div class="fbtns"><a href="#book" class="btn btn-gold">Book your free 45-min call</a></div>
     </div>
     <div class="fwrap copy">
-      <span>© 2026 Contracks Global SRL · Company registered in Belgium</span>
-      <nav class="fnav"><a href="/privacy.html">Privacy</a></nav>
+      <span>© 2026 Ready to Open · Europe · Africa · Gulf</span>
+      <nav class="fnav"><span class="flang"><a href="/" hreflang="en" lang="en" class="on" aria-current="page">English</a><a href="/es.html" hreflang="es" lang="es">Español</a><a href="/fr.html" hreflang="fr" lang="fr">Français</a><a href="/it.html" hreflang="it" lang="it">Italiano</a><a href="/zh.html" hreflang="zh" lang="zh">中文</a><a href="/ar.html" hreflang="ar" lang="ar">العربية</a><a href="/el.html" hreflang="el" lang="el">Ελληνικά</a></span><a href="/join.html">Join us</a><a href="/privacy.html">Privacy</a></nav>
     </div>
   </div>
 </footer>
@@ -815,7 +849,7 @@ function stayIn(e){e.preventDefault();var n=document.getElementById('sn').value.
 var d={'form-name':'ready-to-open',source:'Stay in touch',subject:'New contact — Ready to Open — stay in touch — '+(n||m),name:n,email:m};
 fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams(d).toString()}).catch(function(){}).finally(function(){document.getElementById('stayf').hidden=true;document.getElementById('stayok').hidden=false;});}
 function stash(){try{var n=document.getElementById('n').value,c=document.getElementById('c').value,w=document.getElementById('w').value;document.getElementById('fsubj').value='New lead — Ready to Open — '+n+(c?' ('+c+')':'')+(w?' — '+w:'');}catch(e){}}
-function setPlan(v){var s=document.getElementById('p');if(s){for(var i=0;i<s.options.length;i++){if(s.options[i].text===v){s.selectedIndex=i;}}}}
+function setPlan(v){var s=document.getElementById('p');if(s){for(var i=0;i<s.options.length;i++){if(s.options[i].value===v||s.options[i].text===v){s.selectedIndex=i;}}}}
 (function(){try{var m={review:'Project Review — from €500',coordination:'Project Coordination — monthly',full:'Full Project Management — quote'};var k=new URLSearchParams(location.search).get('plan');if(k&&m[k])document.addEventListener('DOMContentLoaded',function(){setPlan(m[k]);});}catch(e){}})();
 </script>
 </body>
