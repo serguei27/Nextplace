@@ -142,7 +142,7 @@ footer a{text-decoration:none;color:var(--navy);font-weight:600}
 <nav class="top">
   <div class="wrap">
     <a href="/" class="logo"><b>Ready to Open<span>.</span></b></a>
-    <a href="/#book" class="btn btn-navy btn-sm">Free 45-min call</a>
+    <a href="/#book" class="btn btn-navy btn-sm">Request a free call</a>
   </div>
 </nav>
 
@@ -237,7 +237,7 @@ footer a{text-decoration:none;color:var(--navy);font-weight:600}
   </div>
 </div>
 
-<footer><a href="/">Ready to Open</a> · Your move. Your project. One person keeping it together. · <a href="/privacy.html">Privacy</a></footer>
+<footer><a href="/">Ready to Open</a> · A service of Contracks Global · Your move. Your project. One person keeping it together. · <a href="/privacy.html">Privacy</a></footer>
 
 <script>
 const AREAS=[
@@ -386,7 +386,7 @@ function showFull(){
     <h3>${P.name}</h3><div class="price">${P.price}</div><p class="what">${P.what}</p>
     <ul>${P.inc.map(x=>`<li>${x}</li>`).join('')}</ul>
     <p class="what"><b style="color:var(--navy)">Why:</b> ${esc(why.join('; '))}.</p>
-    <a class="btn btn-navy" href="/?plan=${pk}#book">Book your free 45-minute call →</a>
+    <a class="btn btn-navy" href="/?plan=${pk}#book">Request your free 45-minute call →</a>
     <span class="alt">We confirm the right support with you on the call. Scope and fee in writing before you start.</span>`;
   const gi=gapsIdx();document.getElementById('gaps-h').innerHTML=gi.length===2?'Your two biggest <em>gaps</em>':gi.length===1?'Your one <em>gap</em>':'No <em>gaps</em> found';
   document.getElementById('gaps').innerHTML=gi.length?gi.map(a=>`<div class="gap"><b>${AREAS[a].name} · ${AREAS[a].sub} — ${areaS(a)}%: ${AREAS[a].gap}</b><p><b style="display:inline;color:var(--navy)">First move:</b> ${AREAS[a].move}</p></div>`).join(''):`<div class="gap"><b>Every answer is in place.</b><p>The risk now is delivery — keep the same discipline on changes, inspections and handover.</p></div>`;
