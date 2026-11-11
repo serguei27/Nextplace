@@ -3,11 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Opening Readiness Score — Ready to Open</title>
-<meta name="description" content="Opening an office, shop or showroom abroad? 12 Yes/No questions across the four stages of an opening, 3 minutes. Your score, your two biggest gaps and the support that fits.">
-<meta property="og:title" content="Opening Readiness Score — Ready to Open">
+<title>Opening Score — Ready to Open</title>
+<meta name="description" content="Opening an office, shop or showroom abroad? 12 Yes/No questions across the four stages of an opening, 3 minutes. Your Opening Score, your two biggest gaps and the support that fits.">
+<meta property="og:title" content="Opening Score — Ready to Open">
 <meta property="og:description" content="Opening abroad? How ready is your project? Find out in 3 minutes.">
-<meta property="og:url" content="https://nextplaces.netlify.app/quiz.html">
+<meta property="og:url" content="https://nextplaces.netlify.app/quiz">
+<link rel="canonical" href="https://nextplaces.netlify.app/quiz">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -33,6 +34,7 @@ nav.top .wrap{display:flex;align-items:center;justify-content:space-between;heig
 .btn-gold{background:var(--gold);color:var(--navy);box-shadow:0 8px 22px rgba(197,160,80,.28)}
 .btn-line{background:#fff;color:var(--navy);border:1.5px solid var(--navy)}
 .btn-sm{padding:10px 18px;font-size:.9rem}
+.nav-cta .sm{display:none}@media (max-width:480px){.nav-cta .lg{display:none}.nav-cta .sm{display:inline}}
 .pill{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--navy-2);background:var(--gold-soft);border:1px solid var(--gold-line);padding:7px 14px;border-radius:999px}
 .screen{display:none}.screen.active{display:block}
 .inner{max-width:720px;margin:0 auto;padding:44px 20px 80px}
@@ -131,6 +133,10 @@ input:focus,select:focus,textarea:focus{outline:2px solid var(--gold);border-col
 .bkrow{display:flex;justify-content:space-between;gap:14px;padding:11px 20px;border-top:1px solid var(--line);font-size:.92rem}
 .bksc{flex:none;font-weight:700;font-size:.76rem;padding:3px 10px;border-radius:999px;height:fit-content;white-space:nowrap}
 .sch{background:#E8F3EC;color:var(--green)}.scl{background:#FDF0EE;color:var(--red)}
+.post{background:var(--gold-soft);border:1px solid var(--gold-line);border-radius:22px;padding:26px;text-align:center;margin-top:22px}
+.post p.say{font-family:'Playfair Display',serif;font-size:clamp(1.15rem,2.8vw,1.4rem);line-height:1.35;color:var(--navy);max-width:560px;margin:0 auto 18px}
+.post .sub2{font-size:.86rem;color:var(--muted);margin-top:10px}
+.post .first{font-size:.92rem;color:var(--navy);margin-top:14px}
 .rbtns{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:22px}
 @media (max-width:560px){.rbtns{grid-template-columns:1fr}}
 footer{border-top:1px solid var(--line);padding:26px 20px;text-align:center;color:var(--muted);font-size:.86rem}
@@ -142,7 +148,7 @@ footer a{text-decoration:none;color:var(--navy);font-weight:600}
 <nav class="top">
   <div class="wrap">
     <a href="/" class="logo"><b>Ready to Open<span>.</span></b></a>
-    <a href="/#book" class="btn btn-navy btn-sm">Request a free call</a>
+    <a href="/#book" class="btn btn-navy btn-sm nav-cta"><span class="lg">Book your free 45-min call</span><span class="sm">Free call</span></a>
   </div>
 </nav>
 
@@ -154,15 +160,15 @@ footer a{text-decoration:none;color:var(--navy);font-weight:600}
 <div id="screen-landing" class="screen active">
   <div class="landing">
     <div>
-      <span class="pill">Free · 3 minutes</span>
+      <span class="pill">Opening Score</span>
       <h1>Opening abroad? <em>How ready is your project?</em></h1>
-      <p class="sub">Answer 12 Yes/No questions about your planned office, shop or showroom — scored on the four stages of an opening — and 4 about your situation. Get your Opening Readiness Score, your two biggest gaps and the support that fits.</p>
-      <button class="btn btn-navy" onclick="start()">Start the score →</button>
-      <p class="land-note">Your score on screen straight away · No obligation</p>
+      <p class="sub">Answer 12 Yes/No questions about your planned office, shop or showroom — scored on the four stages of an opening — and 4 about your situation. Get your Opening Score, your two biggest gaps and the support that fits.</p>
+      <button class="btn btn-navy" onclick="start()">Get my Opening Score — free →</button>
+      <p class="land-note">Free · 3 minutes · Your score on screen straight away · No obligation</p>
     </div>
     <div class="getbox">
       <div class="t">What you get</div>
-      <div class="getrow"><i>1</i><div><b>Your score out of 100</b><span>At risk, Exposed or Ready.</span></div></div>
+      <div class="getrow"><i>1</i><div><b>Your score out of 100</b><span>Fragile, Exposed or Resilient.</span></div></div>
       <div class="getrow"><i>2</i><div><b>Your two biggest gaps</b><span>Across the four stages — define, find &amp; assess, prepare &amp; procure, deliver &amp; hand over — with the first move for each.</span></div></div>
       <div class="getrow"><i>3</i><div><b>Your recommended support</b><span>Project Review, Project Coordination or Full Project Management — based on your opening.</span></div></div>
     </div>
@@ -186,7 +192,7 @@ footer a{text-decoration:none;color:var(--navy);font-weight:600}
 <div id="screen-results" class="screen">
   <div class="inner">
     <div class="rtop">
-      <div class="lbl">Your Opening Readiness Score · Four stages</div>
+      <div class="lbl">Your Opening Score · Four stages</div>
       <div class="ring" id="ring"><div class="in"><div class="num" id="rnum"></div><div class="of">OUT OF 100</div></div></div>
       <h2 id="rhead"></h2>
       <p id="rdesc"></p>
@@ -233,11 +239,18 @@ footer a{text-decoration:none;color:var(--navy);font-weight:600}
     <details class="bk"><summary>Your answers at a glance <span>+</span></summary><div id="bklist"></div></details>
     </div>
 
-    <div style="text-align:center;margin-top:22px"><button class="btn btn-line" onclick="start()">↺ Retake the score</button></div>
+    <div class="post" id="post">
+      <p class="say" id="psay"></p>
+      <a class="btn btn-navy" id="pbtn" href="/#book">Book a Free 45-Minute Call →</a>
+      <p class="sub2">No documents needed · No obligation</p>
+      <p class="first">Usually the first step after the call: <b>Project Review — from €500</b>, one-off.</p>
+    </div>
+
+    <div style="text-align:center;margin-top:22px"><button class="btn btn-line" onclick="start()">↺ Retake the Opening Score</button></div>
   </div>
 </div>
 
-<footer><a href="/">Ready to Open</a> · A service of Contracks Global · Your move. Your project. One person keeping it together. · <a href="/privacy.html">Privacy</a></footer>
+<footer><a href="/">Ready to Open</a> · A service of Contracks Global · Better contracts. Better companies. Better communities. · <a href="/privacy.html">Privacy</a></footer>
 
 <script>
 const AREAS=[
@@ -281,12 +294,15 @@ const PLANS={
   what:'From brief to keys, for one space or a rollout — all four stages managed for you.',
   inc:['All four stages, managed for you','Local supervision and visits, explicitly scoped','Contractor contracts and cost control','Snagging, handover and move-in']}};
 const LEVELS=[
- {min:0,max:39,name:'At risk',col:'#C0392B',h:'Your opening is running on hope.',
-  b:'Key decisions on the brief, the space or the partners are still open. That is normal early on — but each open item is a risk to your date and budget.'},
+ {min:0,max:39,name:'Fragile',col:'#C0392B',h:'Your opening is running on hope.',
+  b:'Key decisions on the brief, the space or the partners are still open. That is normal early on — but each open item is a risk to your date and budget.',
+  say:'Your Opening Score shows risks to your date and budget that need attention now. Let\'s discuss where to start.'},
  {min:40,max:69,name:'Exposed',col:'#E07B39',h:'The basics are there. The gaps could cost you weeks.',
-  b:'Some stages are under control, others not yet. The gaps usually show up as a lease surprise, a quote that grows, or an opening date that slips.'},
- {min:70,max:100,name:'Ready',col:'#2D6A4F',h:'Your opening is on solid ground. Keep it that way.',
-  b:'Brief, options and partners are largely in place. The risk now is delivery — changes, inspections and handover.'}];
+  b:'Some stages are under control, others not yet. The gaps usually show up as a lease surprise, a quote that grows, or an opening date that slips.',
+  say:'Your Opening Score shows what could put your opening date or budget at risk. Let\'s discuss how to get your project ready.'},
+ {min:70,max:100,name:'Resilient',col:'#2D6A4F',h:'Your opening is on solid ground. Keep it that way.',
+  b:'Brief, options and partners are largely in place. The risk now is delivery — changes, inspections and handover.',
+  say:'Your Opening Score shows a well-prepared opening. Let\'s discuss how to keep it on date and on budget.'}];
 
 const N=Q.length+R.length;
 let i=0,ans=new Array(Q.length).fill(null),rt=new Array(R.length).fill(null),lead={};
@@ -355,7 +371,7 @@ function subGate(e){
   e.preventDefault();if(document.getElementById('gbot').value)return;
   lead={name:gn.value.trim(),company:gc.value.trim(),email:ge.value.trim(),phone:gp.value.trim(),location:gl.value.trim(),comments:gm.value.trim()};
   const s=score(),pk=planKey();
-  const data={'form-name':'ready-to-open-quiz',source:'Opening Readiness Score',subject:'New lead — Ready to Open quiz — '+PLANS[pk].name+' — '+lead.name+' ('+lead.company+') — '+s+'/100',plan:PLANS[pk].opt,project:'(from quiz) '+R[0].o[rt[0]]+' · '+R[1].o[rt[1]]+' · open '+R[2].o[rt[2]],name:lead.name,company:lead.company,email:lead.email,phone:lead.phone,location:lead.location,comments:lead.comments,
+  const data={'form-name':'ready-to-open-quiz',source:'Opening Score',subject:'New lead — Ready to Open quiz — '+PLANS[pk].name+' — '+lead.name+' ('+lead.company+') — '+s+'/100',plan:PLANS[pk].opt,project:'(from quiz) '+R[0].o[rt[0]]+' · '+R[1].o[rt[1]]+' · open '+R[2].o[rt[2]],name:lead.name,company:lead.company,email:lead.email,phone:lead.phone,location:lead.location,comments:lead.comments,
    score:s+'/100',level:level(s).name,'recommended-plan':PLANS[pk].name,
    define:areaS(0)+'%','find-assess':areaS(1)+'%','prepare-procure':areaS(2)+'%','deliver-handover':areaS(3)+'%'};
   R.forEach((r,k)=>data[r.k]=r.o[rt[k]]);
@@ -374,6 +390,8 @@ function showTop(){
   document.getElementById('rhead').textContent=L.h;
   document.getElementById('rdesc').textContent=L.b;
   document.getElementById('ladder').innerHTML=LEVELS.map((l,k)=>`<div class="rung ${l===L?'on':''}"><b>${k+1}</b>${l.name}</div>`).join('');
+  document.getElementById('psay').textContent=L.say;
+  document.getElementById('pbtn').href='/?plan='+planKey()+'#book';
   document.getElementById('rgate').hidden=false;document.getElementById('rfull').hidden=true;
   ss('results');
 }
@@ -386,7 +404,6 @@ function showFull(){
     <h3>${P.name}</h3><div class="price">${P.price}</div><p class="what">${P.what}</p>
     <ul>${P.inc.map(x=>`<li>${x}</li>`).join('')}</ul>
     <p class="what"><b style="color:var(--navy)">Why:</b> ${esc(why.join('; '))}.</p>
-    <a class="btn btn-navy" href="/?plan=${pk}#book">Request your free 45-minute call →</a>
     <span class="alt">We confirm the right support with you on the call. Scope and fee in writing before you start.</span>`;
   const gi=gapsIdx();document.getElementById('gaps-h').innerHTML=gi.length===2?'Your two biggest <em>gaps</em>':gi.length===1?'Your one <em>gap</em>':'No <em>gaps</em> found';
   document.getElementById('gaps').innerHTML=gi.length?gi.map(a=>`<div class="gap"><b>${AREAS[a].name} · ${AREAS[a].sub} — ${areaS(a)}%: ${AREAS[a].gap}</b><p><b style="display:inline;color:var(--navy)">First move:</b> ${AREAS[a].move}</p></div>`).join(''):`<div class="gap"><b>Every answer is in place.</b><p>The risk now is delivery — keep the same discipline on changes, inspections and handover.</p></div>`;

@@ -56,6 +56,7 @@ nav.top .wrap{display:flex;align-items:center;justify-content:space-between;heig
 .burger span{display:block;width:22px;height:2px;background:var(--navy);border-radius:2px}
 @media (max-width:1060px){.links{gap:26px}}
 @media (max-width:1240px){.links{position:static;transform:none;gap:20px}.links a{font-size:.95rem}}
+@media (max-width:1080px){.links{gap:14px}.links a{font-size:.9rem}.nav-cta{padding:12px 18px;font-size:.9rem}}
 @media (max-width:900px){
   nav.top .wrap{flex-wrap:wrap;height:auto;padding-top:12px;padding-bottom:0;row-gap:10px}
   .links{position:static;transform:none;order:3;width:100%;gap:0;justify-content:space-between;overflow-x:auto;-webkit-overflow-scrolling:touch;border-top:1px solid var(--line);scrollbar-width:none}
@@ -237,6 +238,12 @@ section{padding:92px 0}
 .trio div{border-left:3px solid var(--gold);padding:4px 0 4px 16px}
 .trio b{display:block;color:var(--navy);margin-bottom:4px}
 .trio span{color:var(--muted);font-size:.94rem}
+.affil{margin-top:28px;text-align:center}
+.affil>b{display:block;font-size:1rem;color:var(--navy)}
+.affil-row{list-style:none;margin:14px 0 0;padding:0;display:flex;flex-wrap:wrap;justify-content:center;gap:12px}
+.affil-row li{min-width:120px;padding:12px 18px;border:1px solid var(--line);border-radius:10px;background:#fff;font-weight:700;letter-spacing:.04em;color:var(--navy)}
+.affil-cap{margin:10px 0 0;font-size:.85rem;color:var(--muted)}
+@media (max-width:480px){.affil-row li{flex:1 1 calc(50% - 12px);min-width:0}}
 .langs{max-width:900px;margin:30px auto 0;text-align:center}
 .langs b{display:block;font-family:'Playfair Display',serif;font-size:1.2rem;color:var(--navy);margin-bottom:14px}
 .langs .chips{justify-content:center}
@@ -408,7 +415,7 @@ footer a:hover{color:var(--gold-2)}
       <a href="#faq">FAQ</a>
       <a href="/articles/">Articles</a>
     </div>
-    <a href="#book" class="btn btn-navy nav-cta"><span class="lg">Request a free 45-min call</span><span class="sm">Free call</span></a>
+    <a href="#book" class="btn btn-navy nav-cta"><span class="lg">Book your free 45-min call</span><span class="sm">Free call</span></a>
   </div>
 </nav>
 
@@ -420,12 +427,12 @@ footer a:hover{color:var(--gold-2)}
       <h1>Your space overseas, <em>ready to open.</em></h1>
       <p class="sub"><b style="color:var(--navy)">Your move. Your project. One person keeping it together.</b> Open overseas with a clear budget, coordinated partners and someone following delivery on your behalf: a named senior project manager who gives your HQ fewer open decisions, clearer costs and full visibility.</p>
       <div class="hero-ctas">
-        <a href="#book" class="btn btn-navy">Request your free 45-minute call →</a>
+        <a href="#book" class="btn btn-navy">Book a free 45-minute call →</a>
         <a href="#pricing" class="btn btn-text">See pricing</a>
       </div>
       <p class="hero-note">For <b>companies and brands setting up or relocating</b> an office, shop or showroom in a new country — including housing for relocating staff — managed from your HQ, delivered on the ground.</p>
       <p class="hero-note"><b>Project Review from €500</b> · Scope and fee in writing before we start</p>
-      <p class="hero-note">Not sure where to start? <a href="/quiz.html" style="color:var(--navy);font-weight:700">Take the 3-minute Opening Readiness Score →</a></p>
+      <p class="hero-note">Not sure where to start? <a href="/quiz" style="color:var(--navy);font-weight:700">Get my Opening Score — free →</a></p>
     </div>
     <div class="math-card" aria-label="Your Project Review, from €500">
       <div class="tag">Your Project Review · from €500</div>
@@ -466,7 +473,7 @@ footer a:hover{color:var(--gold-2)}
         <span class="sig">Sign: you can't say today what the final cost will be.</span>
       </div>
     </div>
-    <p class="diag-cta"><a href="/quiz.html" class="btn btn-line">Take the 3-minute diagnostic →</a></p>
+    <p class="diag-cta"><a href="/quiz" class="btn btn-line">Get my Opening Score — free →</a></p>
   </div>
 </section>
 
@@ -507,7 +514,7 @@ footer a:hover{color:var(--gold-2)}
         <li><i>4</i><b>DELIVER &amp; HAND OVER</b> Progress, costs and changes; inspections, snagging, completion</li>
       </ol>
     </div>
-    <p class="road-note fivec-note">Every stage runs on the <b>5Cs Framework™</b> — Contain the scope · Command one plan · Close every decision · Confirm vendor dates · Control tower cadence.</p>
+    <p class="road-note fivec-note">Every stage runs on the <b>5Cs Framework™</b> — <b>CONTAIN</b> brief &amp; fit-out scope · <b>COMMAND</b> one opening plan · <b>CLOSE</b> landlord &amp; design decisions · <b>CONFIRM</b> contractor &amp; permit dates · <b>CONTROL</b> weekly site cadence.</p>
   </div>
 </section>
 
@@ -526,7 +533,7 @@ footer a:hover{color:var(--gold-2)}
       <div class="card svc"><div class="ico"><svg viewBox="0 0 24 24"><path d="M2 20h20M6 20V10l6-4 6 4v10"/><path d="M10 14h4"/></svg></div><h3>Programme &amp; progress reporting</h3><p>Weekly progress, cost and change report to your HQ — with changes approved by you, not discovered later.</p></div>
       <div class="card svc"><div class="ico"><svg viewBox="0 0 24 24"><path d="M9 11l3 3 8-8"/><path d="M20 12v7a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h9"/></svg></div><h3>Snagging &amp; handover</h3><p>Inspections, snagging, certificates and move-in coordination — down to the keys.</p></div>
     </div>
-    <p class="diag-cta"><a href="/quiz.html" class="btn btn-line">Take the 3-minute diagnostic →</a></p>
+    <p class="diag-cta"><a href="/quiz" class="btn btn-line">Get my Opening Score — free →</a></p>
   </div>
 </section>
 
@@ -601,7 +608,7 @@ footer a:hover{color:var(--gold-2)}
       <div class="line"><span class="l">Refit during the five years</span><span class="amt"><input id="srefit" class="cv2" type="number" min="0" step="5000" value="70000" aria-label="Refit, euros"></span></div>
       <div class="total"><b>Five-year capex</b><span class="bigred" id="scapex">€300,000</span></div>
       <p class="stake-k">Every repeated decision, extra trip or piece of rework is paid out of this investment. Our fee is fixed and in writing — set it against the costs coordination influences.</p>
-      <a href="#book" class="btn btn-gold" style="margin-top:16px">Get your fee in writing — request a free call</a>
+      <a href="#book" class="btn btn-gold" style="margin-top:16px">Get your fee in writing — book a free call</a>
     </div>
     <div class="principle">
       <div class="ico"><svg viewBox="0 0 24 24"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/><path d="M9 12l2 2 4-4"/></svg></div>
@@ -631,7 +638,7 @@ footer a:hover{color:var(--gold-2)}
           <li>A written plan: who does what, in which order</li>
           <li>Price includes VAT</li>
         </ul>
-        <a href="#book" class="btn btn-line" onclick="setPlan('Project Review — from €500')">Request your free 45-min call</a>
+        <a href="#book" class="btn btn-line" onclick="setPlan('Project Review — from €500')">Book your free 45-min call</a>
       </div>
       <div class="card plan pop">
         <h3>Project Coordination</h3>
@@ -645,7 +652,7 @@ footer a:hover{color:var(--gold-2)}
           <li>Weekly progress, cost and change report</li>
           <li>Weekly remote reporting included within the agreed capacity; site visits and inspections scoped and priced separately</li>
         </ul>
-        <a href="#book" class="btn btn-gold" onclick="setPlan('Project Coordination — monthly')">Request your free 45-min call</a>
+        <a href="#book" class="btn btn-gold" onclick="setPlan('Project Coordination — monthly')">Book your free 45-min call</a>
       </div>
       <div class="card plan">
         <h3>Full Project Management</h3>
@@ -659,7 +666,7 @@ footer a:hover{color:var(--gold-2)}
           <li>Snagging, handover and move-in</li>
           <li>Several sites and countries on one reporting line</li>
         </ul>
-        <a href="#book" class="btn btn-line" onclick="setPlan('Full Project Management — quote')">Request your free 45-min call</a>
+        <a href="#book" class="btn btn-line" onclick="setPlan('Full Project Management — quote')">Book your free 45-min call</a>
       </div>
     </div>
     <p class="scope">We agree the stages covered, meetings, reporting and site visits before starting. Broker, architect and contractor fees are separate, quoted in advance and approved by you — including any referral commissions.</p>
@@ -678,14 +685,14 @@ footer a:hover{color:var(--gold-2)}
     <div class="quiz-box">
       <div>
         <span class="pill">Free · 3 minutes</span>
-        <h2>Not sure which support fits? <em>Score your opening first.</em></h2>
-        <p>Twelve Yes/No questions across the four stages — define, find &amp; assess, prepare &amp; procure, deliver &amp; hand over. Your Opening Readiness Score, your two biggest gaps and the support we'd recommend.</p>
-        <a href="/quiz.html" class="btn btn-gold">Take the Opening Readiness Score →</a>
+        <h2>Your <em>Opening Score.</em></h2>
+        <p>Not sure which support fits? Twelve Yes/No questions across the four stages — define, find &amp; assess, prepare &amp; procure, deliver &amp; hand over. Your Opening Score, your two biggest gaps and the support we'd recommend.</p>
+        <a href="/quiz" class="btn btn-gold">Get my Opening Score — free →</a>
       </div>
-      <ol class="ladder" aria-label="Readiness levels">
-        <li><b>3</b><span>Ready</span></li>
+      <ol class="ladder" aria-label="Score bands">
+        <li><b>3</b><span>Resilient</span></li>
         <li><b>2</b><span>Exposed</span></li>
-        <li><b>1</b><span>At risk</span></li>
+        <li><b>1</b><span>Fragile</span></li>
       </ol>
     </div>
   </div>
@@ -705,7 +712,7 @@ footer a:hover{color:var(--gold-2)}
         <h3>Serguei Poppeleer</h3>
         <div class="role">Founder | Project Management &amp; Real Estate</div>
         <p>Civil engineer with more than 20 years' experience across construction, fit-out and real estate in Europe, Africa and the Gulf — including real estate for an international airline, fit-out for global retail brands, office and staff-housing relocations — across 30 countries in Africa, Europe, the US and Asia.</p>
-        <p class="creds">MCIArb · WorldCC · CIoB · MSc Civil Engineering · Executive MBA</p>
+        <p class="creds">MCIArb · WorldCC · LLM Construction Law &amp; Arbitration · MSc Civil Engineering · Executive MBA</p>
       </div>
     </div>
     <figure class="speak"><img src="serguei-speaking.jpeg" alt="Serguei Poppeleer speaking on a panel at the Global Tourism Forum, Brussels 2025" loading="lazy"><figcaption>Speaking at the Global Tourism Forum · Brussels 2025</figcaption></figure>
@@ -713,6 +720,16 @@ footer a:hover{color:var(--gold-2)}
       <div><b>A person you can call</b><span>Your named project manager knows your space, your partners and your date.</span></div>
       <div><b>On the ground when it matters</b><span>Viewings, key meetings and inspections — agreed in scope.</span></div>
       <div><b>On your side of the table</b><span>We work for you. Partner fees and commissions are always disclosed.</span></div>
+    </div>
+    <div class="affil">
+      <b>Professional Expertise &amp; Affiliations</b>
+      <ul class="affil-row" aria-label="Professional institutions">
+        <li>CIArb</li>
+        <li>CIOB</li>
+        <li>RICS</li>
+        <li>WorldCC</li>
+      </ul>
+      <p class="affil-cap">Professional affiliations are held by individual specialists within our network.</p>
     </div>
     <div class="langs">
       <b>Working across borders, in your language.</b>
@@ -749,9 +766,9 @@ footer a:hover{color:var(--gold-2)}
   <div class="wrap book">
     <div>
       <span class="pill">Get started</span>
-      <h2>Request your free <em>45-minute call.</em></h2>
+      <h2>Book your free <em>45-minute call.</em></h2>
       <p class="lead">Tell us where you're opening and what you need. We read every request and contact you within one business day to book your call. No documents needed.</p>
-      <b style="color:var(--navy)">What happens after you request</b>
+      <b style="color:var(--navy)">What happens after you book</b>
       <ol class="after">
         <li>Send your details<span>Your company, where you're opening and the space you need.</span></li>
         <li>We contact you within one business day<span>To book your call at a time that suits you.</span></li>
@@ -782,7 +799,7 @@ footer a:hover{color:var(--gold-2)}
         <div class="field full"><label for="p">Plan you're interested in</label>
           <select id="p" name="plan"><option value="Not sure yet — review first">Not sure yet — review first</option><option value="Project Review — from €500">Project Review — from €500</option><option value="Project Coordination — monthly">Project Coordination — monthly</option><option value="Full Project Management — quote">Full Project Management — quote</option></select></div>
       </div>
-      <button type="submit" class="btn btn-navy">Request my free 45-minute call →</button>
+      <button type="submit" class="btn btn-navy">Book my free 45-minute call →</button>
       <p class="form-foot">* Required. No documents needed. We contact you within one business day to book your call. <a href="/privacy.html" style="color:var(--navy)">Privacy</a></p>
     </form>
   </div>
@@ -810,8 +827,8 @@ footer a:hover{color:var(--gold-2)}
 <footer>
   <div class="wrap">
     <div class="fwrap">
-      <div class="flogo"><b>Ready to Open<span>.</span></b><br><span>A service of Contracks Global · Your move. Your project. One person keeping it together.</span></div>
-      <div class="fbtns"><a href="#book" class="btn btn-gold">Request your free 45-min call</a></div>
+      <div class="flogo"><b>Ready to Open<span>.</span></b><br><span>A service of Contracks Global · Better contracts. Better companies. Better communities.</span></div>
+      <div class="fbtns"><a href="#book" class="btn btn-gold">Book your free 45-min call</a></div>
     </div>
     <div class="fwrap copy">
       <span>© 2026 Ready to Open · Europe · Africa · Gulf</span>
