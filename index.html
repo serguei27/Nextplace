@@ -401,6 +401,7 @@ footer a:hover{color:var(--gold-2)}
 .fivec-note{margin-top:22px}
 .fivec-note b{color:var(--navy)}
 </style>
+<link rel="stylesheet" href="/contact-form.css?v=20261111b">
 </head>
 <body>
 
@@ -770,38 +771,60 @@ footer a:hover{color:var(--gold-2)}
       <p class="lead">Tell us where you're opening and what you need. We read every request and contact you within one business day to book your call. No documents needed.</p>
       <b style="color:var(--navy)">What happens after you book</b>
       <ol class="after">
-        <li>Send your details<span>Your company, where you're opening and the space you need.</span></li>
+        <li>Send your details<span>Your company, how you'd like us to reach you and, if you like, a few words about your opening.</span></li>
         <li>We contact you within one business day<span>To book your call at a time that suits you.</span></li>
         <li>Your free 45-minute call<span>Your project, timeline and budget — and how we'd run it.</span></li>
         <li>Scope and fee in writing<span>Stages covered, reporting, site visits and fee — no obligation.</span></li>
       </ol>
     </div>
-    <form class="card" name="ready-to-open" onsubmit="stash()" method="POST" action="/thanks.html" data-netlify="true" netlify-honeypot="bot-field">
+    <div class="cf-wrap">
+    <form class="card cform" name="ready-to-open" method="POST" action="/thanks.html" data-netlify="true" netlify-honeypot="bot-field" data-ok="bk-ok" novalidate>
       <input type="hidden" name="form-name" value="ready-to-open">
-      <input type="hidden" name="subject" id="fsubj" value="New lead — Ready to Open">
+      <input type="hidden" name="subject" value="New call request — Ready to Open">
       <input type="hidden" name="source" value="Booking form">
+      <input type="hidden" name="brand" value="Ready to Open">
+      <input type="hidden" name="form-purpose" value="call-request">
+      <input type="hidden" name="plan" value="">
+      <input type="hidden" name="score-name" value="">
+      <input type="hidden" name="assessment-object" value="">
+      <input type="hidden" name="score" value="">
+      <input type="hidden" name="level" value="">
+      <input type="hidden" name="area-scores" value="">
+      <input type="hidden" name="weakest-area" value="">
+      <input type="hidden" name="recommended-plan" value="">
+      <input type="hidden" name="q16-opening" value="">
+      <input type="hidden" name="q17-challenges" value="">
+      <input type="hidden" name="q18-obstacle" value="">
+      <input type="hidden" name="q19-solution" value="">
+      <input type="hidden" name="q20-open" value="">
+      <input type="hidden" name="fit" value="">
+      <input type="hidden" name="review-flag" value="">
+      <input type="hidden" name="engine-version" value="">
+      <input type="hidden" name="config-version" value="">
+      <input type="hidden" name="score-version" value="">
       <p class="hp" hidden style="display:none" aria-hidden="true"><label>Leave empty: <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+      <h3 class="cf-h">Let's talk.</h3>
+      <p class="cf-sub">Leave your details and we'll get in touch.</p>
       <div class="fgrid">
-        <div class="field"><label for="n">Your name *</label><input id="n" name="name" autocomplete="name" required></div>
-        <div class="field"><label for="c">Company *</label><input id="c" name="company" autocomplete="organization" required></div>
-        <div class="field"><label for="e">Email *</label><input id="e" name="email" type="email" autocomplete="email" required></div>
-        <div class="field"><label for="t">Phone <span style="font-weight:400;color:var(--muted)">(optional)</span></label><input id="t" name="phone" type="tel" autocomplete="tel" placeholder="If you prefer a call back"></div>
-        <div class="field"><label for="l">Your HQ / location</label><input id="l" name="location" autocomplete="address-level2" placeholder="City, country"></div>
-        <div class="field"><label for="w">Where are you opening? *</label><input id="w" name="target-location" placeholder="City, country" required></div>
-        <div class="field"><label for="sp">Type of space</label>
-          <select id="sp" name="space-type"><option value="">Select</option><option value="Office">Office</option><option value="Shop / retail">Shop / retail</option><option value="Showroom">Showroom</option><option value="Several sites">Several sites</option><option value="Other">Other</option></select></div>
-        <div class="field"><label for="sz">Approximate size</label>
-          <select id="sz" name="size"><option value="">Select</option><option value="Under 200 m²">Under 200 m²</option><option value="200 – 1,000 m²">200 – 1,000 m²</option><option value="1,000 – 5,000 m²">1,000 – 5,000 m²</option><option value="Over 5,000 m²">Over 5,000 m²</option></select></div>
-        <div class="field full"><label for="dt">Target opening</label>
-          <select id="dt" name="target-opening"><option value="">Select</option><option value="Within 3 months">Within 3 months</option><option value="3 – 6 months">3 – 6 months</option><option value="6 – 12 months">6 – 12 months</option><option value="Not fixed yet">Not fixed yet</option></select></div>
-        <div class="field full"><label for="pr">About your project *</label><textarea id="pr" name="project" required placeholder="What you're opening, current stage (searching, lease signed, design, works…), anything we should know."></textarea></div>
-        <div class="field full"><label for="m">Comments</label><textarea id="m" name="comments" placeholder="What's on your mind — timing, budget, partners already appointed, questions for us…"></textarea></div>
-        <div class="field full"><label for="p">Plan you're interested in</label>
-          <select id="p" name="plan"><option value="Not sure yet — review first">Not sure yet — review first</option><option value="Project Review — from €500">Project Review — from €500</option><option value="Project Coordination — monthly">Project Coordination — monthly</option><option value="Full Project Management — quote">Full Project Management — quote</option></select></div>
+        <div class="field"><label for="bk-n">Name *</label><input id="bk-n" name="name" autocomplete="name" required></div>
+        <div class="field"><label for="bk-c">Company *</label><input id="bk-c" name="company" autocomplete="organization" required></div>
+        <div class="field full"><label for="bk-e">Email *</label><input id="bk-e" name="email" type="email" autocomplete="email" required></div>
       </div>
-      <button type="submit" class="btn btn-navy">Book my free 45-minute call →</button>
-      <p class="form-foot">* Required. No documents needed. We contact you within one business day to book your call. <a href="/privacy.html" style="color:var(--navy)">Privacy</a></p>
+      <fieldset>
+        <legend>Preferred contact method *</legend>
+        <div class="cf-methods"><label><input type="radio" name="contact-method" value="WhatsApp" checked>WhatsApp</label><label><input type="radio" name="contact-method" value="Phone call">Phone call</label><label><input type="radio" name="contact-method" value="LinkedIn message">LinkedIn message</label><label><input type="radio" name="contact-method" value="Email">Email</label></div>
+      </fieldset>
+      <div class="field" data-for="WhatsApp"><label for="bk-wa">WhatsApp number, with country code *</label><input id="bk-wa" name="whatsapp" type="tel" inputmode="tel" autocomplete="tel" placeholder="e.g. +32 470 12 34 56"></div>
+      <div class="field" data-for="Phone call" hidden><label for="bk-ph">Phone number, with country code *</label><input id="bk-ph" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="e.g. +32 470 12 34 56"></div>
+      <div class="field" data-for="LinkedIn message" hidden><label for="bk-li">LinkedIn profile URL *</label><input id="bk-li" name="linkedin" type="url" inputmode="url" placeholder="https://www.linkedin.com/in/your-name"></div>
+      <div class="field"><label for="bk-bt">When is the best time to contact you? <span class="opt-l">(Optional)</span></label><input id="bk-bt" name="best-time" maxlength="200" placeholder="e.g. Tomorrow morning, Thursday after 2 pm, or anytime next week…"></div>
+      <div class="field"><label for="bk-m" class="cf-msg-label">Tell us briefly about your opening <span class="opt-l">(Optional)</span></label><textarea id="bk-m" name="message" maxlength="1000" data-count="bk-mc"></textarea><span class="cf-count" id="bk-mc" aria-live="polite"></span></div>
+      <button type="submit" class="btn btn-navy">Request My Free Call →</button>
+      <p class="cf-err" role="alert" hidden></p>
+      <p class="form-foot">* Required. No documents needed · No obligation. <a href="/privacy.html" style="color:var(--navy)">Privacy</a></p>
     </form>
+    <div class="cf-ok" id="bk-ok" role="status" tabindex="-1" hidden>Thank you. We've received your request. We'll contact you using your preferred method to arrange your free 45-minute conversation.</div>
+    </div>
   </div>
 </section>
 
@@ -843,12 +866,11 @@ footer a:hover{color:var(--gold-2)}
 </div>
 
 <script>
-document.querySelectorAll('a[href="#book"]').forEach(function(a){a.addEventListener('click',function(ev){ev.preventDefault();var f=document.querySelector('form[name="ready-to-open"]');f.scrollIntoView({behavior:(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches)?'auto':'smooth',block:'start'});setTimeout(function(){try{document.getElementById('n').focus({preventScroll:true});}catch(e){}f.classList.remove('flash');void f.offsetWidth;f.classList.add('flash');},650);});});
+document.querySelectorAll('a[href="#book"]').forEach(function(a){a.addEventListener('click',function(ev){ev.preventDefault();var f=document.querySelector('form.cform');f.scrollIntoView({behavior:(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches)?'auto':'smooth',block:'start'});setTimeout(function(){try{f.querySelector('input[name="name"]').focus({preventScroll:true});}catch(e){}f.classList.remove('flash');void f.offsetWidth;f.classList.add('flash');},650);});});
 function stayIn(e){e.preventDefault();var n=document.getElementById('sn').value.trim(),m=document.getElementById('se').value.trim(),b=document.getElementById('sbtn');b.disabled=true;
-var d={'form-name':'ready-to-open',source:'Stay in touch',subject:'New contact — Ready to Open — stay in touch — '+(n||m),name:n,email:m};
+var d={'form-name':'ready-to-open',source:'Stay in touch',brand:'Ready to Open','form-purpose':'stay-in-touch',subject:'New contact — Ready to Open — stay in touch — '+(n||m),name:n,email:m};
 fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams(d).toString()}).then(function(r){if(!r.ok)throw 0;var ok=document.getElementById('stayok');ok.textContent='Thank you — you\'re on the list.';document.getElementById('stayf').hidden=true;ok.hidden=false;}).catch(function(){b.disabled=false;var ok=document.getElementById('stayok');ok.textContent='Something went wrong — please try again, or use the booking form above.';ok.hidden=false;});}
-function stash(){try{var n=document.getElementById('n').value,c=document.getElementById('c').value,w=document.getElementById('w').value;document.getElementById('fsubj').value='New lead — Ready to Open — '+n+(c?' ('+c+')':'')+(w?' — '+w:'');}catch(e){}}
-function setPlan(v){var s=document.getElementById('p');if(s){for(var i=0;i<s.options.length;i++){if(s.options[i].value===v||s.options[i].text===v){s.selectedIndex=i;}}}}
+function setPlan(v){var f=document.querySelector('form.cform');if(f&&f.setPlan)f.setPlan(v);}
 (function(){try{var m={review:'Project Review — from €500',coordination:'Project Coordination — monthly',full:'Full Project Management — quote'};var k=new URLSearchParams(location.search).get('plan');if(k&&m[k])document.addEventListener('DOMContentLoaded',function(){setPlan(m[k]);});}catch(e){}})();
 </script>
 <script>
@@ -864,5 +886,6 @@ document.getElementById('rtotal').textContent=f(r);document.getElementById('itot
 var fit=v('cfit');document.getElementById('sfit').textContent=f(fit);document.getElementById('scapex').textContent=f(fit+v('srefit'));}
 document.querySelectorAll('#cost input').forEach(function(x){x.addEventListener('input',calc);});calc();})();
 </script>
+<script src="/contact-form.js?v=20261111"></script>
 </body>
 </html>

@@ -133,15 +133,50 @@ input:focus,select:focus,textarea:focus{outline:2px solid var(--gold);border-col
 .bkrow{display:flex;justify-content:space-between;gap:14px;padding:11px 20px;border-top:1px solid var(--line);font-size:.92rem}
 .bksc{flex:none;font-weight:700;font-size:.76rem;padding:3px 10px;border-radius:999px;height:fit-content;white-space:nowrap}
 .sch{background:#E8F3EC;color:var(--green)}.scl{background:#FDF0EE;color:var(--red)}
-.post{background:var(--gold-soft);border:1px solid var(--gold-line);border-radius:22px;padding:26px;text-align:center;margin-top:22px}
 .post p.say{font-family:'Playfair Display',serif;font-size:clamp(1.15rem,2.8vw,1.4rem);line-height:1.35;color:var(--navy);max-width:560px;margin:0 auto 18px}
 .post .sub2{font-size:.86rem;color:var(--muted);margin-top:10px}
 .post .first{font-size:.92rem;color:var(--navy);margin-top:14px}
+.post{display:grid;grid-template-columns:1fr 1.3fr;gap:14px;margin-top:22px}
+.post .opt{border-radius:22px;padding:24px;text-align:center}
+.post .opt>b{display:block;font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#8A6D2B;margin-bottom:8px}
+.post .opt-diy{border:1px solid var(--line)}
+.post .opt-diy p{color:var(--muted)}
+.post .opt-help{background:var(--gold-soft);border:1px solid var(--gold-line)}
+.post.best .opt-help{order:-1;border:2px solid var(--navy)}
+.post.best{grid-template-columns:1.3fr 1fr}
+@media (max-width:640px){.post,.post.best{grid-template-columns:1fr}}
+.consent{display:flex;gap:10px;align-items:flex-start;font-size:.9rem;color:var(--navy);font-weight:500;cursor:pointer}
+.consent input{width:18px;height:18px;margin-top:3px;flex:none;accent-color:var(--navy)}
+.consent span{color:var(--muted)}
+.gerr{margin:4px 0 0;padding:12px 14px;border-radius:12px;background:#FDF0EE;color:var(--red);font-weight:600;font-size:.92rem}
+.olist .hint{font-size:.88rem;color:var(--muted);margin:-12px 0 4px}
+.other-in{margin-top:4px}
+#callbox{margin-top:22px}
+.retake{text-align:center;margin-top:22px}
+.rtools{display:flex;justify-content:flex-end;margin-bottom:14px}
+.print-head{display:none}
+@media print{
+  @page{size:A4;margin:16mm 14mm 20mm}
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  body{font-size:11pt}
+  nav.top,footer,#rgate,#post,#callbox,.retake,.rtools,.screen:not(#screen-results){display:none!important}
+  .inner{max-width:none;padding:0}
+  .print-head{display:block;border-bottom:2px solid var(--gold);padding-bottom:10px;margin-bottom:16px}
+  .print-head b{font-family:'Playfair Display',serif;font-size:14pt;color:var(--navy)}
+  .print-head b span{color:var(--gold)}
+  .print-head h2{font-size:20pt;margin:4px 0}
+  .print-head p{color:var(--muted);font-size:9.5pt}
+  .rtop{border-radius:14px;padding:20px;break-inside:avoid}
+  .sec,.gap,.plan,.barrow{break-inside:avoid}
+  .bk{border:0}.bk summary{display:none}
+  body::after{content:"Ready to Open · Opening Score report · nextplaces.netlify.app";position:fixed;bottom:-12mm;left:0;right:0;text-align:center;font-size:8.5pt;color:#5A6476}
+}
 .rbtns{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:22px}
 @media (max-width:560px){.rbtns{grid-template-columns:1fr}}
 footer{border-top:1px solid var(--line);padding:26px 20px;text-align:center;color:var(--muted);font-size:.86rem}
 footer a{text-decoration:none;color:var(--navy);font-weight:600}
 </style>
+<link rel="stylesheet" href="/contact-form.css?v=20261111b">
 </head>
 <body>
 
@@ -155,14 +190,14 @@ footer a{text-decoration:none;color:var(--navy);font-weight:600}
 
 
 <!-- Netlify form registration for quiz leads -->
-<form name="ready-to-open-quiz" data-netlify="true" netlify-honeypot="bot-field" hidden style="display:none" aria-hidden="true"><input type="hidden" name="source"><input type="hidden" name="subject"><input type="hidden" name="plan"><input type="hidden" name="project"><input type="hidden" name="name"><input type="hidden" name="company"><input type="hidden" name="email"><input type="hidden" name="phone"><input type="hidden" name="location"><input type="hidden" name="comments"><input type="hidden" name="score"><input type="hidden" name="level"><input type="hidden" name="recommended-plan"><input type="hidden" name="define"><input type="hidden" name="find-assess"><input type="hidden" name="prepare-procure"><input type="hidden" name="deliver-handover"><input type="hidden" name="opening-type"><input type="hidden" name="stage"><input type="hidden" name="timeline"><input type="hidden" name="support"><input type="hidden" name="answers"><input name="bot-field" tabindex="-1" autocomplete="off"></form>
+<form name="ready-to-open-quiz" data-netlify="true" netlify-honeypot="bot-field" hidden style="display:none" aria-hidden="true"><input type="hidden" name="source"><input type="hidden" name="subject"><input type="hidden" name="brand"><input type="hidden" name="score-name"><input type="hidden" name="assessment-object"><input type="hidden" name="score"><input type="hidden" name="level"><input type="hidden" name="recommended-plan"><input type="hidden" name="define"><input type="hidden" name="find-assess"><input type="hidden" name="prepare-procure"><input type="hidden" name="deliver-handover"><input type="hidden" name="weakest-area"><input type="hidden" name="q16-opening"><input type="hidden" name="q17-challenges"><input type="hidden" name="q18-obstacle"><input type="hidden" name="q19-solution"><input type="hidden" name="q20-open"><input type="hidden" name="fit"><input type="hidden" name="review-flag"><input type="hidden" name="engine-version"><input type="hidden" name="config-version"><input type="hidden" name="score-version"><input type="hidden" name="answers"><input type="hidden" name="name"><input type="hidden" name="email"><input type="hidden" name="marketing-consent"><input name="bot-field" tabindex="-1" autocomplete="off"></form>
 <!-- LANDING -->
 <div id="screen-landing" class="screen active">
   <div class="landing">
     <div>
       <span class="pill">Opening Score</span>
       <h1>Opening abroad? <em>How ready is your project?</em></h1>
-      <p class="sub">Answer 12 Yes/No questions about your planned office, shop or showroom — scored on the four stages of an opening — and 4 about your situation. Get your Opening Score, your two biggest gaps and the support that fits.</p>
+      <p class="sub">Answer 12 Yes/No questions about your planned office, shop or showroom — scored on the four stages of an opening — and 5 about your situation. Get your Opening Score, your two biggest gaps and the support that fits.</p>
       <button class="btn btn-navy" onclick="start()">Get my Opening Score — free →</button>
       <p class="land-note">Free · 3 minutes · Your score on screen straight away · No obligation</p>
     </div>
@@ -200,26 +235,28 @@ footer a{text-decoration:none;color:var(--navy);font-weight:600}
     </div>
 
     <div id="rgate" class="sec gate">
-      <h3>Get your full <em>breakdown</em></h3>
-      <p class="p">Your two biggest gaps with the first move for each, your score on each of the four stages, and the support that fits your opening.</p>
-      <form class="gform" onsubmit="subGate(event)">
+      <h3>Want to see what's behind your <em>score?</em></h3>
+      <p class="p">Enter your email to unlock your complete Opening Score report: your two biggest gaps with the first move for each, your score on each of the four stages, and the support that fits your opening.</p>
+      <form class="gform" onsubmit="subGate(event)" novalidate>
         <p class="hp" hidden style="display:none" aria-hidden="true"><label>Leave empty: <input id="gbot" tabindex="-1" autocomplete="off"></label></p>
         <div class="g2">
-          <div><label for="gn">Your name *</label><input id="gn" autocomplete="name" required></div>
-          <div><label for="gc">Company *</label><input id="gc" autocomplete="organization" required></div>
+          <div><label for="ge">Email *</label><input id="ge" type="email" autocomplete="email" required></div>
+          <div><label for="gn">Name <span style="font-weight:400;color:var(--muted)">(optional)</span></label><input id="gn" autocomplete="name"></div>
         </div>
-        <div class="g2">
-          <div><label for="ge">Work email *</label><input id="ge" type="email" autocomplete="email" required></div>
-          <div><label for="gp">Phone <span style="font-weight:400;color:var(--muted)">(optional)</span></label><input id="gp" type="tel" autocomplete="tel" placeholder="If you prefer a call back"></div>
-        </div>
-        <div><label for="gl">Location</label><input id="gl" placeholder="City, country"></div>
-        <div><label for="gm">Anything we should know? <span style="font-weight:400;color:var(--muted)">(optional)</span></label><textarea id="gm" placeholder="City you are opening in, a lease or partner question…"></textarea></div>
-        <button type="submit" class="btn btn-navy" id="gbtn">Show my full breakdown →</button>
+        <label class="consent"><input type="checkbox" id="gconsent"> Send me occasional field notes from Ready to Open. <span>(Optional — you can unsubscribe at any time.)</span></label>
+        <button type="submit" class="btn btn-navy" id="gbtn">Unlock my report →</button>
+        <p class="gerr" id="gerr" role="alert" hidden></p>
       </form>
-      <p class="enote">We may contact you once about your result. No newsletters. <a href="/privacy.html" style="color:var(--navy)">Privacy</a></p>
+      <p class="enote">Giving your email for the report doesn't subscribe you to anything. <a href="/privacy.html" style="color:var(--navy)">Privacy</a></p>
     </div>
 
     <div id="rfull" hidden>
+    <div class="print-head" aria-hidden="true">
+      <b>Ready to Open<span>.</span></b>
+      <h2>Opening Score report</h2>
+      <p id="ph-meta"></p>
+    </div>
+    <div class="rtools"><button class="btn btn-line btn-sm" type="button" onclick="savePdf()">Download PDF</button></div>
 
     <div class="sec">
       <h3>Your recommended support</h3>
@@ -240,13 +277,69 @@ footer a{text-decoration:none;color:var(--navy);font-weight:600}
     </div>
 
     <div class="post" id="post">
-      <p class="say" id="psay"></p>
-      <a class="btn btn-navy" id="pbtn" href="/#book">Book a Free 45-Minute Call →</a>
-      <p class="sub2">No documents needed · No obligation</p>
-      <p class="first">Usually the first step after the call: <b>Project Review — from €500</b>, one-off.</p>
+      <div class="opt opt-diy">
+        <b>Improve it yourself — free</b>
+        <p>Use the actions in your report to keep your opening on date and on budget.</p>
+      </div>
+      <div class="opt opt-help">
+        <b>Expert support</b>
+        <p class="say" id="psay"></p>
+        <button class="btn btn-navy" id="pbtn" type="button" onclick="openCall()">Book a Free 45-Minute Call →</button>
+        <p class="sub2">No documents needed · No obligation</p>
+        <p class="first">Not ready for ongoing support? Start with a <b>Project Review — from €500</b>.</p>
+      </div>
     </div>
 
-    <div style="text-align:center;margin-top:22px"><button class="btn btn-line" onclick="start()">↺ Retake the Opening Score</button></div>
+    <div id="callbox" class="sec" hidden>
+    <form class="card cform" name="ready-to-open" method="POST" action="/thanks.html" data-netlify="true" netlify-honeypot="bot-field" data-ok="qz-ok" novalidate>
+      <input type="hidden" name="form-name" value="ready-to-open">
+      <input type="hidden" name="subject" value="New call request — Ready to Open">
+      <input type="hidden" name="source" value="Opening Score — call request">
+      <input type="hidden" name="brand" value="Ready to Open">
+      <input type="hidden" name="form-purpose" value="call-request">
+      <input type="hidden" name="plan" value="">
+      <input type="hidden" name="score-name" value="">
+      <input type="hidden" name="assessment-object" value="">
+      <input type="hidden" name="score" value="">
+      <input type="hidden" name="level" value="">
+      <input type="hidden" name="area-scores" value="">
+      <input type="hidden" name="weakest-area" value="">
+      <input type="hidden" name="recommended-plan" value="">
+      <input type="hidden" name="q16-opening" value="">
+      <input type="hidden" name="q17-challenges" value="">
+      <input type="hidden" name="q18-obstacle" value="">
+      <input type="hidden" name="q19-solution" value="">
+      <input type="hidden" name="q20-open" value="">
+      <input type="hidden" name="fit" value="">
+      <input type="hidden" name="review-flag" value="">
+      <input type="hidden" name="engine-version" value="">
+      <input type="hidden" name="config-version" value="">
+      <input type="hidden" name="score-version" value="">
+      <p class="hp" hidden style="display:none" aria-hidden="true"><label>Leave empty: <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+      <h3 class="cf-h">Let's talk.</h3>
+      <p class="cf-sub">Leave your details and we'll get in touch.</p>
+      <div class="fgrid">
+        <div class="field"><label for="qz-n">Name *</label><input id="qz-n" name="name" autocomplete="name" required></div>
+        <div class="field"><label for="qz-c">Company *</label><input id="qz-c" name="company" autocomplete="organization" required></div>
+        <div class="field full"><label for="qz-e">Email *</label><input id="qz-e" name="email" type="email" autocomplete="email" required></div>
+      </div>
+      <fieldset>
+        <legend>Preferred contact method *</legend>
+        <div class="cf-methods"><label><input type="radio" name="contact-method" value="WhatsApp" checked>WhatsApp</label><label><input type="radio" name="contact-method" value="Phone call">Phone call</label><label><input type="radio" name="contact-method" value="LinkedIn message">LinkedIn message</label><label><input type="radio" name="contact-method" value="Email">Email</label></div>
+      </fieldset>
+      <div class="field" data-for="WhatsApp"><label for="qz-wa">WhatsApp number, with country code *</label><input id="qz-wa" name="whatsapp" type="tel" inputmode="tel" autocomplete="tel" placeholder="e.g. +32 470 12 34 56"></div>
+      <div class="field" data-for="Phone call" hidden><label for="qz-ph">Phone number, with country code *</label><input id="qz-ph" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="e.g. +32 470 12 34 56"></div>
+      <div class="field" data-for="LinkedIn message" hidden><label for="qz-li">LinkedIn profile URL *</label><input id="qz-li" name="linkedin" type="url" inputmode="url" placeholder="https://www.linkedin.com/in/your-name"></div>
+      <div class="field"><label for="qz-bt">When is the best time to contact you? <span class="opt-l">(Optional)</span></label><input id="qz-bt" name="best-time" maxlength="200" placeholder="e.g. Tomorrow morning, Thursday after 2 pm, or anytime next week…"></div>
+      <div class="field"><label for="qz-m" class="cf-msg-label">What would you like to discuss? <span class="opt-l">(Optional)</span></label><textarea id="qz-m" name="message" maxlength="1000" data-count="qz-mc"></textarea><span class="cf-count" id="qz-mc" aria-live="polite"></span></div>
+      <button type="submit" class="btn btn-navy">Request My Free Call →</button>
+      <p class="cf-err" role="alert" hidden></p>
+      <p class="form-foot">* Required. No documents needed · No obligation. <a href="/privacy.html" style="color:var(--navy)">Privacy</a></p>
+    </form>
+    <div class="cf-ok" id="qz-ok" role="status" tabindex="-1" hidden>Thank you. We've received your request. We'll contact you using your preferred method to arrange your free 45-minute conversation.</div>
+    </div>
+
+    <div class="retake"><a class="btn btn-line" href="/quiz">↺ Retake the Opening Score</a></div>
   </div>
 </div>
 
@@ -276,13 +369,14 @@ const Q=[
  {a:3,t:'Will you receive a weekly report on progress, cost and changes?'},
  {a:3,t:'Will someone independent of the contractor inspect the works on site?'},
  {a:3,t:'Would the opening date slip if one key person on your team were away for two weeks?',neg:true}];
-// 4 routing questions
-const R=[
- {k:'opening-type',t:'What are you opening?',o:['One office','One shop or showroom','Several sites or countries']},
- {k:'stage',t:'Where are you today?',o:['Still deciding where','Space found — lease not signed','Lease signed — design or works next','Works already under way']},
- {k:'timeline',t:'When do you need to open?',o:['Within 3 months','3 – 6 months','6 – 12 months','Not fixed yet']},
- {k:'support',t:'What kind of support do you want?',o:['Advice on one question — we run it ourselves','Someone to coordinate partners, stage by stage','Someone to manage it from brief to keys','Not sure yet'],
-  sub:['A written plan, risks and next steps','Brokers, architect and contractors coordinated, weekly reporting','All four stages managed, local supervision scoped','We will decide after the call']}];
+// Q16–Q20 qualifying questions (scorecard v3.4). Not scored.
+const SIT=[
+ {k:'q16-opening',type:'one',t:'What are you opening?',o:['One space under 1,000 m²','One space over 1,000 m²','Several sites or countries']},
+ {k:'q17-challenges',type:'two',t:'What are your top two challenges for the next 90 days?',hint:'Pick two.',o:['Find and choose the right location','Get the lease terms right','Appoint architect and contractors on solid quotes','Keep the opening date','Keep the budget under control','Run it from HQ without constant travel']},
+ {k:'q18-obstacle',type:'other',t:'What is your biggest obstacle?',o:['No time — too many live issues','No expertise — not sure what good looks like','No accountability — people won\'t follow the process unless someone enforces it','No clarity — unsure what to fix first','Internal politics — decisions drift into side conversations','Other']},
+ {k:'q19-solution',type:'one',t:'Which kind of solution do you want?',o:['We\'ll do it ourselves with a clear method','A proven method plus expert support']},
+ {k:'q20-open',type:'text',t:'Anything we should know about your opening or what\'s at risk right now?',hint:'Optional · up to 1,000 characters'}];
+const VERSIONS={'engine-version':'ro-inline-1.0','config-version':'ro-2026-11-11','score-version':'stages12-v1'};
 const PLANS={
  review:{name:'Project Review',price:'from €500 incl. VAT · one-off',opt:'Project Review — from €500',
   what:'One defined relocation or set-up question, answered — with a written plan you can run yourself.',
@@ -304,8 +398,9 @@ const LEVELS=[
   b:'Brief, options and partners are largely in place. The risk now is delivery — changes, inspections and handover.',
   say:'Your Opening Score shows a well-prepared opening. Let\'s discuss how to keep it on date and on budget.'}];
 
-const N=Q.length+R.length;
-let i=0,ans=new Array(Q.length).fill(null),rt=new Array(R.length).fill(null),lead={};
+const N=Q.length+SIT.length;
+let i=0,ans=new Array(Q.length).fill(null),sv=freshSit(),lead={};
+function freshSit(){return [null,[],{i:null,other:''},null,''];}
 
 function ss(id){document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));document.getElementById('screen-'+id).classList.add('active');window.scrollTo(0,0);}
 function ok(k){const v=ans[k];if(v===null)return 0;return Q[k].neg?(v===0?1:0):(v===1?1:0);}
@@ -314,31 +409,38 @@ function score(){return Math.round(Q.reduce((s,q,k)=>s+ok(k),0)/Q.length*100);}
 function level(s){return LEVELS.find(l=>s>=l.min&&s<=l.max);}
 function esc(t){return String(t).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));}
 
-function planKey(){
-  const t=rt[0],st=rt[1],sup=rt[3];
-  if(t===2||sup===2)return 'full';
-  if(sup===1)return 'coordination';
-  if(sup===0)return (score()<40&&st>=2)?'coordination':'review';
-  return st>=2?'coordination':'review';
-}
+function sitDone(j){const t=SIT[j].type,v=sv[j];return t==='one'?v!==null:t==='two'?v.length===2:t==='other'?v.i!==null:true;}
+function sitText(j){const q=SIT[j],v=sv[j];
+  if(q.type==='one')return v===null?'':q.o[v];
+  if(q.type==='two')return v.map(k=>q.o[k]).join(' · ');
+  if(q.type==='other')return v.i===null?'':(v.i===q.o.length-1?'Other'+(v.other.trim()?': '+v.other.trim():''):q.o[v.i]);
+  return v.trim();}
+// Best fit (v3.4 §3): over 1,000 m² or several sites, and a proven method plus expert support.
+function isBest(){return (sv[0]===1||sv[0]===2)&&sv[3]===1;}
+function reviewFlag(){const r=[];if(sv[1].includes(3))r.push('Urgent: keep the opening date');if(sv[4].trim())r.push('Open answer to read');return r.join(' · ');}
+function weakest(){let w=0;AREAS.forEach((_,k)=>{if(areaS(k)<areaS(w))w=k;});return w;}
+// Plan suggestion, re-based on Q16, Q19 (v3.4 §1). The score shapes the "why", not the plan.
+function planKey(){if(sv[3]===0)return 'review';return sv[0]===2?'full':'coordination';}
 function planWhy(k){
   const why=[];
-  if(k==='full'){
-    if(rt[0]===2)why.push('you are opening several sites or countries');
-    if(rt[3]===2)why.push('you want the opening managed from brief to keys');
-  }else if(k==='coordination'){
-    if(rt[3]===1)why.push('you want partners coordinated stage by stage');
-    if(rt[1]>=2)why.push('design or works are next, so coordination matters most now');
-    if(rt[3]===0&&score()<40)why.push('your score suggests more than one question needs attention');
-  }else{
-    why.push(rt[3]===0?'you want advice on one question and to run the project yourselves':'a review is the simplest way to start before committing');
-    if(rt[1]<=1)why.push('you are still at the search stage');
-  }
-  if(rt[2]===0)why.push('opening within 3 months — raise the timeline on the call');
+  if(k==='review')why.push('you want to run it yourselves with a clear method');
+  if(k==='coordination')why.push('you want a proven method plus expert support'+(sv[0]===1?', on a space over 1,000 m²':''));
+  if(k==='full')why.push('you want expert support across several sites or countries');
+  if(k!=='review'&&score()<40)why.push('your score shows several open items to coordinate');
+  if(sv[1].includes(3))why.push('keeping the opening date is a top challenge — raise the timeline on the call');
   return why;
 }
+function ctx(){
+  const s=score(),L=level(s),pk=planKey(),w=weakest();
+  return Object.assign({brand:'Ready to Open','score-name':'Opening Score','assessment-object':'opening_project_controls',
+    score:s+'/100',level:L.name,'recommended-plan':PLANS[pk].name,
+    'area-scores':AREAS.map((a,k)=>a.name+' '+areaS(k)+'%').join(' · '),
+    'weakest-area':AREAS[w].name+' ('+areaS(w)+'%)',
+    fit:isBest()?'BEST FIT':'standard','review-flag':reviewFlag()},
+    Object.fromEntries(SIT.map((q,j)=>[q.k,sitText(j)])),VERSIONS);
+}
 
-function start(){i=0;ans=new Array(Q.length).fill(null);rt=new Array(R.length).fill(null);render();ss('quiz');}
+function start(){i=0;ans=new Array(Q.length).fill(null);sv=freshSit();render();ss('quiz');}
 function render(){
   const isQ=i<Q.length,el=document.getElementById('qcon');
   document.getElementById('sec-name').textContent=isQ?(AREAS[Q[i].a].name+' · '+AREAS[Q[i].a].sub):'Your situation';
@@ -353,32 +455,50 @@ function render(){
       <button class="abtn ${v===0?'sel':''}" onclick="pickQ(0)"><span class="adot">✗</span>No</button></div>`;
     bn.disabled=v===null;
   }else{
-    const r=R[i-Q.length],v=rt[i-Q.length];
-    el.innerHTML=`<div class="qtext">${r.t}</div><div class="olist">${r.o.map((o,k)=>`<button class="obtn ${v===k?'sel':''}" onclick="pickR(${k})">${o}${r.sub?`<small>${r.sub[k]}</small>`:''}</button>`).join('')}</div>`;
-    bn.disabled=v===null;
+    const j=i-Q.length,q=SIT[j],v=sv[j];
+    let h=`<div class="qtext">${q.t}</div><div class="olist">`+(q.hint?`<p class="hint">${q.hint}</p>`:'');
+    if(q.type==='text'){
+      h+=`<label for="q20" class="hint" style="margin:0">Your answer</label><textarea id="q20" maxlength="1000" oninput="sv[4]=this.value">${esc(v)}</textarea>`;
+    }else{
+      h+=q.o.map((o,k)=>{const on=q.type==='two'?v.includes(k):q.type==='other'?v.i===k:v===k;
+        return `<button class="obtn ${on?'sel':''}" aria-pressed="${on}" onclick="pickS(${k})">${o}</button>`;}).join('');
+      if(q.type==='other'&&v.i===q.o.length-1)h+=`<input class="other-in" id="q18o" maxlength="200" placeholder="Your obstacle (optional)" aria-label="Your obstacle" value="${esc(v.other)}" oninput="sv[2].other=this.value">`;
+    }
+    el.innerHTML=h+'</div>';
+    bn.disabled=!sitDone(j);
   }
   bn.textContent=i===N-1?'See my score →':'Continue →';
 }
 function pickQ(v){ans[i]=v;render();setTimeout(next,250);}
-function pickR(v){rt[i-Q.length]=v;render();setTimeout(next,250);}
+function pickS(k){
+  const j=i-Q.length,q=SIT[j];
+  if(q.type==='one'){sv[j]=k;render();setTimeout(next,250);return;}
+  if(q.type==='two'){const a=sv[j],p=a.indexOf(k);if(p>=0)a.splice(p,1);else if(a.length<2)a.push(k);render();return;}
+  if(q.type==='other'){sv[j].i=k;render();if(k===q.o.length-1){const o=document.getElementById('q18o');if(o)o.focus();}else setTimeout(next,250);}
+}
 function next(){
-  const done=i<Q.length?ans[i]!==null:rt[i-Q.length]!==null;if(!done)return;
+  const done=i<Q.length?ans[i]!==null:sitDone(i-Q.length);if(!done)return;
   if(i<N-1){i++;render();}else{showTop();}
 }
 function prev(){if(i>0){i--;render();}}
 
 function subGate(e){
   e.preventDefault();if(document.getElementById('gbot').value)return;
-  lead={name:gn.value.trim(),company:gc.value.trim(),email:ge.value.trim(),phone:gp.value.trim(),location:gl.value.trim(),comments:gm.value.trim()};
-  const s=score(),pk=planKey();
-  const data={'form-name':'ready-to-open-quiz',source:'Opening Score',subject:'New lead — Ready to Open quiz — '+PLANS[pk].name+' — '+lead.name+' ('+lead.company+') — '+s+'/100',plan:PLANS[pk].opt,project:'(from quiz) '+R[0].o[rt[0]]+' · '+R[1].o[rt[1]]+' · open '+R[2].o[rt[2]],name:lead.name,company:lead.company,email:lead.email,phone:lead.phone,location:lead.location,comments:lead.comments,
-   score:s+'/100',level:level(s).name,'recommended-plan':PLANS[pk].name,
-   define:areaS(0)+'%','find-assess':areaS(1)+'%','prepare-procure':areaS(2)+'%','deliver-handover':areaS(3)+'%'};
-  R.forEach((r,k)=>data[r.k]=r.o[rt[k]]);
-  data.answers=Q.map((q,k)=>(k+1)+'. '+(ans[k]===1?'Yes':'No')+(ok(k)?'':'  <- GAP')+' — '+q.t).join('\n');
-  const b=document.getElementById('gbtn');b.disabled=true;b.textContent='One moment…';
+  const ge=document.getElementById('ge'),gn=document.getElementById('gn'),b=document.getElementById('gbtn'),er=document.getElementById('gerr');
+  if(b.disabled)return;
+  if(!ge.checkValidity()){ge.reportValidity();return;}
+  lead={name:gn.value.trim(),email:ge.value.trim(),consent:document.getElementById('gconsent').checked?'Yes':'No'};
+  const c=ctx();
+  const data=Object.assign({'form-name':'ready-to-open-quiz',source:'Opening Score',
+    subject:'New Opening Score — '+(c.fit==='BEST FIT'?'BEST FIT — ':'')+(c['review-flag']?'REVIEW — ':'')+c.score+' '+c.level+' — '+(lead.name||lead.email),
+    name:lead.name,email:lead.email,'marketing-consent':lead.consent,
+    define:areaS(0)+'%','find-assess':areaS(1)+'%','prepare-procure':areaS(2)+'%','deliver-handover':areaS(3)+'%',
+    answers:Q.map((q,k)=>(k+1)+'. '+(ans[k]===1?'Yes':'No')+(ok(k)?'':'  <- GAP')+' — '+q.t).join('\n')},c);
+  delete data['area-scores'];
+  b.disabled=true;b.textContent='One moment…';er.hidden=true;
   fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams(data).toString()})
-   .catch(()=>{}).finally(()=>{b.disabled=false;b.textContent='Show my full breakdown →';showFull();});
+   .then(r=>{if(!r.ok)throw new Error(r.status);showFull();})
+   .catch(()=>{er.textContent='We couldn\'t unlock your report: the connection failed. Your answers are kept, so nothing is lost. Please try again.';er.hidden=false;b.disabled=false;b.textContent='Try again →';});
 }
 
 function gapsIdx(){return AREAS.map((_,k)=>k).filter(k=>areaS(k)<100).sort((a,b)=>areaS(a)-areaS(b)).slice(0,2);}
@@ -391,7 +511,12 @@ function showTop(){
   document.getElementById('rdesc').textContent=L.b;
   document.getElementById('ladder').innerHTML=LEVELS.map((l,k)=>`<div class="rung ${l===L?'on':''}"><b>${k+1}</b>${l.name}</div>`).join('');
   document.getElementById('psay').textContent=L.say;
-  document.getElementById('pbtn').href='/?plan='+planKey()+'#book';
+  const post=document.getElementById('post'),best=isBest();
+  post.classList.toggle('best',best);
+  // Best fit: the support option comes first, straight under the score (v3.4 §3).
+  const anchor=best?document.querySelector('#screen-results .rtop'):document.getElementById('rfull');
+  anchor.after(post);
+  const cb=document.getElementById('callbox');post.after(cb);cb.hidden=true;
   document.getElementById('rgate').hidden=false;document.getElementById('rfull').hidden=true;
   ss('results');
 }
@@ -410,8 +535,18 @@ function showFull(){
   document.getElementById('bars').innerHTML=AREAS.map((a,k)=>`<div class="barrow"><div class="h"><span>${a.name} <span style="font-weight:400;color:var(--muted)">· ${a.sub}</span></span><span>${areaS(k)}%</span></div><div class="track"><div style="width:${areaS(k)}%;background:${a.col}"></div></div></div>`).join('');
   document.getElementById('bklist').innerHTML=Q.map((q,k)=>`<div class="bkrow"><div>${q.t}</div><div class="bksc ${ok(k)?'sch':'scl'}">${ok(k)?'✓ In place':'✗ Gap'}</div></div>`).join('');
   document.getElementById('rgate').hidden=true;document.getElementById('rfull').hidden=false;
+  const d=new Date().toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'});
+  document.getElementById('ph-meta').textContent=(lead.name?lead.name+' · ':'')+'Assessed: your opening project\'s delivery controls · '+d+' · version '+VERSIONS['config-version']+' / '+VERSIONS['score-version'];
   document.getElementById('rfull').scrollIntoView({behavior:'smooth',block:'start'});
 }
+function openCall(){
+  const box=document.getElementById('callbox'),f=box.querySelector('form.cform');
+  if(f.setContext){f.setContext(ctx());f.setPlan(PLANS[planKey()].opt);}
+  box.hidden=false;box.scrollIntoView({behavior:'smooth',block:'start'});
+  setTimeout(()=>{try{f.querySelector('input[name="name"]').focus({preventScroll:true});}catch(e){}},400);
+}
+function savePdf(){document.querySelectorAll('#rfull details').forEach(d=>d.open=true);window.print();}
 </script>
+<script src="/contact-form.js?v=20261111"></script>
 </body>
 </html>
