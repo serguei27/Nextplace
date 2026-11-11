@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://nextplaces.netlify.app/</loc></url>
+  <url><loc>https://nextplaces.netlify.app/quiz</loc></url>
+  <url><loc>https://nextplaces.netlify.app/articles/</loc></url>
+  <url><loc>https://nextplaces.netlify.app/articles/ro-01-opening-date.html</loc><lastmod>2026-11-09</lastmod></url>
+  <url><loc>https://nextplaces.netlify.app/join</loc></url>
+  <url><loc>https://nextplaces.netlify.app/privacy</loc></url>
+  <!-- Add one <url> per published article -->
+</urlset>

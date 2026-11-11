@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /index1.html
+
+Sitemap: https://nextplaces.netlify.app/sitemap.xml
