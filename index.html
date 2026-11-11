@@ -402,6 +402,69 @@ footer a:hover{color:var(--gold-2)}
 .diag-cta{text-align:center;margin-top:30px}
 .fivec-note{margin-top:22px}
 .fivec-note b{color:var(--navy)}
+/* OPENING SCORE INVITATION (same pattern as Ask Contracks) */
+section.crs{padding:72px 0}
+.crs-head{margin-bottom:28px}
+.crs .crs-head h2{color:var(--navy)}
+.crs .crs-head h2 em{color:var(--gold)}
+.crs-panel{background-color:var(--navy);background-image:linear-gradient(180deg,rgba(10,22,40,0) 0,rgba(10,22,40,.25) 26%,var(--navy) 60%),linear-gradient(90deg,rgba(10,22,40,.95) 0,rgba(10,22,40,.8) 52%,rgba(10,22,40,.08) 100%),url(site-roof.jpeg);background-size:100% 100%,100% 100%,100% auto;background-position:top center;background-repeat:no-repeat;color:#fff;border-radius:28px;padding:48px}
+.crs-kicker{display:flex;align-items:center;gap:14px;color:var(--gold-2);font-size:.78rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+.crs-kicker::after{content:"";flex:1;height:1px;background:rgba(197,160,80,.45)}
+.crs-panel h2{color:#fff;font-size:clamp(2rem,4.4vw,3.1rem);margin:16px 0 14px;max-width:900px}
+.crs-panel h2 em{color:var(--gold-2)}
+.crs-lead{color:rgba(255,255,255,.8);font-size:1.08rem;max-width:760px}
+.crs-risks{list-style:none;display:flex;flex-wrap:wrap;gap:8px 28px;margin:18px 0 0;padding:0}
+.crs-risks li{padding-left:22px;position:relative;font-weight:600;font-size:.96rem}
+.crs-risks li::before{content:"";position:absolute;left:0;top:.72em;width:13px;height:2px;background:var(--gold)}
+.crs-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:36px;align-items:end;margin-top:36px}
+.crs-stages h3{color:#fff;font-family:'Playfair Display',Georgia,serif;font-size:clamp(1.35rem,2.6vw,1.75rem);margin-bottom:18px}
+.crs-line{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;align-items:end}
+.crs-stage{font:inherit;text-align:left;color:#fff;border:1.5px solid transparent;border-radius:14px;padding:16px 14px;cursor:pointer}
+.crs-stage b{display:block;font-family:'Playfair Display',Georgia,serif;font-size:1.2rem;margin-bottom:6px}
+.crs-stage span{display:block;font-size:.82rem;line-height:1.4;color:rgba(255,255,255,.9)}
+.crs-stage.s1{background:#8F3027;min-height:190px}
+.crs-stage.s2{background:#8A6D2B;min-height:225px}
+.crs-stage.s3{background:#2D6A4F;min-height:260px}
+.crs-stage:hover{border-color:rgba(255,255,255,.55)}
+.crs-stage:focus-visible,.crs-act a:focus-visible{outline:3px solid var(--gold-2);outline-offset:2px}
+.crs-stage[aria-pressed="true"]{border-color:#fff;box-shadow:0 0 0 2px var(--gold-2)}
+.crs-note{color:rgba(255,255,255,.72);font-size:.9rem;margin-top:14px;min-height:2.8em}
+.crs-card{background:rgba(255,255,255,.05);border:1px solid rgba(212,180,112,.45);border-radius:20px;padding:24px}
+.crs-tag{color:var(--gold-2);font-size:.74rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+.crs-title{font-weight:700;font-size:1.05rem;margin:6px 0 14px}
+.crs-score{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:16px;align-items:center}
+.crs-bar{display:grid;grid-template-columns:104px minmax(0,1fr) 42px;gap:8px;align-items:center;padding:6px 0;font-size:.76rem;font-weight:600;letter-spacing:.03em}
+.crs-bar i{display:block;height:13px;background:rgba(255,255,255,.12);border-radius:3px;overflow:hidden}
+.crs-bar u{display:block;height:100%;text-decoration:none;background:var(--gold)}
+.crs-bar b{text-align:right}
+.crs-total{border-left:1px solid rgba(255,255,255,.2);padding-left:16px;text-align:center}
+.crs-total small{display:block;font-size:.76rem;color:rgba(255,255,255,.72)}
+.crs-total strong{display:block;font-family:'Playfair Display',Georgia,serif;font-size:2.4rem;line-height:1.1;color:var(--gold-2)}
+.crs-total em{display:block;font-style:normal;font-weight:700;margin-top:6px}
+.crs-weak{border:1px solid rgba(255,255,255,.22);border-radius:12px;padding:12px 14px;margin-top:14px;font-size:.88rem;color:rgba(255,255,255,.82)}
+.crs-weak b{display:block;color:var(--gold-2);margin-bottom:2px}
+.crs-foot{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;margin-top:32px;padding-top:24px;border-top:1px solid rgba(255,255,255,.16)}
+.crs-foot p{font-weight:600;font-size:1.1rem;border-left:3px solid var(--gold);padding-left:14px;max-width:520px}
+.crs-act{text-align:center}
+.crs-act small{display:block;margin-top:4px;font-size:.84rem;color:rgba(255,255,255,.72)}
+.crs-act .free-tag{display:block;margin-top:12px;font-weight:700;font-size:.82rem;letter-spacing:.18em;color:var(--gold)}
+@keyframes crspulse{0%,100%{box-shadow:0 8px 22px rgba(197,160,80,.28),0 0 0 0 rgba(197,160,80,.75)}60%{box-shadow:0 8px 22px rgba(197,160,80,.28),0 0 0 14px rgba(197,160,80,0)}}
+.crs-start{animation:crspulse 2.2s ease-out infinite}
+.crs-start:hover,.crs-start:focus-visible{animation:none}
+@media (prefers-reduced-motion:reduce){.crs-start{animation:none}}
+@media (max-width:960px){.crs-grid{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:640px){
+  section.crs{padding:48px 0}
+  .crs-panel{padding:26px 20px;border-radius:22px;background-image:linear-gradient(180deg,rgba(10,22,40,.72) 0,rgba(10,22,40,.88) 300px,var(--navy) 540px),url(site-roof.jpeg);background-size:100% 100%,auto 560px}
+  .crs-line{grid-template-columns:minmax(0,1fr)}
+  .crs-stage.s1,.crs-stage.s2,.crs-stage.s3{min-height:0}
+  .crs-score{grid-template-columns:minmax(0,1fr)}
+  .crs-total{border-left:0;border-top:1px solid rgba(255,255,255,.2);padding:12px 0 0;display:flex;gap:8px;align-items:baseline;justify-content:center;flex-wrap:wrap}
+  .crs-total strong{font-size:1.8rem}
+  .crs-total em{margin:0}
+  .crs-act,.crs-act .btn{width:100%}
+}
+@media (max-width:480px){.crs-start{white-space:nowrap;font-size:.92rem;padding:15px 12px}}
 </style>
 <link rel="stylesheet" href="/contact-form.css?v=20261111c">
 </head>
@@ -477,6 +540,62 @@ footer a:hover{color:var(--gold-2)}
       </div>
     </div>
     <p class="diag-cta"><a href="/quiz" class="btn btn-line">Get my Opening Score — free →</a></p>
+  </div>
+</section>
+
+<!-- 2B. OPENING SCORE INVITATION -->
+<section class="crs" id="opening-score">
+  <div class="wrap">
+    <div class="head crs-head">
+      <span class="pill">Opening Score</span>
+      <h2>Check how ready your opening <em>really is.</em></h2>
+    </div>
+    <div class="crs-panel">
+      <div class="crs-kicker"><span>The Opening Score</span></div>
+      <h2>Your opening date is set. <em>Will your space be ready?</em></h2>
+      <p class="crs-lead">Openings abroad rarely slip on one big mistake. They slip when the brief isn't nailed down, lease terms go untested and you hear about delays and extras late.</p>
+      <ul class="crs-risks">
+        <li>Ten spaces seen, none you can compare.</li>
+        <li>Every meeting ends with "we're waiting for someone else".</li>
+        <li>A final cost nobody can give you today.</li>
+      </ul>
+
+      <div class="crs-grid">
+        <div class="crs-stages">
+          <h3>Where is your opening really?</h3>
+          <div class="crs-line" role="group" aria-label="Choose the position that sounds like your project">
+            <button type="button" class="crs-stage s1" aria-pressed="false"><b>Fragile</b><span>Key decisions on the brief, the space or the partners are still open.</span></button>
+            <button type="button" class="crs-stage s2" aria-pressed="false"><b>Exposed</b><span>Some stages are under control, others not yet. The gaps could cost you weeks.</span></button>
+            <button type="button" class="crs-stage s3" aria-pressed="false"><b>Resilient</b><span>Brief, options and partners are largely in place. The risk now is delivery.</span></button>
+          </div>
+          <p class="crs-note" id="crs-note" aria-live="polite">Pick the one that sounds like your project. This is self-reflection, not an assessment result.</p>
+        </div>
+
+        <div class="crs-card" role="img" aria-label="Example scorecard, illustrative only. Score 67 out of 100, Exposed. Define 67 percent, Find and assess 33 percent, Prepare and procure 67 percent, Deliver and hand over 100 percent. Potential weak point: find and assess.">
+          <div class="crs-tag">Example result — illustrative</div>
+          <div class="crs-title">Your Opening Score</div>
+          <div class="crs-score">
+            <div class="crs-bars">
+              <div class="crs-bar"><span>DEFINE</span><i><u style="width:67%"></u></i><b>67%</b></div>
+              <div class="crs-bar"><span>FIND &amp; ASSESS</span><i><u style="width:33%"></u></i><b>33%</b></div>
+              <div class="crs-bar"><span>PREPARE</span><i><u style="width:67%"></u></i><b>67%</b></div>
+              <div class="crs-bar"><span>DELIVER</span><i><u style="width:100%"></u></i><b>100%</b></div>
+            </div>
+            <div class="crs-total"><small>Score</small><strong>67</strong><small>out of 100</small><em>Exposed</em></div>
+          </div>
+          <div class="crs-weak"><b>Potential weak point: find &amp; assess</b>Answers like these may suggest that options and lease terms are not being tested before you commit.</div>
+        </div>
+      </div>
+
+      <div class="crs-foot">
+        <p>Four stages. One question: will your space be ready on date and on budget?</p>
+        <div class="crs-act">
+          <a href="/quiz" class="btn btn-navy crs-start">Start my Opening Score</a>
+          <span class="free-tag">FREE</span>
+          <small>About 3 minutes · Personalised scorecard</small>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -827,6 +946,16 @@ var d={'form-name':'ready-to-open',source:'Stay in touch',brand:'Ready to Open',
 fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams(d).toString()}).then(function(r){if(!r.ok)throw 0;var ok=document.getElementById('stayok');ok.textContent='Thank you — you\'re on the list.';document.getElementById('stayf').hidden=true;ok.hidden=false;}).catch(function(){b.disabled=false;var ok=document.getElementById('stayok');ok.textContent='Something went wrong — please try again, or use the booking form above.';ok.hidden=false;});}
 function setPlan(v){var f=document.querySelector('form.cform');if(f&&f.setPlan)f.setPlan(v);}
 (function(){try{var m={review:'Project Review — from €500',coordination:'Project Coordination — monthly',full:'Full Project Management — quote'};var k=new URLSearchParams(location.search).get('plan');if(k&&m[k])document.addEventListener('DOMContentLoaded',function(){setPlan(m[k]);});}catch(e){}})();
+</script>
+<script>
+(function(){
+  var sec=document.getElementById('opening-score');if(!sec)return;
+  var stages=sec.querySelectorAll('.crs-stage'),note=document.getElementById('crs-note');
+  stages.forEach(function(b){b.addEventListener('click',function(){
+    stages.forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false');});
+    note.textContent='You picked '+b.querySelector('b').textContent+'. That is your own reflection, not an assessment. The score checks it against 12 questions.';
+  });});
+})();
 </script>
 <script src="/contact-form.js?v=20261111c"></script>
 </body>
