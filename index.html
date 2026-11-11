@@ -177,7 +177,9 @@ section{padding:92px 0}
 .plan ul{list-style:none;flex:1;margin-bottom:26px}
 .plan li{padding:8px 0 8px 28px;position:relative;font-size:.97rem}
 .plan li::before{content:"";position:absolute;left:0;top:13px;width:14px;height:8px;border-left:2px solid var(--gold);border-bottom:2px solid var(--gold);transform:rotate(-45deg)}
-.plan .btn{width:100%}
+.plan .btn{width:100%;padding:15px 12px;font-size:.95rem;white-space:nowrap}
+@media (min-width:901px) and (max-width:1100px){.plan .btn{font-size:.86rem;padding:14px 8px}}
+@media (max-width:360px){.plan .btn{white-space:normal}}
 .plan.pop{background:var(--navy);color:#fff;border:0;position:relative;box-shadow:0 24px 60px rgba(10,22,40,.25)}
 .plan.pop h3,.plan.pop .price{color:#fff}
 .plan.pop .for,.plan.pop .price small{color:rgba(255,255,255,.7)}
@@ -639,7 +641,7 @@ footer a:hover{color:var(--gold-2)}
           <li>A written plan: who does what, in which order</li>
           <li>Price includes VAT</li>
         </ul>
-        <a href="#book" class="btn btn-line" onclick="setPlan('Project Review — from €500')">Book your free 45-min call</a>
+        <a href="/quiz" class="btn btn-line">Get my Opening Score — free →</a>
       </div>
       <div class="card plan pop">
         <h3>Project Coordination</h3>
@@ -653,7 +655,7 @@ footer a:hover{color:var(--gold-2)}
           <li>Weekly progress, cost and change report</li>
           <li>Weekly remote reporting included within the agreed capacity; site visits and inspections scoped and priced separately</li>
         </ul>
-        <a href="#book" class="btn btn-gold" onclick="setPlan('Project Coordination — monthly')">Book your free 45-min call</a>
+        <a href="/quiz" class="btn btn-gold">Get my Opening Score — free →</a>
       </div>
       <div class="card plan">
         <h3>Full Project Management</h3>
@@ -667,7 +669,7 @@ footer a:hover{color:var(--gold-2)}
           <li>Snagging, handover and move-in</li>
           <li>Several sites and countries on one reporting line</li>
         </ul>
-        <a href="#book" class="btn btn-line" onclick="setPlan('Full Project Management — quote')">Book your free 45-min call</a>
+        <a href="/quiz" class="btn btn-line">Get my Opening Score — free →</a>
       </div>
     </div>
     <p class="scope">We agree the stages covered, meetings, reporting and site visits before starting. Broker, architect and contractor fees are separate, quoted in advance and approved by you — including any referral commissions.</p>
@@ -819,7 +821,7 @@ footer a:hover{color:var(--gold-2)}
       <div class="field" data-for="LinkedIn message" hidden><label for="bk-li">LinkedIn profile URL *</label><input id="bk-li" name="linkedin" type="url" inputmode="url" placeholder="https://www.linkedin.com/in/your-name"></div>
       <div class="field"><label for="bk-bt">When is the best time to contact you? <span class="opt-l">(Optional)</span></label><input id="bk-bt" name="best-time" maxlength="200" placeholder="e.g. Tomorrow morning, Thursday after 2 pm, or anytime next week…"></div>
       <div class="field"><label for="bk-m" class="cf-msg-label">Tell us briefly about your opening <span class="opt-l">(Optional)</span></label><textarea id="bk-m" name="message" maxlength="1000" data-count="bk-mc"></textarea><span class="cf-count" id="bk-mc" aria-live="polite"></span></div>
-      <button type="submit" class="btn btn-navy">Request My Free Call →</button>
+      <button type="submit" class="btn btn-gold">Book a Free 45-Minute Call →</button>
       <p class="cf-err" role="alert" hidden></p>
       <p class="form-foot">* Required. No documents needed · No obligation. <a href="/privacy.html" style="color:var(--navy)">Privacy</a></p>
     </form>
