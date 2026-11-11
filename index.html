@@ -474,6 +474,103 @@ section.crs{padding:72px 0}
   .crs-act,.crs-act .btn{width:100%}
 }
 @media (max-width:480px){.crs-start{white-space:nowrap;font-size:.92rem;padding:15px 12px}}
+/* Opening Score invite, above Common questions (home score-section brief, adapted) */
+.inv{background:var(--navy);color:#fff;padding:80px 0}
+.inv-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:48px;align-items:center}
+.inv-eye{font-size:.78rem;letter-spacing:.14em;font-weight:700;color:var(--gold-2)}
+.inv h2{color:#fff;font-size:clamp(2rem,4.2vw,3rem);line-height:1.1;margin:14px 0 16px}
+.inv h2 em{color:var(--gold-2)}
+.inv-lead{font-size:1.12rem;line-height:1.6;color:rgba(255,255,255,.86);margin-bottom:26px}
+.inv-q{font-weight:600;font-size:.95rem;margin-bottom:12px}
+.inv-chips{display:flex;flex-wrap:wrap;gap:8px}
+.inv-chip{font:inherit;font-size:.92rem;font-weight:600;min-height:44px;padding:0 16px;border-radius:99px;cursor:pointer;border:1px solid rgba(255,255,255,.35);background:transparent;color:#fff;transition:background .3s,color .3s,border-color .3s,transform .3s}
+.inv-chip:hover{border-color:var(--gold-2)}
+.inv-chip[aria-pressed="true"]{background:var(--gold);border-color:var(--gold);color:var(--navy);transform:translateY(-2px)}
+.inv-chip:focus-visible,.inv-cta:focus-visible{outline:3px solid var(--gold-2);outline-offset:2px}
+.inv-act{margin-top:30px}
+.inv-cta{animation:crspulse 2.2s ease-out infinite}
+.inv-cta:hover,.inv-cta:focus-visible{animation:none}
+.inv-note{font-size:.84rem;color:rgba(255,255,255,.72);margin-top:14px}
+.inv-stats{display:flex;gap:28px;flex-wrap:wrap;margin-top:26px;padding-top:20px;border-top:1px solid rgba(255,255,255,.15)}
+.inv-stats[hidden]{display:none}
+.inv-stats b{display:block;font-family:'Playfair Display',Georgia,serif;font-size:1.9rem;color:var(--gold-2)}
+.inv-stats span{font-size:.84rem;color:rgba(255,255,255,.72)}
+.inv-card{background:#fff;color:var(--navy);border-radius:16px;overflow:hidden;box-shadow:0 40px 90px -40px rgba(0,0,0,.75)}
+.inv-top{display:flex;align-items:center;gap:8px;padding:12px 18px;border-bottom:1px solid var(--line);background:#F7F8FA;font-size:.82rem;color:var(--muted)}
+.inv-top i{width:10px;height:10px;border-radius:99px;background:#D5DAE3}
+.inv-top span{margin-left:8px;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.inv-top em{margin-left:auto;font-style:normal;font-size:.76rem;font-weight:700;color:#7A5E1C;background:var(--gold-soft);padding:3px 10px;border-radius:99px}
+.inv-body{padding:22px}
+.inv-head{display:flex;gap:18px;align-items:center;flex-wrap:wrap}
+.inv-gauge path+path{transition:stroke-dashoffset 1s cubic-bezier(.16,1,.3,1),stroke .4s}
+.inv-num{flex:1 1 130px}
+.inv-num strong{font-family:'Playfair Display',Georgia,serif;font-size:2.75rem;line-height:1}
+.inv-num strong small{font-family:'DM Sans',sans-serif;font-weight:400;font-size:1rem;color:var(--muted)}
+.inv-num div{font-size:.82rem;color:var(--muted);margin-top:4px}
+.inv-tiles{display:flex;gap:10px}
+.inv-tiles div{border-radius:10px;padding:10px 14px;text-align:center;font-size:.76rem}
+.inv-tiles b{display:block;font-size:1.35rem}
+.inv-t1{background:#EAF4EE;color:#1F5A40}
+.inv-t2{background:var(--gold-soft);color:#6B4F12}
+.inv-bars{margin-top:18px;display:flex;flex-direction:column;gap:8px}
+.inv-bar{display:grid;grid-template-columns:150px minmax(0,1fr) 42px;gap:10px;align-items:center;font-size:.8rem}
+.inv-bar span{font-weight:600}
+.inv-bar i{display:block;height:8px;background:#EEF1F5;border-radius:99px;overflow:hidden}
+.inv-bar u{display:block;height:8px;border-radius:99px;text-decoration:none;transition:width .9s cubic-bezier(.16,1,.3,1),background .4s}
+.inv-bar b{text-align:right;color:var(--muted);font-weight:500}
+.inv-sub{font-size:.82rem;font-weight:600;color:var(--muted);margin:22px 0 10px}
+.inv-fixes{display:flex;flex-direction:column;gap:10px}
+.inv-fix{border:1px solid var(--line);border-radius:12px;padding:14px 16px;font-size:.84rem;line-height:1.45}
+.inv-fix>b{display:block;font-size:.95rem;margin-bottom:8px}
+.inv-fix p{display:flex;gap:8px;margin-top:4px}
+.inv-fix svg{flex:none;margin-top:1px}
+.inv-diy strong{color:#1F5A40}
+.inv-help strong{color:#6B4F12}
+.inv-fx{animation:invUp .7s cubic-bezier(.16,1,.3,1) both}
+@keyframes invUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.inv-keep{padding:72px 0 80px}
+.inv-keep h3{font-family:'Playfair Display',Georgia,serif;font-size:clamp(1.7rem,3.4vw,2.3rem);line-height:1.15;margin:12px 0 32px;max-width:760px}
+.inv-keep .inv-eye{color:#7A5E1C}
+.inv-keeps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.inv-k{border:1px solid var(--line);border-radius:14px;padding:22px}
+.inv-k>div{display:flex;justify-content:space-between;align-items:center}
+.inv-tick{width:26px;height:26px;border-radius:99px;background:var(--green);color:#fff;display:flex;align-items:center;justify-content:center}
+.inv-k h4{font-size:1.05rem;margin:14px 0 6px}
+.inv-k p{font-size:.9rem;color:var(--muted);line-height:1.5}
+.inv-keep.go .inv-tick{animation:invPop .5s cubic-bezier(.2,1.4,.4,1) both}
+.inv-keep.go .inv-k:nth-child(2) .inv-tick{animation-delay:.2s}
+.inv-keep.go .inv-k:nth-child(3) .inv-tick{animation-delay:.4s}
+.inv-keep.go .inv-k:nth-child(4) .inv-tick{animation-delay:.6s}
+@keyframes invPop{0%{opacity:0;transform:scale(.4)}70%{opacity:1;transform:scale(1.15)}100%{opacity:1;transform:scale(1)}}
+@media (max-width:1000px){.inv-grid{grid-template-columns:minmax(0,1fr)}.inv-keeps{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:700px){
+  .inv{padding:40px 0}
+  .inv-grid{gap:24px}
+  .inv h2{margin:10px 0 10px}
+  .inv-lead{font-size:1rem;margin-bottom:18px}
+  .inv-chips{gap:6px}.inv-chip{font-size:.85rem;padding:0 12px}
+  .inv-act{margin-top:20px}
+  .inv-bars,.inv-fix:nth-child(3){display:none}
+  .inv-top{padding:10px 14px}
+  .inv-body{padding:14px}
+  .inv-head{gap:10px}.inv-gauge{width:84px;height:49px}
+  .inv-num strong{font-size:2.1rem}
+  .inv-tiles{width:100%}.inv-tiles div{flex:1;padding:6px 10px}.inv-tiles b{font-size:1.1rem}
+  .inv-sub{margin:14px 0 8px}
+  .inv-fix{padding:10px 12px;font-size:.8rem}.inv-fix>b{font-size:.88rem;margin-bottom:4px}
+  .inv-keep{padding:36px 0}
+  .inv-keep h3{margin:8px 0 18px}
+  .inv-keeps{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+  .inv-k{padding:14px}.inv-k>div>svg{width:22px;height:22px}
+  .inv-k h4{font-size:.92rem;margin:10px 0 4px}.inv-k p{font-size:.8rem}
+}
+@media (max-width:480px){.inv-cta{width:100%;white-space:nowrap;font-size:.92rem;padding:15px 12px}}
+@media (prefers-reduced-motion:reduce){.inv-cta,.inv-fx{animation:none}}
+/* Example scorecard in the Opening Score section: plays once when seen */
+.crs-card.anim .crs-bar u{width:0!important;transition:width .9s cubic-bezier(.16,1,.3,1)}
+.crs-card.anim .crs-weak{opacity:0;transform:translateY(10px);transition:opacity .6s .9s,transform .6s .9s}
+.crs-card.anim.go .crs-bar u{width:var(--w)!important}
+.crs-card.anim.go .crs-weak{opacity:1;transform:none}
 </style>
 <link rel="stylesheet" href="/contact-form.css?v=20261111c">
 </head>
@@ -599,7 +696,7 @@ section.crs{padding:72px 0}
       <div class="crs-foot">
         <p>Four stages. One question: will your space be ready on date and on budget?</p>
         <div class="crs-act">
-          <a href="/quiz" class="btn btn-navy crs-start">Start my Opening Score</a>
+          <a href="/quiz?src=home-snapshot" class="btn btn-navy crs-start">Start my Opening Score</a>
           <span class="free-tag">FREE</span>
           <small>About 3 minutes · Personalised scorecard</small>
         </div>
@@ -821,6 +918,55 @@ section.crs{padding:72px 0}
   </div>
 </section>
 
+<!-- 9B. OPENING SCORE INVITE -->
+<section class="inv" id="score-invite" aria-labelledby="inv-h">
+  <div class="wrap inv-grid">
+    <div>
+      <div class="inv-eye">OPENING SCORE · FREE</div>
+      <h2 id="inv-h">How ready is your opening <em>really?</em></h2>
+      <p class="inv-lead">In about 3 minutes, see what's in place, what to fix first, and the simplest way to fix it — on your own or with help.</p>
+      <div class="inv-q" id="inv-q">Where is your opening right now?</div>
+      <div class="inv-chips" role="group" aria-labelledby="inv-q">
+        <button type="button" class="inv-chip" data-k="where" aria-pressed="false">Still choosing where</button>
+        <button type="button" class="inv-chip" data-k="lease" aria-pressed="true">Lease on the table</button>
+        <button type="button" class="inv-chip" data-k="team" aria-pressed="false">Choosing architect &amp; contractors</button>
+        <button type="button" class="inv-chip" data-k="works" aria-pressed="false">Works on site</button>
+        <button type="button" class="inv-chip" data-k="rollout" aria-pressed="false">Several sites</button>
+      </div>
+      <div class="inv-act">
+        <a href="/quiz?src=home-invite" class="btn btn-gold inv-cta">Start my Opening Score →</a>
+        <p class="inv-note">About 3 minutes · No documents needed · Score on screen · No sales call unless you ask</p>
+        <div class="inv-stats" hidden><div><b>[N]</b><span>openings scored</span></div><div><b>[AVG]</b><span>average score</span></div><div><b>[GAP]</b><span>most common gap</span></div></div>
+      </div>
+    </div>
+    <div class="inv-card">
+      <div class="inv-top"><i></i><i></i><i></i><span>Your result · <b id="inv-sit">Lease on the table</b></span><em>Example</em></div>
+      <div class="inv-body">
+        <div class="inv-head">
+          <svg class="inv-gauge" width="120" height="70" viewBox="0 0 100 58" role="img" aria-label="Example Opening Score: 50 out of 100"><path d="M10 52 A40 40 0 0 1 90 52" fill="none" stroke="#EEF1F5" stroke-width="10" stroke-linecap="round"/><path d="M10 52 A40 40 0 0 1 90 52" fill="none" stroke="#C5A050" stroke-width="10" stroke-linecap="round" stroke-dasharray="125.7" stroke-dashoffset="62.9"/></svg>
+          <div class="inv-num"><strong><span id="inv-n">50</span><small> / 100</small></strong><div>Opening Score</div></div>
+          <div class="inv-tiles"><div class="inv-t1"><b id="inv-w">6 of 12</b>in place</div><div class="inv-t2"><b id="inv-l">Exposed</b>level</div></div>
+        </div>
+        <div class="inv-bars"><div class="inv-bar"><span>Define</span><i><u style="width:67%;background:#C5A050"></u></i><b>67%</b></div><div class="inv-bar"><span>Find &amp; assess</span><i><u style="width:33%;background:#C0392B"></u></i><b>33%</b></div><div class="inv-bar"><span>Prepare &amp; procure</span><i><u style="width:33%;background:#C0392B"></u></i><b>33%</b></div><div class="inv-bar"><span>Deliver &amp; hand over</span><i><u style="width:67%;background:#C5A050"></u></i><b>67%</b></div></div>
+        <div class="inv-sub">What you'd see, and how to fix it</div>
+        <div class="inv-fixes"><div class="inv-fix"><b>See what the lease leaves to you</b><p class="inv-diy"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2D6A4F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18v3h3l6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.4-.6-.6-2.4z"/></svg><span><strong>Fix it yourself:</strong> List the fit-out allowance, landlord works and handover condition before you sign.</span></p><p class="inv-help"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8A6A1F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="4"/><path d="M2 21c0-3.9 3.1-7 7-7s7 3.1 7 7"/><path d="M17 11l2 2 4-4"/></svg><span><strong>Or with help:</strong> A Project Review of the lease terms. Local counsel gives the legal advice.</span></p></div><div class="inv-fix"><b>Check the date the lease really allows</b><p class="inv-diy"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2D6A4F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18v3h3l6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.4-.6-.6-2.4z"/></svg><span><strong>Fix it yourself:</strong> Set the handover date and any rent-free period against your opening date.</span></p><p class="inv-help"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8A6A1F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="4"/><path d="M2 21c0-3.9 3.1-7 7-7s7 3.1 7 7"/><path d="M17 11l2 2 4-4"/></svg><span><strong>Or with help:</strong> A Project Review of your timeline.</span></p></div><div class="inv-fix"><b>Know what to negotiate first</b><p class="inv-diy"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2D6A4F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18v3h3l6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.4-.6-.6-2.4z"/></svg><span><strong>Fix it yourself:</strong> Rank the three terms that would cost you most if they go wrong.</span></p><p class="inv-help"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8A6A1F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="4"/><path d="M2 21c0-3.9 3.1-7 7-7s7 3.1 7 7"/><path d="M17 11l2 2 4-4"/></svg><span><strong>Or with help:</strong> A free 45-minute call before you sign.</span></p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="inv-keep" aria-labelledby="inv-k-h">
+  <div class="wrap">
+    <div class="inv-eye">YOU LEAVE WITH THIS, WHATEVER YOU DECIDE NEXT</div>
+    <h3 id="inv-k-h">Three minutes in. Something useful out.</h3>
+    <div class="inv-keeps">
+      <div class="inv-k"><div><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0A1628" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/></svg><span class="inv-tick" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg></span></div><h4>Your score on the four stages</h4><p>And what's already in place, so you know where you're strong.</p></div>
+      <div class="inv-k"><div><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0A1628" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6h11"/><path d="M9 12h11"/><path d="M9 18h11"/><path d="M4 6h.01"/><path d="M4 12h.01"/><path d="M4 18h.01"/></svg><span class="inv-tick" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg></span></div><h4>Your two biggest gaps</h4><p>With the first move for each, in the order that matters.</p></div>
+      <div class="inv-k"><div><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0A1628" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6"/><path d="M9 15h6"/></svg><span class="inv-tick" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg></span></div><h4>A PDF of your report</h4><p>Free with your email. Share it with your team or your HQ.</p></div>
+      <div class="inv-k"><div><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0A1628" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="4"/><path d="M2 21c0-3.9 3.1-7 7-7s7 3.1 7 7"/><path d="M17 11l2 2 4-4"/></svg><span class="inv-tick" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg></span></div><h4>The support that fits</h4><p>Do it yourself, or Project Review, Coordination or Full Project Management — based on your opening.</p></div>
+    </div>
+  </div>
+</section>
+
 <!-- 10. FAQ -->
 <section id="faq" class="alt">
   <div class="wrap">
@@ -877,6 +1023,8 @@ section.crs{padding:72px 0}
       <input type="hidden" name="q20-open" value="">
       <input type="hidden" name="fit" value="">
       <input type="hidden" name="review-flag" value="">
+      <input type="hidden" name="situation" value="">
+      <input type="hidden" name="src" value="">
       <input type="hidden" name="engine-version" value="">
       <input type="hidden" name="config-version" value="">
       <input type="hidden" name="score-version" value="">
@@ -962,6 +1110,95 @@ function setPlan(v){var f=document.querySelector('form.cform');if(f&&f.setPlan)f
     stages.forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false');});
     note.textContent='You picked '+b.querySelector('b').textContent+'. That is your own reflection, not an assessment. The score checks it against 12 questions.';
   });});
+})();
+</script>
+<script>
+/* Opening Score invite. Example data, one object, for later translation. */
+(function(){
+  var SHOW_REAL_STATS=false; // turn on only with 30+ real scores, from the lead data, never hand-typed
+  var sec=document.getElementById('score-invite');if(!sec)return;
+  var track=function(e){if(window.roTrack)window.roTrack(e);}; // no analytics on this site yet
+  var STAGES=['Define','Find &amp; assess','Prepare &amp; procure','Deliver &amp; hand over'];
+  var S={
+    where:{label:'Still choosing where',stages:[1,0,1,2],fixes:[
+      ['See whether your brief is ready for brokers','Put space, budget, date and must-haves on one page, agreed internally.','A Project Review of your brief.'],
+      ['Compare spaces on the same criteria','Score every viewing on one sheet: area, access, image, cost.','Partner brokers and a side-by-side comparison, with Project Coordination.'],
+      ['Know who owns the date','Name one person accountable for the opening date and the budget.','A free 45-minute call to plan who does what.']]},
+    lease:{label:'Lease on the table',stages:[2,1,1,2],fixes:[
+      ['See what the lease leaves to you','List the fit-out allowance, landlord works and handover condition before you sign.','A Project Review of the lease terms. Local counsel gives the legal advice.'],
+      ['Check the date the lease really allows','Set the handover date and any rent-free period against your opening date.','A Project Review of your timeline.'],
+      ['Know what to negotiate first','Rank the three terms that would cost you most if they go wrong.','A free 45-minute call before you sign.']]},
+    team:{label:'Choosing architect & contractors',stages:[3,2,1,1],fixes:[
+      ['See if your quotes compare like for like','Send every contractor the same scope and drawings.','Quotations obtained and compared, with Project Coordination.'],
+      ['Turn the design brief into a written scope','Agree the architect\'s brief, scope and fee in writing before design starts.','Architect selected and briefed, with Project Coordination.'],
+      ['Spot long-lead items early','List permits and long-lead items with their dates.','A Project Review of your delivery plan.']]},
+    works:{label:'Works on site',stages:[3,2,2,1],fixes:[
+      ['See progress, cost and changes in one place','Ask the contractor for one weekly report covering all three.','A weekly progress, cost and change report to your HQ, with Project Coordination.'],
+      ['Know who checks the work','Have someone independent of the contractor inspect on site.','Local supervision and visits, with Full Project Management.'],
+      ['Plan the handover before it arrives','Agree snagging, certificates and move-in dates in writing.','Snagging and handover, with Full Project Management.']]},
+    rollout:{label:'Several sites',stages:[1,2,1,1],fixes:[
+      ['See every site on one page','One tracker for date, budget and stage per site.','Full Project Management, single or multi-site.'],
+      ['Reuse what worked','Turn your first site\'s brief and scope into a standard.','A Project Review of your standard brief.'],
+      ['Know where you need someone local','List the sites that need someone on the ground.','Project Coordination, with site visits scoped separately.']]}
+  };
+  var KEYS=Object.keys(S),k='lease',picked=null,auto=true,paused=false,seen=false,timer=null,raf=null;
+  var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var $=function(id){return document.getElementById(id);};
+  var chips=sec.querySelectorAll('.inv-chip'),cta=sec.querySelector('.inv-cta'),gauge=sec.querySelector('.inv-gauge'),arc=gauge.querySelectorAll('path')[1];
+  var WR=sec.querySelector('.inv-diy svg').outerHTML,PE=sec.querySelector('.inv-help svg').outerHTML;
+  if(SHOW_REAL_STATS)sec.querySelector('.inv-stats').hidden=false;
+  function col(p){return p<40?'#C0392B':p<70?'#C5A050':'#2D6A4F';}
+  function esc(t){return t.replace(/&/g,'&amp;').replace(/</g,'&lt;');}
+  function count(to){
+    var n=$('inv-n'),from=+n.textContent||0,t0=null;if(raf)cancelAnimationFrame(raf);
+    if(reduce){n.textContent=to;return;}
+    (function step(ts){if(t0===null)t0=ts;var p=Math.min(1,(ts-t0)/900),e=1-Math.pow(1-p,3);n.textContent=Math.round(from+(to-from)*e);if(p<1)raf=requestAnimationFrame(step);})(performance.now());
+  }
+  function show(key){
+    k=key;var d=S[key],ok=d.stages.reduce(function(a,b){return a+b;},0),sc=Math.round(ok/12*100);
+    var lv=sc<40?'Fragile':sc<70?'Exposed':'Resilient';
+    chips.forEach(function(c){c.setAttribute('aria-pressed',c.getAttribute('data-k')===key?'true':'false');});
+    $('inv-sit').textContent=d.label;$('inv-w').textContent=ok+' of 12';$('inv-l').textContent=lv;
+    arc.setAttribute('stroke-dashoffset',(125.7*(1-sc/100)).toFixed(1));arc.setAttribute('stroke',col(sc));
+    gauge.setAttribute('aria-label','Example Opening Score: '+sc+' out of 100');
+    count(sc);
+    sec.querySelectorAll('.inv-bar').forEach(function(b,i){var p=Math.round(d.stages[i]/3*100),u=b.querySelector('u');u.style.width=p+'%';u.style.background=col(p);b.querySelector('b').textContent=p+'%';});
+    sec.querySelector('.inv-fixes').innerHTML=d.fixes.map(function(f,i){
+      return '<div class="inv-fix inv-fx" style="animation-delay:'+(i*140)+'ms"><b>'+esc(f[0])+'</b><p class="inv-diy">'+WR+'<span><strong>Fix it yourself:</strong> '+esc(f[1])+'</span></p><p class="inv-help">'+PE+'<span><strong>Or with help:</strong> '+esc(f[2])+'</span></p></div>';}).join('');
+  }
+  function tick(){if(auto&&!paused&&seen)show(KEYS[(KEYS.indexOf(k)+1)%KEYS.length]);}
+  function run(){clearInterval(timer);timer=null;if(auto&&!reduce&&seen&&!paused)timer=setInterval(tick,5200);}
+  chips.forEach(function(c){c.addEventListener('click',function(){
+    auto=false;run();picked=c.getAttribute('data-k');show(picked);
+    cta.href='/quiz?situation='+picked+'&src=home-invite';track('Home invite situation: '+picked);
+  });});
+  sec.addEventListener('pointerenter',function(){paused=true;run();});
+  sec.addEventListener('pointerleave',function(){paused=false;run();});
+  sec.addEventListener('focusin',function(){paused=true;run();});
+  sec.addEventListener('focusout',function(e){if(!sec.contains(e.relatedTarget)){paused=false;run();}});
+  cta.addEventListener('click',function(){track('Home invite CTA clicked: '+(picked||'none'));});
+  if('IntersectionObserver' in window){
+    var viewed=false;
+    new IntersectionObserver(function(es){es.forEach(function(e){
+      seen=e.isIntersecting;run();
+      if(e.intersectionRatio>=.5&&!viewed){viewed=true;track('Home invite viewed');}
+    });},{threshold:[0,.5]}).observe(sec);
+    var keep=document.querySelector('.inv-keep');
+    new IntersectionObserver(function(es,o){es.forEach(function(e){if(e.isIntersecting){keep.classList.add('go');o.disconnect();}});},{threshold:.3}).observe(keep);
+  }
+})();
+/* Example scorecard in the Opening Score section: count, fill, then the weak point, once. */
+(function(){
+  var card=document.querySelector('.crs-card');if(!card||!('IntersectionObserver' in window))return;
+  if(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+  card.querySelectorAll('.crs-bar u').forEach(function(u){u.style.setProperty('--w',u.style.width);});
+  var num=card.querySelector('.crs-total strong'),to=+num.textContent;
+  card.classList.add('anim');num.textContent='0';
+  new IntersectionObserver(function(es,o){es.forEach(function(e){if(!e.isIntersecting)return;o.disconnect();
+    card.classList.add('go');var t0=null;
+    (function step(ts){if(t0===null)t0=ts;var p=Math.min(1,(ts-t0)/900);num.textContent=Math.round(to*(1-Math.pow(1-p,3)));if(p<1)requestAnimationFrame(step);})(performance.now());
+  });},{threshold:.4}).observe(card);
+  var b=document.querySelector('.crs-start');if(b)b.addEventListener('click',function(){if(window.roTrack)window.roTrack('Home snapshot CTA clicked');});
 })();
 </script>
 <script src="/contact-form.js?v=20261111c"></script>
