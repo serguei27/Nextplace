@@ -279,6 +279,53 @@ footer a{text-decoration:none;color:var(--navy);font-weight:600}
 }
 @media (max-width:480px){.inv-cta{width:100%;white-space:nowrap;font-size:.92rem;padding:15px 12px}}
 @media (prefers-reduced-motion:reduce){.inv-cta,.inv-fx,.inv-keep.go .inv-tick{animation:none}.inv-bar u,.inv-gauge path+path,.inv-chip{transition:none}}
+/* Quiz landing blocks, adapted from the Ask Contracks quiz page */
+.how{max-width:1160px;margin:0 auto;padding:0 20px 88px}
+.how-block{padding:56px 0;border-top:1px solid var(--line)}
+.how-kicker{display:flex;align-items:center;gap:14px;color:#8C6D25;font-size:.78rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+.how-kicker::after{content:"";flex:1;height:1px;background:var(--line)}
+.how h2{font-size:clamp(1.8rem,3.6vw,2.6rem);margin:14px 0 12px;max-width:760px}
+.how .lead{color:var(--muted);font-size:1.05rem;max-width:680px}
+.how-steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin-top:28px}
+.how-step{border:1px solid var(--line);border-radius:18px;padding:22px;background:#fff}
+.how-step i{font-style:normal;display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--navy);color:#fff;font-weight:700;font-size:.9rem;margin-bottom:14px}
+.how-step b{display:block;color:var(--navy);margin-bottom:4px}
+.how-step span{color:var(--muted);font-size:.92rem}
+.how-cs{list-style:none;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:28px}
+.how-cs li{border-top:3px solid var(--navy);padding-top:12px}
+.how-cs small{display:block;color:#8C6D25;font-weight:700;font-size:.72rem;letter-spacing:.12em}
+.how-cs b{display:block;font-size:.98rem;letter-spacing:.06em;color:var(--navy);margin:2px 0}
+.how-cs span{color:var(--muted);font-size:.9rem}
+.how-cs .cbar{display:block;height:8px;border-radius:4px;background:var(--line);overflow:hidden;margin-top:12px}
+.how-cs .cbar u{display:block;height:100%;width:0;border-radius:4px;transition:width 1.1s cubic-bezier(.2,.8,.2,1)}
+.how-cs .cpct{display:block;margin-top:6px;font-weight:700;color:var(--navy);font-size:.9rem}
+.how-cs.how-5c{grid-template-columns:repeat(5,minmax(0,1fr))}
+.how-cs-note{margin-top:14px;font-size:.82rem;color:var(--muted)}
+.how-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:28px}
+.how-stat{border:1px solid var(--line);border-radius:18px;padding:20px;display:flex;gap:16px;align-items:center}
+.how-stat b{display:block;font-family:'Playfair Display',Georgia,serif;font-size:2rem;line-height:1;color:var(--navy)}
+.how-stat span{color:var(--muted);font-size:.9rem}
+.sw{flex:none;width:58px;height:58px;border-radius:50%;background:conic-gradient(var(--navy) calc(var(--p,0)*1%),var(--line) 0);display:grid;place-items:center}
+.sw::after{content:"";width:44px;height:44px;border-radius:50%;background:#fff}
+.how-faq{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px 40px;margin-top:28px}
+.how-faq h3{font-size:1.15rem;margin-bottom:6px}
+.how-faq p{color:var(--muted)}
+.how-end{background:var(--navy);color:#fff;border-radius:28px;padding:52px 40px;display:grid;grid-template-columns:auto minmax(0,1fr);gap:40px;align-items:center;text-align:left}
+.how-end h2{color:#fff;margin:0 0 12px}
+.how-end h2 em{color:var(--gold-2)}
+.how-end p{color:rgba(255,255,255,.75);margin-bottom:26px}
+.how-end .start-wrap{align-items:flex-start}
+.how-end .free-tag{color:var(--gold-2)}
+.how-end .land-note{color:rgba(255,255,255,.65)}
+.dring{width:170px;height:170px;border-radius:50%;margin:6px auto 12px;display:grid;place-items:center;background:conic-gradient(var(--c,#C5A050) calc(var(--p,0)*1%),rgba(255,255,255,.12) 0)}
+.dring div{width:134px;height:134px;border-radius:50%;background:var(--navy);display:grid;place-items:center;text-align:center}
+.dring b{font-family:'Playfair Display',Georgia,serif;font-size:2.6rem;line-height:1}
+.dring small{display:block;font-size:.66rem;letter-spacing:.12em;color:rgba(255,255,255,.6)}
+.dband{text-align:center;font-weight:700;letter-spacing:.06em}
+.dband span{display:inline-block;padding:4px 14px;border-radius:999px;background:rgba(197,160,80,.18);color:var(--gold-2)}
+@media (max-width:900px){.how-steps{grid-template-columns:repeat(2,minmax(0,1fr))}.how-cs,.how-cs.how-5c,.how-faq,.how-stats{grid-template-columns:minmax(0,1fr)}.how-end{grid-template-columns:minmax(0,1fr);text-align:center;justify-items:center}.how-end .start-wrap{align-items:center}}
+@media (max-width:560px){.how-steps{grid-template-columns:minmax(0,1fr)}.how-block{padding:44px 0}.how-end{padding:40px 20px;border-radius:22px}}
+@media (prefers-reduced-motion:reduce){.how-cs .cbar u{transition:none}}
 </style>
 <link rel="stylesheet" href="/contact-form.css?v=20261111c">
 </head>
@@ -300,18 +347,19 @@ footer a{text-decoration:none;color:var(--navy);font-weight:600}
   <div class="landing">
     <div>
       <span class="pill">Opening Score</span>
-      <h1>Opening abroad? <em>How ready is your project?</em></h1>
-      <p class="sub">Answer 12 Yes/No questions about your planned office, shop or showroom — scored on the four stages of an opening — and 5 about your situation. Get your Opening Score, your two biggest gaps and the support that fits.</p>
+      <h1>Could a lease term, a growing quote or a late contractor <em>push back your opening?</em></h1>
+      <p class="sub">Find out how well your plan for your office, shop or showroom protects your opening date and your budget.</p>
       <p class="told" id="told" hidden></p>
       <div class="start-wrap"><button class="btn btn-navy ro-pulse" onclick="start()">Start my Opening Score</button>
       <span class="free-tag">FREE</span></div>
-      <p class="land-note">About 3 minutes · Your score on screen straight away · No obligation</p>
+      <p class="land-note">About 3 minutes · Personalised scorecard</p>
+      <p class="land-note">12 Yes/No questions on the four stages of an opening, plus 5 about your situation. Indicative self-assessment. General information, not legal advice.</p>
     </div>
     <div class="getbox">
       <div class="t">What you get</div>
-      <div class="getrow"><i>1</i><div><b>Your score out of 100</b><span>Fragile, Exposed or Resilient.</span></div></div>
-      <div class="getrow"><i>2</i><div><b>Your two biggest gaps</b><span>Across the four stages — define, find &amp; assess, prepare &amp; procure, deliver &amp; hand over — with the first move for each.</span></div></div>
-      <div class="getrow"><i>3</i><div><b>Your recommended support</b><span>Project Review, Project Coordination or Full Project Management — based on your opening.</span></div></div>
+      <div class="getrow"><i>1</i><div><b>Your Opening Score</b><span>Out of 100, and whether your opening looks Fragile, Exposed or Resilient.</span></div></div>
+      <div class="getrow"><i>2</i><div><b>Your weakest stage</b><span>Which stage may put your date or your budget at risk, and why it matters.</span></div></div>
+      <div class="getrow"><i>3</i><div><b>Your first moves</b><span>Your two biggest gaps with the first move for each, and the support that fits. Part of your free full report.</span></div></div>
     </div>
   </div>
 <!-- OPENING SCORE INVITE -->
@@ -362,6 +410,75 @@ footer a{text-decoration:none;color:var(--navy);font-weight:600}
     </div>
   </div>
 </section>
+  <div class="how">
+    <section class="how-block" aria-labelledby="how-h">
+      <div class="how-kicker"><span>How the score works</span></div>
+      <h2 id="how-h">Know where your opening may slip. <em>In three minutes.</em></h2>
+      <p class="lead">An indicative result based on your own answers. It points to where to look first. It is not a review of your lease, your quotes or your plan.</p>
+      <div class="how-steps">
+        <div class="how-step"><i>1</i><b>Your Opening Score</b><span>Out of 100, with your level: Fragile, Exposed or Resilient.</span></div>
+        <div class="how-step"><i>2</i><b>Your four-stage profile</b><span>Where your project looks stronger or weaker, stage by stage.</span></div>
+        <div class="how-step"><i>3</i><b>Your weakest stage</b><span>The one to look at first, and why it matters.</span></div>
+        <div class="how-step"><i>4</i><b>Your detailed report</b><span>Your two biggest gaps with the first move for each, and the support that fits, with a PDF. Free with your email.</span></div>
+      </div>
+    </section>
+
+    <section class="how-block" aria-labelledby="how-st-h">
+      <div class="how-kicker"><span>The four stages</span></div>
+      <h2 id="how-st-h">What the Opening Score <em>assesses.</em></h2>
+      <p class="lead">Three Yes/No questions on each stage of an opening: twelve in all.</p>
+      <ol class="how-cs">
+        <li><small>STAGE 1</small><b>DEFINE</b><span>Brief, budget &amp; date</span><i class="cbar" aria-hidden="true"><u data-v="67"></u></i><span class="cpct" data-v="67" aria-hidden="true">67%</span></li>
+        <li><small>STAGE 2</small><b>FIND &amp; ASSESS</b><span>Options &amp; lease terms</span><i class="cbar" aria-hidden="true"><u data-v="33"></u></i><span class="cpct" data-v="33" aria-hidden="true">33%</span></li>
+        <li><small>STAGE 3</small><b>PREPARE &amp; PROCURE</b><span>Design, quotes &amp; plan</span><i class="cbar" aria-hidden="true"><u data-v="67"></u></i><span class="cpct" data-v="67" aria-hidden="true">67%</span></li>
+        <li><small>STAGE 4</small><b>DELIVER &amp; HAND OVER</b><span>Works, changes &amp; handover</span><i class="cbar" aria-hidden="true"><u data-v="100"></u></i><span class="cpct" data-v="100" aria-hidden="true">100%</span></li>
+      </ol>
+      <p class="how-cs-note">Example profile, illustrative only: 67 · 33 · 67 · 100.</p>
+    </section>
+
+    <section class="how-block" aria-labelledby="how-5c-h">
+      <div class="how-kicker"><span>The 5Cs Framework™</span></div>
+      <h2 id="how-5c-h">How every stage <em>is run.</em></h2>
+      <p class="lead">Each stage of your opening runs on the 5Cs Framework™: five controls that keep scope, plan, decisions, dates and site on track.</p>
+      <ol class="how-cs how-5c">
+        <li><small>C1</small><b>CONTAIN</b><span>Brief &amp; fit-out scope</span></li>
+        <li><small>C2</small><b>COMMAND</b><span>One opening plan</span></li>
+        <li><small>C3</small><b>CLOSE</b><span>Landlord &amp; design decisions</span></li>
+        <li><small>C4</small><b>CONFIRM</b><span>Contractor &amp; permit dates</span></li>
+        <li><small>C5</small><b>CONTROL</b><span>Weekly site cadence</span></li>
+      </ol>
+    </section>
+
+    <section class="how-block" aria-labelledby="how-faq-h">
+      <div class="how-kicker"><span>Common questions</span></div>
+      <h2 id="how-faq-h">Answers, <em>straight.</em></h2>
+      <div class="how-stats" aria-hidden="true">
+        <div class="how-stat"><div><b data-count="17">17</b><span>questions: 12 scored, 5 about you</span></div></div>
+        <div class="how-stat"><div class="sw" id="sw" style="--p:100"></div><div><b id="swT">3:00</b><span>about 3 minutes</span></div></div>
+        <div class="how-stat"><div><b>€0</b><span>no email to see your score</span></div></div>
+      </div>
+      <div class="how-faq">
+        <div><h3>How long does it take?</h3><p>About 3 minutes: 12 Yes/No questions, then 5 short questions about your situation.</p></div>
+        <div><h3>Is it free?</h3><p>Yes. Your score shows straight away, with no email needed. We only ask for your email if you want the detailed report.</p></div>
+        <div><h3>What do I get?</h3><p>Your Opening Score out of 100, your level, your four stage scores and your weakest stage. The detailed report adds your two biggest gaps with the first move for each and the support that fits, with a PDF copy.</p></div>
+        <div><h3>What happens after?</h3><p>Use the report to run the opening yourselves, or book a free 45-minute call to go through your result. No documents needed, no obligation.</p></div>
+      </div>
+    </section>
+
+    <div class="how-end">
+      <div aria-hidden="true">
+        <div class="dring end-ring" id="eRing" style="--p:67;--c:#C5A050"><div><span><b id="eNum">67</b><small>OUT OF 100</small></span></div></div>
+        <div class="dband end-band"><span id="eBand">Exposed</span></div>
+      </div>
+      <div>
+      <h2>Openings rarely slip on one big mistake. <em>They slip on the small ones nobody checked.</em></h2>
+      <p>Find out where your opening stands, before a lease term or a late quote tells you.</p>
+      <div class="start-wrap"><button class="btn btn-gold" onclick="start()">Start my Opening Score</button>
+      <span class="free-tag">FREE</span></div>
+      <p class="land-note">About 3 minutes · Indicative self-assessment · General information, not legal advice</p>
+      </div>
+    </div>
+  </div>
 </div>
 
 <!-- QUESTIONS -->
@@ -800,6 +917,37 @@ function savePdf(){document.querySelectorAll('#rfull details').forEach(d=>d.open
     var keep=document.querySelector('.inv-keep');
     new IntersectionObserver(function(es,o){es.forEach(function(e){if(e.isIntersecting){keep.classList.add('go');o.disconnect();}});},{threshold:.3}).observe(keep);
   }
+})();
+</script>
+<script>
+/* Quiz landing demos, adapted from Ask Contracks. Decorative: example values, nothing is scored or sent. */
+(function(){
+  var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var col=function(v){return v<40?'#C0392B':v<70?'#C5A050':'#2D6A4F';};
+  var band=function(v){return v<40?'Fragile':v<70?'Exposed':'Resilient';};
+  var $=function(id){return document.getElementById(id);};
+  var wait=function(ms){return new Promise(function(r){setTimeout(r,ms);});};
+  function count(el,to,ms,fmt){return new Promise(function(r){if(reduce){el.textContent=fmt?fmt(to):to;return r();}var t0=performance.now();(function f(t){var k=Math.min(1,(t-t0)/ms),v=Math.round(to*(1-Math.pow(1-k,3)));el.textContent=fmt?fmt(v):v;k<1?requestAnimationFrame(f):r();})(t0);});}
+  function ring(el,numEl,to,ms){return new Promise(function(r){var t0=performance.now();if(reduce){el.style.setProperty('--p',to);el.style.setProperty('--c',col(to));numEl.textContent=to;return r();}(function f(t){var k=Math.min(1,(t-t0)/ms),v=Math.round(to*(1-Math.pow(1-k,3)));el.style.setProperty('--p',v);el.style.setProperty('--c',col(v));numEl.textContent=v;k<1?requestAnimationFrame(f):r();})(t0);});}
+  function onView(el,fn,keep){if(!el)return;if(!('IntersectionObserver' in window)){fn(true);return;}var o=new IntersectionObserver(function(e){if(e[0].isIntersecting){fn(true);if(!keep)o.disconnect();}else if(keep)fn(false);},{threshold:.35});o.observe(el);}
+
+  /* Stage bars: shown full without JS; here they fill when seen */
+  var cs=document.querySelector('.how-cs');
+  if(cs){cs.querySelectorAll('.cbar u').forEach(function(u){u.style.background=col(+u.dataset.v);if(reduce)u.style.width=u.dataset.v+'%';});
+    if(!reduce)cs.querySelectorAll('.cpct').forEach(function(e){e.textContent='0%';});
+    onView(cs,function(){cs.querySelectorAll('.cbar u').forEach(function(u){u.style.width=u.dataset.v+'%';});cs.querySelectorAll('.cpct').forEach(function(e){count(e,+e.dataset.v,1100,function(v){return v+'%';});});});}
+
+  /* FAQ counters */
+  var st=document.querySelector('.how-stats');
+  if(st&&!reduce){st.querySelectorAll('[data-count]').forEach(function(e){e.textContent='0';});$('sw').style.setProperty('--p',0);$('swT').textContent='0:00';}
+  onView(st,function(){st.querySelectorAll('[data-count]').forEach(function(e){count(e,+e.dataset.count,1200);});
+    var sw=$('sw');count({set textContent(v){sw.style.setProperty('--p',v);}},100,1600);count($('swT'),180,1600,function(v){return Math.floor(v/60)+':'+String(v%60).padStart(2,'0');});});
+
+  /* Closing ring: Fragile 33 -> Exposed 67 -> Resilient 92 (scores the quiz can give) */
+  var er=$('eRing');
+  if(er&&!reduce){var seq=[33,67,92],n=0,on=false,id=0;
+    var step=async function(my){while(on&&my===id){var v=seq[n%3];$('eBand').textContent=band(v);$('eBand').style.color=col(v);await ring(er,$('eNum'),v,1100);await wait(1700);n++;}};
+    onView(er,function(v){if(v&&!on){on=true;step(++id);}else if(!v){on=false;}},true);}
 })();
 </script>
 <script src="/contact-form.js?v=20261111c"></script>
