@@ -454,6 +454,8 @@ section.crs{padding:72px 0}
 @keyframes crspulse{0%,100%{box-shadow:0 8px 22px rgba(197,160,80,.28),0 0 0 0 rgba(197,160,80,.75)}60%{box-shadow:0 8px 22px rgba(197,160,80,.28),0 0 0 14px rgba(197,160,80,0)}}
 .crs-start{animation:crspulse 2.2s ease-out infinite}
 .crs-start:hover,.crs-start:focus-visible{animation:none}
+.nav-pulse{animation:crspulse 2.2s ease-out infinite}.nav-pulse:hover,.nav-pulse:focus-visible{animation:none}
+@media (prefers-reduced-motion:reduce){.nav-pulse{animation:none}}
 @media (prefers-reduced-motion:reduce){.crs-start{animation:none}}
 @media (max-width:960px){.crs-grid{grid-template-columns:minmax(0,1fr)}}
 @media (max-width:640px){
@@ -484,7 +486,7 @@ section.crs{padding:72px 0}
       <a href="#faq">FAQ</a>
       <a href="/articles/">Articles</a>
     </div>
-    <a href="#book" class="btn btn-navy nav-cta"><span class="lg">Book your free 45-min call</span><span class="sm">Free call</span></a>
+    <a href="/quiz" class="btn btn-navy nav-cta nav-pulse"><span class="lg">Start my Opening Score</span><span class="sm">Opening Score</span></a>
   </div>
 </nav>
 
