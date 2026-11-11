@@ -570,56 +570,6 @@ footer a:hover{color:var(--gold-2)}
   </div>
 </section>
 
-<!-- 6. THE MATH -->
-<section class="alt" id="cost">
-  <div class="wrap">
-    <div class="head">
-      <span class="pill">Opening budget planner</span>
-      <h2>What an opening costs — and <em>where coordination makes the difference.</em></h2>
-      <p>Some costs remain whoever manages the project. Others depend on how well it is coordinated — and in some corporations an opening runs 6 to 18 months, depending on the decision process. Change any figure to your own.</p>
-    </div>
-    <p class="fine" style="text-align:center;margin:-30px 0 22px">Example: 300 m² retail opening · time spent estimated</p>
-    <div class="math">
-      <div class="card">
-        <h3>Costs that remain either way</h3>
-        <div class="line"><span class="l"><span class="v">•</span>Local agents — search and brokerage fees</span><span class="amt"><input class="cr" type="number" min="0" step="500" value="6000" aria-label="Local agents, euros"></span></div>
-        <div class="line"><span class="l"><span class="v">•</span>Architect — home country (brand concept)</span><span class="amt"><input class="cr" type="number" min="0" step="500" value="5000" aria-label="Architect home country, euros"></span></div>
-        <div class="line"><span class="l"><span class="v">•</span>Architect — local (permits &amp; execution)</span><span class="amt"><input class="cr" type="number" min="0" step="500" value="8000" aria-label="Local architect, euros"></span></div>
-        <div class="line"><span class="l"><span class="v">•</span>Consultancy — location or market study</span><span class="amt"><input class="cr" type="number" min="0" step="500" value="6000" aria-label="Consultancy, euros"></span></div>
-        <div class="line"><span class="l"><span class="v">•</span>Legal advice — corporate counsel</span><span class="amt"><input class="cr" type="number" min="0" step="500" value="3000" aria-label="Corporate counsel, euros"></span></div>
-        <div class="line"><span class="l"><span class="v">•</span>Legal advice — local counsel</span><span class="amt"><input class="cr" type="number" min="0" step="500" value="2500" aria-label="Local counsel, euros"></span></div>
-        <div class="line"><span class="l"><span class="v">•</span>Site inspections</span><span class="amt"><input class="cr" type="number" min="0" step="500" value="4000" aria-label="Site inspections, euros"></span></div>
-        <div class="total"><b>Subtotal</b><span class="bigred" id="rtotal" style="color:var(--navy)">€34,500</span></div>
-        <p class="fine">Design, brokerage, legal advice and inspections are needed whoever coordinates the project. We brief and coordinate these partners — their fees stay separate and approved by you.</p>
-      </div>
-      <div class="card">
-        <h3>Costs coordination influences</h3>
-        <div class="line dur"><span class="l"><b>Project duration</b></span><span class="amt"><input id="cmonths" type="number" min="1" max="36" step="1" value="6" aria-label="Project duration in months" class="cn"> months</span></div>
-        <p class="fine" style="margin:4px 0 6px">Typically 6–18 months, depending on your decision process.</p>
-        <div class="line"><span class="l"><span class="x">◦</span>Corporate project manager at HQ — share of time</span><span class="amt"><input class="cm" type="number" min="0" step="100" value="1200" aria-label="Corporate project manager at HQ, euros per month"><small class="pm">/month</small></span></div>
-        <div class="line"><span class="l"><span class="x">◦</span>Corporate real estate manager — share of time</span><span class="amt"><input class="cm" type="number" min="0" step="100" value="800" aria-label="Corporate real estate manager, euros per month"><small class="pm">/month</small></span></div>
-        <div class="line"><span class="l"><span class="x">◦</span>Local project management</span><span class="amt"><input class="cm" type="number" min="0" step="100" value="2400" aria-label="Local project management, euros per month"><small class="pm">/month</small></span></div>
-        <div class="line"><span class="l"><span class="x">◦</span><span>Flights &amp; travel<small class="tw"><input id="cppl" type="number" min="1" max="3" step="1" value="2" aria-label="People travelling from corporate" class="cn"> people from corporate × <input id="ctpy" type="number" min="0" step="1" value="5" aria-label="Trips per person per year" class="cn"> trips a year × €<input id="ctrip" type="number" min="0" step="100" value="2000" aria-label="Cost per trip, euros" class="cn cw"> per trip<span id="ctripn" class="tn"></span></small></span></span><span class="amt" id="ctravel">€10,000</span></div>
-        <div class="line"><span class="l"><span class="x">◦</span><span>Avoidable rework — market not well understood, work done twice<small class="tw">€<input id="cfit" type="number" min="0" step="10000" value="230000" aria-label="Fit-out budget, euros" class="cn cw2"> fit-out budget × <input id="crew" type="number" min="0" max="50" step="1" value="5" aria-label="Rework percentage" class="cn"> %</small></span></span><span class="amt" id="crework">€11,500</span></div>
-        <div class="total"><b>Subtotal</b><span class="bigred" id="itotal">€47,900</span></div>
-        <p class="fine">This is where a single representative makes the difference: decisions prepared on time (a shorter project), one plan and one weekly report (less HQ time, fewer trips), and local knowledge (less rework). Local project management is the line our fee replaces.</p>
-      </div>
-    </div>
-    <div class="card stake">
-      <div class="line"><span class="l"><b>Opening budget, excluding the fit-out works</b></span><span class="amt" id="btotal" style="font-family:'Playfair Display',serif;font-size:1.6rem">€82,400</span></div>
-      <div class="line"><span class="l">Initial fit-out</span><span class="amt" id="sfit">€230,000</span></div>
-      <div class="line"><span class="l">Refit during the five years</span><span class="amt"><input id="srefit" class="cv2" type="number" min="0" step="5000" value="70000" aria-label="Refit, euros"></span></div>
-      <div class="total"><b>Five-year capex</b><span class="bigred" id="scapex">€300,000</span></div>
-      <p class="stake-k">Every repeated decision, extra trip or piece of rework is paid out of this investment. Our fee is fixed and in writing — set it against the costs coordination influences.</p>
-      <a href="#book" class="btn btn-gold" style="margin-top:16px">Get your fee in writing — book a free call</a>
-    </div>
-    <div class="principle">
-      <div class="ico"><svg viewBox="0 0 24 24"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/><path d="M9 12l2 2 4-4"/></svg></div>
-      <div><b>Repeated success is not luck.</b><span>It is the result of a resilient business model and processes tested over multiple markets, over the years.</span></div>
-    </div>
-  </div>
-</section>
-
 <!-- 7. PLANS -->
 <section id="pricing">
   <div class="wrap">
@@ -877,19 +827,6 @@ var d={'form-name':'ready-to-open',source:'Stay in touch',brand:'Ready to Open',
 fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams(d).toString()}).then(function(r){if(!r.ok)throw 0;var ok=document.getElementById('stayok');ok.textContent='Thank you — you\'re on the list.';document.getElementById('stayf').hidden=true;ok.hidden=false;}).catch(function(){b.disabled=false;var ok=document.getElementById('stayok');ok.textContent='Something went wrong — please try again, or use the booking form above.';ok.hidden=false;});}
 function setPlan(v){var f=document.querySelector('form.cform');if(f&&f.setPlan)f.setPlan(v);}
 (function(){try{var m={review:'Project Review — from €500',coordination:'Project Coordination — monthly',full:'Full Project Management — quote'};var k=new URLSearchParams(location.search).get('plan');if(k&&m[k])document.addEventListener('DOMContentLoaded',function(){setPlan(m[k]);});}catch(e){}})();
-</script>
-<script>
-(function(){function f(n){return '€'+Math.round(n).toLocaleString('en-US');}
-function v(id){return +document.getElementById(id).value||0;}
-function calc(){var m=v('cmonths'),r=0,i=0;
-document.querySelectorAll('#cost input.cr').forEach(function(x){r+=+x.value||0;});
-document.querySelectorAll('#cost input.cm').forEach(function(x){i+=(+x.value||0)*m;});
-var trips=v('cppl')*v('ctpy')*m/12,tr=trips*v('ctrip');i+=tr;
-document.getElementById('ctravel').textContent=f(tr);document.getElementById('ctripn').textContent=' · ≈ '+Math.round(trips)+' trips over the project';
-var rw=v('cfit')*v('crew')/100;i+=rw;document.getElementById('crework').textContent=f(rw);
-document.getElementById('rtotal').textContent=f(r);document.getElementById('itotal').textContent=f(i);document.getElementById('btotal').textContent=f(r+i);
-var fit=v('cfit');document.getElementById('sfit').textContent=f(fit);document.getElementById('scapex').textContent=f(fit+v('srefit'));}
-document.querySelectorAll('#cost input').forEach(function(x){x.addEventListener('input',calc);});calc();})();
 </script>
 <script src="/contact-form.js?v=20261111c"></script>
 </body>
