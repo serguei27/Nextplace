@@ -24,7 +24,7 @@
       boxes.forEach(function(b){
         var i=b.querySelector('input'),v=i.value.trim();i.setCustomValidity('');
         if(b.hidden||!v)return;
-        if(i.type==='tel'&&(!PHONE.test(v)||digits(v)<7))i.setCustomValidity('Please enter the number with its country code, e.g. +32 470 12 34 56.');
+        if(i.type==='tel'&&(!PHONE.test(v)||digits(v)<7))i.setCustomValidity('Please enter the number with its country code, e.g. +44 7700 900123.');
         if(i.type==='url'&&!/linkedin\.com\//i.test(v))i.setCustomValidity('Please enter your LinkedIn profile address, e.g. https://www.linkedin.com/in/your-name');
       });
       return f.checkValidity();

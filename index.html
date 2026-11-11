@@ -403,7 +403,7 @@ footer a:hover{color:var(--gold-2)}
 .fivec-note{margin-top:22px}
 .fivec-note b{color:var(--navy)}
 </style>
-<link rel="stylesheet" href="/contact-form.css?v=20261111b">
+<link rel="stylesheet" href="/contact-form.css?v=20261111c">
 </head>
 <body>
 
@@ -808,21 +808,24 @@ footer a:hover{color:var(--gold-2)}
       <h3 class="cf-h">Let's talk.</h3>
       <p class="cf-sub">Leave your details and we'll get in touch.</p>
       <div class="fgrid">
-        <div class="field"><label for="bk-n">Name *</label><input id="bk-n" name="name" autocomplete="name" required></div>
-        <div class="field"><label for="bk-c">Company *</label><input id="bk-c" name="company" autocomplete="organization" required></div>
-        <div class="field full"><label for="bk-e">Email *</label><input id="bk-e" name="email" type="email" autocomplete="email" required></div>
+        <div class="field"><label for="bk-n">Your name *</label><input id="bk-n" name="name" autocomplete="name" required></div>
+        <div class="field"><label for="bk-e">Email *</label><input id="bk-e" name="email" type="email" autocomplete="email" required></div>
+        <div class="field full"><label for="bk-c">Company *</label><input id="bk-c" name="company" autocomplete="organization" required></div>
+        <fieldset class="field full cmeth"><legend>How should we contact you? *</legend>
+          <label><input type="radio" name="contact-method" value="WhatsApp" checked> WhatsApp</label>
+          <label><input type="radio" name="contact-method" value="Phone call"> Phone call</label>
+          <label><input type="radio" name="contact-method" value="LinkedIn message"> LinkedIn message</label>
+          <label><input type="radio" name="contact-method" value="Email"> Email</label>
+        </fieldset>
+        <div class="field full" data-for="WhatsApp"><label for="bk-wa">WhatsApp number *</label><input id="bk-wa" name="whatsapp" type="tel" inputmode="tel" autocomplete="tel" placeholder="+44 7700 900123"></div>
+        <div class="field full" data-for="Phone call" hidden><label for="bk-ph">Phone number *</label><input id="bk-ph" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+44 7700 900123"></div>
+        <div class="field full" data-for="LinkedIn message" hidden><label for="bk-li">LinkedIn profile URL *</label><input id="bk-li" name="linkedin" type="url" inputmode="url" placeholder="https://www.linkedin.com/in/your-name"></div>
+        <div class="field full"><label for="bk-l">Location <span class="opt-l">(optional)</span></label><input id="bk-l" name="location" autocomplete="address-level2" placeholder="City, country"></div>
+        <div class="field full"><label for="bk-bt">When is the best time to contact you? <span class="opt-l">(Optional)</span></label><input id="bk-bt" name="best-time" maxlength="200" placeholder="e.g. Tomorrow morning, Thursday after 2 pm, or anytime next week…"></div>
+        <div class="field full"><label for="bk-m" class="cf-msg-label">Tell us briefly about your opening <span class="opt-l">(Optional)</span></label><textarea id="bk-m" name="message" maxlength="1000"></textarea></div>
       </div>
-      <fieldset>
-        <legend>Preferred contact method *</legend>
-        <div class="cf-methods"><label><input type="radio" name="contact-method" value="WhatsApp" checked>WhatsApp</label><label><input type="radio" name="contact-method" value="Phone call">Phone call</label><label><input type="radio" name="contact-method" value="LinkedIn message">LinkedIn message</label><label><input type="radio" name="contact-method" value="Email">Email</label></div>
-      </fieldset>
-      <div class="field" data-for="WhatsApp"><label for="bk-wa">WhatsApp number, with country code *</label><input id="bk-wa" name="whatsapp" type="tel" inputmode="tel" autocomplete="tel" placeholder="e.g. +32 470 12 34 56"></div>
-      <div class="field" data-for="Phone call" hidden><label for="bk-ph">Phone number, with country code *</label><input id="bk-ph" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="e.g. +32 470 12 34 56"></div>
-      <div class="field" data-for="LinkedIn message" hidden><label for="bk-li">LinkedIn profile URL *</label><input id="bk-li" name="linkedin" type="url" inputmode="url" placeholder="https://www.linkedin.com/in/your-name"></div>
-      <div class="field"><label for="bk-bt">When is the best time to contact you? <span class="opt-l">(Optional)</span></label><input id="bk-bt" name="best-time" maxlength="200" placeholder="e.g. Tomorrow morning, Thursday after 2 pm, or anytime next week…"></div>
-      <div class="field"><label for="bk-m" class="cf-msg-label">Tell us briefly about your opening <span class="opt-l">(Optional)</span></label><textarea id="bk-m" name="message" maxlength="1000" data-count="bk-mc"></textarea><span class="cf-count" id="bk-mc" aria-live="polite"></span></div>
-      <button type="submit" class="btn btn-gold">Book a Free 45-Minute Call →</button>
       <p class="cf-err" role="alert" hidden></p>
+      <button type="submit" class="btn btn-gold">Book a Free 45-Minute Call →</button>
       <p class="form-foot">* Required. No documents needed · No obligation. <a href="/privacy.html" style="color:var(--navy)">Privacy</a></p>
     </form>
     <div class="cf-ok" id="bk-ok" role="status" tabindex="-1" hidden>Thank you. We've received your request. We'll contact you using your preferred method to arrange your free 45-minute conversation.</div>
@@ -888,6 +891,6 @@ document.getElementById('rtotal').textContent=f(r);document.getElementById('itot
 var fit=v('cfit');document.getElementById('sfit').textContent=f(fit);document.getElementById('scapex').textContent=f(fit+v('srefit'));}
 document.querySelectorAll('#cost input').forEach(function(x){x.addEventListener('input',calc);});calc();})();
 </script>
-<script src="/contact-form.js?v=20261111"></script>
+<script src="/contact-form.js?v=20261111c"></script>
 </body>
 </html>

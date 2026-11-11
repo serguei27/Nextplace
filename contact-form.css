@@ -1,27 +1,23 @@
-/* Standard contact form (scorecard family v3.5), shared by the homepage and the quiz */
+/* Standard contact form (scorecard family v3.5), shared by the homepage and the quiz.
+   Layout and styling match the Ask Contracks booking form. */
 .cform [hidden],.cf-ok[hidden]{display:none!important}
-.cform .cf-h{font-family:'Playfair Display',Georgia,serif;font-size:1.7rem;font-weight:800;color:var(--navy);margin:0 0 4px}
-.cform .cf-sub{color:var(--muted);margin:0 0 20px}
-.cform .fgrid{display:grid;grid-template-columns:1fr 1fr;gap:0 16px}
+.cform .cf-h{font-family:'Playfair Display',Georgia,serif;font-size:1.6rem;font-weight:800;color:var(--navy);margin:0 0 4px}
+.cform .cf-sub{color:var(--muted);margin:0 0 18px}
+.cform .fgrid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 .cform .field{display:flex;flex-direction:column;gap:7px;margin-bottom:16px}
 .cform .field.full{grid-column:1/-1}
-.cform label,.cform legend{font-weight:600;font-size:.9rem;color:var(--navy)}
+.cform label{font-weight:600;font-size:.92rem;color:var(--navy)}
 .cform .opt-l{font-weight:400;color:var(--muted)}
 .cform input,.cform textarea{font:inherit;font-size:1rem;color:var(--ink,#0A1628);border:1px solid #D5DAE3;border-radius:12px;padding:13px 14px;background:#fff;width:100%}
-.cform textarea{min-height:96px;resize:vertical}
+.cform textarea{min-height:110px;resize:vertical}
 .cform input:focus,.cform textarea:focus{outline:2px solid var(--gold);border-color:var(--gold)}
-.cform fieldset{border:0;margin:0 0 16px;padding:0;min-width:0}
-.cform legend{margin-bottom:8px;padding:0}
-.cf-methods{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
-.cf-methods label{position:relative;display:flex;align-items:center;justify-content:center;text-align:center;min-height:46px;padding:8px 6px;border:1.5px solid var(--line);border-radius:12px;background:#fff;cursor:pointer;font-size:.88rem;font-weight:600;line-height:1.2}
-.cf-methods input{position:absolute;opacity:0;width:1px;height:1px;pointer-events:none}
-.cf-methods label:has(input:checked){border-color:var(--navy);background:var(--navy);color:#fff}
-.cf-methods label:has(input:focus-visible){outline:2px solid var(--gold);outline-offset:2px}
-.cform .cf-count{font-size:.78rem;color:var(--muted);text-align:right;margin-top:-2px}
+.cform .cmeth{border:0;padding:0;margin:0 0 16px;display:flex;flex-direction:row;flex-wrap:wrap;gap:8px 18px;min-width:0}
+.cform .cmeth legend{font-weight:600;font-size:.88rem;color:var(--navy);margin-bottom:8px;padding:0}
+.cform .cmeth label{display:flex;align-items:center;gap:6px;font-weight:500;font-size:.95rem;cursor:pointer}
+.cform .cmeth input{width:auto;accent-color:var(--navy);padding:0}
 .cform .btn{width:100%;margin-top:6px}
 .cform .btn[disabled]{opacity:.6;cursor:wait;transform:none}
-.cf-err{margin:12px 0 0;padding:12px 14px;border-radius:12px;background:#FDF0EE;color:#C0392B;font-weight:600;font-size:.92rem}
-.cf-ok{padding:30px;border-radius:20px;background:var(--gold-soft);border:1px solid var(--gold-line);color:var(--navy);font-family:'Playfair Display',Georgia,serif;font-size:1.25rem;line-height:1.4;outline:none}
+.cf-err{color:#C0392B;font-weight:600;margin:14px 0 0}
+.cf-ok{padding:30px;border-radius:20px;background:#fff;border:1px solid var(--line);box-shadow:0 20px 50px rgba(10,22,40,.08);color:var(--navy);font-family:'Playfair Display',Georgia,serif;font-size:1.25rem;line-height:1.4;outline:none}
 .cform .form-foot{text-align:center;color:var(--muted);font-size:.86rem;margin-top:14px}
-@media (max-width:900px){.cform .fgrid{grid-template-columns:1fr}}
-@media (max-width:480px){.cf-methods{grid-template-columns:1fr 1fr}}
+@media (max-width:900px){.cform .fgrid{grid-template-columns:1fr;gap:0}}

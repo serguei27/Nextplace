@@ -45,6 +45,11 @@ nav.top .wrap{display:flex;align-items:center;justify-content:space-between;heig
 .landing h1{font-size:clamp(2.2rem,5vw,3.6rem);margin:18px 0}
 .landing .sub{color:var(--muted);font-size:1.12rem;margin-bottom:28px;max-width:540px}
 .land-note{margin-top:16px;color:var(--muted);font-size:.9rem}
+.start-wrap{display:inline-flex;flex-direction:column;align-items:center}
+.free-tag{display:block;margin-top:12px;font-weight:700;font-size:.82rem;letter-spacing:.18em;color:#8C6D25}.start-wrap+.land-note{margin-top:8px}
+@keyframes ropulse{0%,100%{box-shadow:0 8px 22px rgba(197,160,80,.28),0 0 0 0 rgba(197,160,80,.75)}60%{box-shadow:0 8px 22px rgba(197,160,80,.28),0 0 0 14px rgba(197,160,80,0)}}
+.ro-pulse{animation:ropulse 2.2s ease-out infinite}.ro-pulse:hover,.ro-pulse:focus-visible{animation:none}
+@media (prefers-reduced-motion:reduce){.ro-pulse{animation:none}}
 .getbox{background:var(--navy);border-radius:22px;padding:28px;color:#fff;box-shadow:0 24px 60px rgba(10,22,40,.2)}
 .getbox .t{font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
 .getrow{display:flex;gap:14px;align-items:flex-start;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.1)}
@@ -176,7 +181,7 @@ input:focus,select:focus,textarea:focus{outline:2px solid var(--gold);border-col
 footer{border-top:1px solid var(--line);padding:26px 20px;text-align:center;color:var(--muted);font-size:.86rem}
 footer a{text-decoration:none;color:var(--navy);font-weight:600}
 </style>
-<link rel="stylesheet" href="/contact-form.css?v=20261111b">
+<link rel="stylesheet" href="/contact-form.css?v=20261111c">
 </head>
 <body>
 
@@ -198,8 +203,9 @@ footer a{text-decoration:none;color:var(--navy);font-weight:600}
       <span class="pill">Opening Score</span>
       <h1>Opening abroad? <em>How ready is your project?</em></h1>
       <p class="sub">Answer 12 Yes/No questions about your planned office, shop or showroom — scored on the four stages of an opening — and 5 about your situation. Get your Opening Score, your two biggest gaps and the support that fits.</p>
-      <button class="btn btn-navy" onclick="start()">Get my Opening Score — free →</button>
-      <p class="land-note">Free · 3 minutes · Your score on screen straight away · No obligation</p>
+      <div class="start-wrap"><button class="btn btn-navy ro-pulse" onclick="start()">Start my Opening Score</button>
+      <span class="free-tag">FREE</span></div>
+      <p class="land-note">About 3 minutes · Your score on screen straight away · No obligation</p>
     </div>
     <div class="getbox">
       <div class="t">What you get</div>
@@ -319,21 +325,24 @@ footer a{text-decoration:none;color:var(--navy);font-weight:600}
       <h3 class="cf-h">Let's talk.</h3>
       <p class="cf-sub">Leave your details and we'll get in touch.</p>
       <div class="fgrid">
-        <div class="field"><label for="qz-n">Name *</label><input id="qz-n" name="name" autocomplete="name" required></div>
-        <div class="field"><label for="qz-c">Company *</label><input id="qz-c" name="company" autocomplete="organization" required></div>
-        <div class="field full"><label for="qz-e">Email *</label><input id="qz-e" name="email" type="email" autocomplete="email" required></div>
+        <div class="field"><label for="qz-n">Your name *</label><input id="qz-n" name="name" autocomplete="name" required></div>
+        <div class="field"><label for="qz-e">Email *</label><input id="qz-e" name="email" type="email" autocomplete="email" required></div>
+        <div class="field full"><label for="qz-c">Company *</label><input id="qz-c" name="company" autocomplete="organization" required></div>
+        <fieldset class="field full cmeth"><legend>How should we contact you? *</legend>
+          <label><input type="radio" name="contact-method" value="WhatsApp" checked> WhatsApp</label>
+          <label><input type="radio" name="contact-method" value="Phone call"> Phone call</label>
+          <label><input type="radio" name="contact-method" value="LinkedIn message"> LinkedIn message</label>
+          <label><input type="radio" name="contact-method" value="Email"> Email</label>
+        </fieldset>
+        <div class="field full" data-for="WhatsApp"><label for="qz-wa">WhatsApp number *</label><input id="qz-wa" name="whatsapp" type="tel" inputmode="tel" autocomplete="tel" placeholder="+44 7700 900123"></div>
+        <div class="field full" data-for="Phone call" hidden><label for="qz-ph">Phone number *</label><input id="qz-ph" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+44 7700 900123"></div>
+        <div class="field full" data-for="LinkedIn message" hidden><label for="qz-li">LinkedIn profile URL *</label><input id="qz-li" name="linkedin" type="url" inputmode="url" placeholder="https://www.linkedin.com/in/your-name"></div>
+        <div class="field full"><label for="qz-l">Location <span class="opt-l">(optional)</span></label><input id="qz-l" name="location" autocomplete="address-level2" placeholder="City, country"></div>
+        <div class="field full"><label for="qz-bt">When is the best time to contact you? <span class="opt-l">(Optional)</span></label><input id="qz-bt" name="best-time" maxlength="200" placeholder="e.g. Tomorrow morning, Thursday after 2 pm, or anytime next week…"></div>
+        <div class="field full"><label for="qz-m" class="cf-msg-label">What would you like to discuss? <span class="opt-l">(Optional)</span></label><textarea id="qz-m" name="message" maxlength="1000"></textarea></div>
       </div>
-      <fieldset>
-        <legend>Preferred contact method *</legend>
-        <div class="cf-methods"><label><input type="radio" name="contact-method" value="WhatsApp" checked>WhatsApp</label><label><input type="radio" name="contact-method" value="Phone call">Phone call</label><label><input type="radio" name="contact-method" value="LinkedIn message">LinkedIn message</label><label><input type="radio" name="contact-method" value="Email">Email</label></div>
-      </fieldset>
-      <div class="field" data-for="WhatsApp"><label for="qz-wa">WhatsApp number, with country code *</label><input id="qz-wa" name="whatsapp" type="tel" inputmode="tel" autocomplete="tel" placeholder="e.g. +32 470 12 34 56"></div>
-      <div class="field" data-for="Phone call" hidden><label for="qz-ph">Phone number, with country code *</label><input id="qz-ph" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="e.g. +32 470 12 34 56"></div>
-      <div class="field" data-for="LinkedIn message" hidden><label for="qz-li">LinkedIn profile URL *</label><input id="qz-li" name="linkedin" type="url" inputmode="url" placeholder="https://www.linkedin.com/in/your-name"></div>
-      <div class="field"><label for="qz-bt">When is the best time to contact you? <span class="opt-l">(Optional)</span></label><input id="qz-bt" name="best-time" maxlength="200" placeholder="e.g. Tomorrow morning, Thursday after 2 pm, or anytime next week…"></div>
-      <div class="field"><label for="qz-m" class="cf-msg-label">What would you like to discuss? <span class="opt-l">(Optional)</span></label><textarea id="qz-m" name="message" maxlength="1000" data-count="qz-mc"></textarea><span class="cf-count" id="qz-mc" aria-live="polite"></span></div>
-      <button type="submit" class="btn btn-gold">Book a Free 45-Minute Call →</button>
       <p class="cf-err" role="alert" hidden></p>
+      <button type="submit" class="btn btn-gold">Book a Free 45-Minute Call →</button>
       <p class="form-foot">* Required. No documents needed · No obligation. <a href="/privacy.html" style="color:var(--navy)">Privacy</a></p>
     </form>
     <div class="cf-ok" id="qz-ok" role="status" tabindex="-1" hidden>Thank you. We've received your request. We'll contact you using your preferred method to arrange your free 45-minute conversation.</div>
@@ -547,6 +556,6 @@ function openCall(){
 }
 function savePdf(){document.querySelectorAll('#rfull details').forEach(d=>d.open=true);window.print();}
 </script>
-<script src="/contact-form.js?v=20261111"></script>
+<script src="/contact-form.js?v=20261111c"></script>
 </body>
 </html>
