@@ -159,12 +159,17 @@ input:focus,select:focus,textarea:focus{outline:2px solid var(--gold);border-col
 #callbox{margin-top:22px}
 .retake{text-align:center;margin-top:22px}
 .rtools{display:flex;justify-content:flex-end;margin-bottom:14px}
+.rtools-end{justify-content:center;margin:18px 0 0}
+.nextstep{background:var(--navy);border-radius:22px;padding:28px 26px;margin-top:22px;text-align:center}
+.nextstep h3{color:#fff;font-size:clamp(1.3rem,3.2vw,1.7rem);margin-bottom:18px}
+.nextstep .alt{display:block;margin-top:10px;font-size:.88rem;color:rgba(255,255,255,.65)}
+#weakbox:empty{display:none}
 .print-head{display:none}
 @media print{
   @page{size:A4;margin:16mm 14mm 20mm}
   *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
   body{font-size:11pt}
-  nav.top,footer,#rgate,#post,#callbox,.retake,.rtools,.screen:not(#screen-results){display:none!important}
+  nav.top,footer,#rgate,#rnext,#post,#callbox,.retake,.rtools,.screen:not(#screen-results){display:none!important}
   .inner{max-width:none;padding:0}
   .print-head{display:block;border-bottom:2px solid var(--gold);padding-bottom:10px;margin-bottom:16px}
   .print-head b{font-family:'Playfair Display',serif;font-size:14pt;color:var(--navy)}
@@ -232,6 +237,11 @@ footer a{text-decoration:none;color:var(--navy);font-weight:600}
 <!-- RESULTS -->
 <div id="screen-results" class="screen">
   <div class="inner">
+    <div class="print-head" aria-hidden="true">
+      <b>Ready to Open<span>.</span></b>
+      <h2>Opening Score report</h2>
+      <p id="ph-meta"></p>
+    </div>
     <div class="rtop">
       <div class="lbl">Your Opening Score · Four stages</div>
       <div class="ring" id="ring"><div class="in"><div class="num" id="rnum"></div><div class="of">OUT OF 100</div></div></div>
@@ -240,9 +250,16 @@ footer a{text-decoration:none;color:var(--navy);font-weight:600}
       <div class="ladder" id="ladder"></div>
     </div>
 
+    <div class="sec">
+      <h3>Your score on the <em>four stages</em></h3>
+      <div class="bars" id="bars"></div>
+    </div>
+
+    <div class="sec" id="weakbox"></div>
+
     <div id="rgate" class="sec gate">
       <h3>Want to see what's behind your <em>score?</em></h3>
-      <p class="p">Enter your email to unlock your complete Opening Score report: your two biggest gaps with the first move for each, your score on each of the four stages, and the support that fits your opening.</p>
+      <p class="p">Enter your email to unlock your complete Opening Score report: your two biggest gaps with the first move for each, the support that fits your opening, and your answers at a glance — with a PDF to keep.</p>
       <form class="gform" onsubmit="subGate(event)" novalidate>
         <p class="hp" hidden style="display:none" aria-hidden="true"><label>Leave empty: <input id="gbot" tabindex="-1" autocomplete="off"></label></p>
         <div class="g2">
@@ -257,30 +274,17 @@ footer a{text-decoration:none;color:var(--navy);font-weight:600}
     </div>
 
     <div id="rfull" hidden>
-    <div class="print-head" aria-hidden="true">
-      <b>Ready to Open<span>.</span></b>
-      <h2>Opening Score report</h2>
-      <p id="ph-meta"></p>
-    </div>
-    <div class="rtools"><button class="btn btn-line btn-sm" type="button" onclick="savePdf()">Download PDF</button></div>
-
-    <div class="sec">
-      <h3>Your recommended support</h3>
-      <div class="plan" id="plan"></div>
-    </div>
-
     <div class="sec">
       <h3 id="gaps-h">Your two biggest <em>gaps</em></h3>
       <div id="gaps"></div>
     </div>
 
     <div class="sec">
-      <h3>Your score on the <em>four stages</em></h3>
-      <div class="bars" id="bars"></div>
+      <h3>Your recommended support</h3>
+      <div class="plan" id="plan"></div>
     </div>
 
     <details class="bk"><summary>Your answers at a glance <span>+</span></summary><div id="bklist"></div></details>
-    </div>
 
     <div class="post" id="post">
       <div class="opt opt-diy">
@@ -290,10 +294,19 @@ footer a{text-decoration:none;color:var(--navy);font-weight:600}
       <div class="opt opt-help">
         <b>Expert support</b>
         <p class="say" id="psay"></p>
-        <button class="btn btn-navy" id="pbtn" type="button" onclick="openCall()">Book a Free 45-Minute Call →</button>
+        <button class="btn btn-navy" id="pbtn" type="button" onclick="openCall(this)">Book a Free 45-Minute Call →</button>
         <p class="sub2">No documents needed · No obligation</p>
         <p class="first">Not ready for ongoing support? Start with a <b>Project Review — from €500</b>.</p>
       </div>
+    </div>
+
+    <div class="rtools rtools-end"><button class="btn btn-line btn-sm" type="button" onclick="savePdf()">Download PDF</button></div>
+    </div>
+
+    <div class="sec nextstep" id="rnext">
+      <h3 id="rband"></h3>
+      <button class="btn btn-gold" type="button" onclick="openCall(this)">Book a Free 45-Minute Call →</button>
+      <span class="alt">No documents needed · No obligation</span>
     </div>
 
     <div id="callbox" class="sec" hidden>
@@ -520,13 +533,14 @@ function showTop(){
   document.getElementById('rdesc').textContent=L.b;
   document.getElementById('ladder').innerHTML=LEVELS.map((l,k)=>`<div class="rung ${l===L?'on':''}"><b>${k+1}</b>${l.name}</div>`).join('');
   document.getElementById('psay').textContent=L.say;
-  const post=document.getElementById('post'),best=isBest();
-  post.classList.toggle('best',best);
-  // Best fit: the support option comes first, straight under the score (v3.4 §3).
-  const anchor=best?document.querySelector('#screen-results .rtop'):document.getElementById('rfull');
-  anchor.after(post);
-  const cb=document.getElementById('callbox');post.after(cb);cb.hidden=true;
-  document.getElementById('rgate').hidden=false;document.getElementById('rfull').hidden=true;
+  document.getElementById('rband').textContent=L.say;
+  // Best fit: the support option comes first in the report (v3.4 §3).
+  document.getElementById('post').classList.toggle('best',isBest());
+  document.getElementById('bars').innerHTML=AREAS.map((a,k)=>`<div class="barrow"><div class="h"><span>${a.name} <span style="font-weight:400;color:var(--muted)">· ${a.sub}</span></span><span>${areaS(k)}%</span></div><div class="track"><div style="width:${areaS(k)}%;background:${a.col}"></div></div></div>`).join('');
+  const w=weakest();
+  document.getElementById('weakbox').innerHTML=areaS(w)<100?`<div class="gap"><b>Your weakest stage: ${AREAS[w].name} · ${AREAS[w].sub} — ${areaS(w)}%</b><p>${AREAS[w].gap}</p></div>`:'';
+  const cb=document.getElementById('callbox');document.getElementById('rnext').after(cb);cb.hidden=true;
+  document.getElementById('rgate').hidden=false;document.getElementById('rfull').hidden=true;document.getElementById('rnext').hidden=false;
   ss('results');
 }
 function showFull(){
@@ -543,13 +557,14 @@ function showFull(){
   document.getElementById('gaps').innerHTML=gi.length?gi.map(a=>`<div class="gap"><b>${AREAS[a].name} · ${AREAS[a].sub} — ${areaS(a)}%: ${AREAS[a].gap}</b><p><b style="display:inline;color:var(--navy)">First move:</b> ${AREAS[a].move}</p></div>`).join(''):`<div class="gap"><b>Every answer is in place.</b><p>The risk now is delivery — keep the same discipline on changes, inspections and handover.</p></div>`;
   document.getElementById('bars').innerHTML=AREAS.map((a,k)=>`<div class="barrow"><div class="h"><span>${a.name} <span style="font-weight:400;color:var(--muted)">· ${a.sub}</span></span><span>${areaS(k)}%</span></div><div class="track"><div style="width:${areaS(k)}%;background:${a.col}"></div></div></div>`).join('');
   document.getElementById('bklist').innerHTML=Q.map((q,k)=>`<div class="bkrow"><div>${q.t}</div><div class="bksc ${ok(k)?'sch':'scl'}">${ok(k)?'✓ In place':'✗ Gap'}</div></div>`).join('');
-  document.getElementById('rgate').hidden=true;document.getElementById('rfull').hidden=false;
+  document.getElementById('rgate').hidden=true;document.getElementById('rfull').hidden=false;document.getElementById('rnext').hidden=true;
   const d=new Date().toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'});
   document.getElementById('ph-meta').textContent=(lead.name?lead.name+' · ':'')+'Assessed: your opening project\'s delivery controls · '+d+' · version '+VERSIONS['config-version']+' / '+VERSIONS['score-version'];
   document.getElementById('rfull').scrollIntoView({behavior:'smooth',block:'start'});
 }
-function openCall(){
+function openCall(btn){
   const box=document.getElementById('callbox'),f=box.querySelector('form.cform');
+  const at=btn&&btn.closest('#post,#rnext');if(at)at.after(box);
   if(f.setContext){f.setContext(ctx());f.setPlan(PLANS[planKey()].opt);}
   box.hidden=false;box.scrollIntoView({behavior:'smooth',block:'start'});
   setTimeout(()=>{try{f.querySelector('input[name="name"]').focus({preventScroll:true});}catch(e){}},400);
