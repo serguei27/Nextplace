@@ -326,6 +326,10 @@ footer a{text-decoration:none;color:var(--navy);font-weight:600}
 @media (max-width:900px){.how-steps{grid-template-columns:repeat(2,minmax(0,1fr))}.how-cs,.how-cs.how-5c,.how-faq,.how-stats{grid-template-columns:minmax(0,1fr)}.how-end{grid-template-columns:minmax(0,1fr);text-align:center;justify-items:center}.how-end .start-wrap{align-items:center}}
 @media (max-width:560px){.how-steps{grid-template-columns:minmax(0,1fr)}.how-block{padding:44px 0}.how-end{padding:40px 20px;border-radius:22px}}
 @media (prefers-reduced-motion:reduce){.how-cs .cbar u{transition:none}}
+/* Boxes lift with a gold outline under the cursor, as the homepage price boxes */
+.how-step,.how-stat,.inv-k,.inv-fix{transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease}
+.how-step:hover,.how-stat:hover,.inv-k:hover,.inv-fix:hover{transform:translateY(-4px);border-color:var(--gold);box-shadow:0 0 0 2px var(--gold),0 18px 40px rgba(197,160,80,.22)}
+@media (prefers-reduced-motion:reduce){.how-step,.how-stat,.inv-k,.inv-fix{transition:none}.how-step:hover,.how-stat:hover,.inv-k:hover,.inv-fix:hover{transform:none}}
 </style>
 <link rel="stylesheet" href="/contact-form.css?v=20261111c">
 </head>
