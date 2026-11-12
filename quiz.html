@@ -38,6 +38,8 @@ nav.top .wrap{display:flex;align-items:center;justify-content:space-between;heig
 .pill{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--navy-2);background:var(--gold-soft);border:1px solid var(--gold-line);padding:7px 14px;border-radius:999px}
 .screen{display:none}.screen.active{display:block}
 .inner{max-width:720px;margin:0 auto;padding:44px 20px 80px}
+.q-head{text-align:center;padding-bottom:22px;margin-bottom:24px;border-bottom:1px solid var(--line)}
+.q-title{font-size:clamp(1.7rem,4.2vw,2.5rem);margin:16px auto 0;max-width:640px}
 .inner-sm{max-width:520px;margin:0 auto;padding:52px 20px 80px}
 
 /* LANDING */
@@ -559,6 +561,7 @@ body[data-screen]:not([data-screen="landing"]) .nav-start{display:none}
 <!-- QUESTIONS -->
 <div id="screen-quiz" class="screen">
   <div class="inner">
+    <div class="q-head"><span class="pill">Opening Score</span><h1 class="q-title">Check how ready your opening <em>really is.</em></h1></div>
     <div class="meta"><b id="sec-name"></b><span id="prog-txt"></span></div>
     <div class="pbar-bg"><div class="pbar-fill" id="pbar"></div></div>
     <div id="qcon"></div>
