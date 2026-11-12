@@ -362,6 +362,8 @@ body[data-screen]:not([data-screen="landing"]) .nav-start{display:none}
 .vid-play svg{margin-left:4px}
 .vid:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
 .vid iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+/* Phones get the vertical Short instead of the 16:9 video */
+@media (max-width:560px){.vid{aspect-ratio:9/16;max-width:300px;margin:0 auto}.vid picture{display:contents}}
 .vid-note{margin-top:10px;font-size:.84rem;color:var(--muted)}
 .vid-bio h2{margin-top:0}
 .vid-who{display:flex;gap:14px;align-items:center;margin:16px 0 14px}
@@ -567,8 +569,8 @@ body[data-screen]:not([data-screen="landing"]) .nav-start{display:none}
       <div class="how-kicker"><span>Why I built it</span></div>
       <div class="vid-grid">
         <div>
-          <button type="button" class="vid" id="vidBtn" data-id="EXAH8Csng5Q" aria-label="Play video: Openings abroad don't slip on site. They slip in the gaps. Opens the YouTube player.">
-            <img src="opening-video-poster.jpg" alt="" loading="lazy" width="960" height="540">
+          <button type="button" class="vid" id="vidBtn" data-id="EXAH8Csng5Q" data-id-phone="-61vPMR1aAg" aria-label="Play video: Openings abroad don't slip on site. They slip in the gaps. Opens the YouTube player.">
+            <picture><source media="(max-width:560px)" srcset="opening-video-poster-vertical.jpg"><img src="opening-video-poster.jpg" alt="" loading="lazy" width="960" height="540"></picture>
             <span class="vid-play" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span>
           </button>
           <p class="vid-note">Presented by an AI avatar of Serguei Poppeleer. Plays on YouTube when you press play.</p>
@@ -1093,7 +1095,8 @@ fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlenco
 /* Founder video: the YouTube player loads only when the visitor presses play. */
 (function(){var b=document.getElementById('vidBtn');if(!b)return;b.addEventListener('click',function(){
   try{window.roTrack&&roTrack('Quiz video played');}catch(e){}
-  var f=document.createElement('iframe');f.src='https://www.youtube-nocookie.com/embed/'+b.dataset.id+'?autoplay=1&rel=0&modestbranding=1';
+  var f=document.createElement('iframe');var id=(b.dataset.idPhone&&matchMedia('(max-width:560px)').matches)?b.dataset.idPhone:b.dataset.id;
+  f.src='https://www.youtube-nocookie.com/embed/'+id+'?autoplay=1&rel=0&modestbranding=1';
   f.title='Openings abroad don\'t slip on site. They slip in the gaps.';f.allow='autoplay; encrypted-media; picture-in-picture';f.allowFullscreen=true;f.referrerPolicy='strict-origin-when-cross-origin';
   var w=document.createElement('div');w.className='vid';w.appendChild(f);b.replaceWith(w);},{once:true});})();
 </script>
