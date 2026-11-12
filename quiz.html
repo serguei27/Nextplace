@@ -330,6 +330,31 @@ footer a{text-decoration:none;color:var(--navy);font-weight:600}
 .how-step,.how-stat,.inv-k,.inv-fix{transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease}
 .how-step:hover,.how-stat:hover,.inv-k:hover,.inv-fix:hover{transform:translateY(-4px);border-color:var(--gold);box-shadow:0 0 0 2px var(--gold),0 18px 40px rgba(197,160,80,.22)}
 @media (prefers-reduced-motion:reduce){.how-step,.how-stat,.inv-k,.inv-fix{transition:none}.how-step:hover,.how-stat:hover,.inv-k:hover,.inv-fix:hover{transform:none}}
+/* Founder bio and stay in touch, as on the Ask Contracks quiz page */
+.how-end .btn-navy{border:1.5px solid var(--gold-2)}
+.how-vid{margin-top:56px}
+.vid-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:40px;align-items:center;margin-top:24px}
+.vid{position:relative;display:block;width:100%;aspect-ratio:16/9;border-radius:18px;overflow:hidden;background:var(--navy);box-shadow:0 24px 60px rgba(10,22,40,.18);margin:0}
+.vid img{width:100%;height:100%;object-fit:cover;display:block}
+.vid-note{margin-top:10px;font-size:.84rem;color:var(--muted)}
+.vid-bio h2{margin-top:0}
+.vid-who{display:flex;gap:14px;align-items:center;margin:16px 0 14px}
+.vid-who img{width:64px;height:64px;border-radius:50%;object-fit:cover;flex:none}
+.vid-who b{display:block;color:var(--navy)}.vid-who span{color:var(--muted);font-size:.9rem}
+.vid-bio p{color:var(--muted)}
+.vid-bio .creds{color:var(--navy);font-weight:600;font-size:.88rem;margin-top:12px}
+.stay{max-width:1160px;margin:0 auto;padding:0 20px 70px}
+.stay-box{display:grid;grid-template-columns:1fr 1.25fr;gap:24px;align-items:center;border:1px solid var(--gold-line);background:var(--gold-soft);border-radius:20px;padding:26px 28px}
+.stay-box b{display:block;font-family:'Playfair Display',serif;font-size:1.35rem;color:var(--navy);margin-bottom:4px}
+.stay-box span{color:var(--muted);font-size:.95rem}
+.stay-f{display:grid;grid-template-columns:1fr 1.2fr auto;gap:10px}
+.stay-f input{font:inherit;font-size:1rem;border:1px solid #D5DAE3;border-radius:12px;padding:12px 14px;background:#fff;width:100%}
+.stay-f .btn{padding:13px 22px}
+.stay-ok{grid-column:1/-1;color:var(--green);font-weight:700}
+.stay-err{grid-column:1/-1;color:var(--red);font-weight:600}
+@media (max-width:860px){.vid-grid{grid-template-columns:minmax(0,1fr);gap:24px}}
+@media (max-width:900px){.stay-box{grid-template-columns:1fr}.stay-f{grid-template-columns:1fr}}
+@media (max-width:560px){.how-vid{margin-top:40px}}
 </style>
 <link rel="stylesheet" href="/contact-form.css?v=20261111c">
 </head>
@@ -482,7 +507,40 @@ footer a{text-decoration:none;color:var(--navy);font-weight:600}
       <p class="land-note">About 3 minutes · Indicative self-assessment · General information, not legal advice</p>
       </div>
     </div>
+
+    <section class="how-block how-vid" aria-labelledby="how-vid-h">
+      <div class="how-kicker"><span>Why I built it</span></div>
+      <div class="vid-grid">
+        <div>
+          <!-- Founder video goes here when ready: swap this figure for the play button, as on Ask Contracks. -->
+          <figure class="vid"><img src="serguei-speaking.jpeg" alt="Serguei Poppeleer speaking on a panel at the Global Tourism Forum, Brussels 2025" loading="lazy"></figure>
+          <p class="vid-note">Speaking at the Global Tourism Forum · Brussels 2025</p>
+        </div>
+        <div class="vid-bio">
+          <h2 id="how-vid-h">Good openings still slip <em>on the details.</em></h2>
+          <div class="vid-who"><img src="serguei-portrait.jpeg" alt="Serguei Poppeleer" loading="lazy" width="64" height="64"><div><b>Serguei Poppeleer</b><span>Founder, Ready2Open · Project Management &amp; Real Estate</span></div></div>
+          <p>Civil engineer. More than 20 years across construction, fit-out and real estate in 30 countries in Africa, Europe, the US and Asia — offices, shops, lounges and housing for relocating staff. I built the Opening Score to show, in a few minutes, where an opening abroad may slip on date or budget.</p>
+          <p class="creds">MCIArb · WorldCC · LLM Construction Law &amp; Arbitration · MSc Civil Engineering · Executive MBA</p>
+        </div>
+      </div>
+    </section>
   </div>
+  <section class="stay">
+    <div class="stay-box">
+      <div>
+        <b>Not ready?</b>
+        <span>Stay in touch — leave your email and we'll share occasional field notes on opening spaces abroad. No spam, unsubscribe any time.</span>
+      </div>
+      <form id="stayf" class="stay-f" method="POST" action="/thanks.html" onsubmit="stayIn(event)">
+        <input type="hidden" name="form-name" value="ready-to-open"><input type="hidden" name="source" value="Stay in touch · quiz page">
+        <input id="sn" name="name" placeholder="Your name" autocomplete="name" aria-label="Your name">
+        <input id="se" name="email" type="email" placeholder="Work email" autocomplete="email" aria-label="Work email" required>
+        <button class="btn btn-navy" id="sbtn">Stay in touch</button>
+      </form>
+      <p class="stay-ok" id="stayok" hidden>Thank you — you're on the list.</p>
+      <p class="stay-err" id="stayerr" hidden>Something went wrong — please try again.</p>
+    </div>
+  </section>
 </div>
 
 <!-- QUESTIONS -->
@@ -953,6 +1011,11 @@ function savePdf(){document.querySelectorAll('#rfull details').forEach(d=>d.open
     var step=async function(my){while(on&&my===id){var v=seq[n%3];$('eBand').textContent=band(v);$('eBand').style.color=col(v);await ring(er,$('eNum'),v,1100);await wait(1700);n++;}};
     onView(er,function(v){if(v&&!on){on=true;step(++id);}else if(!v){on=false;}},true);}
 })();
+</script>
+<script>
+function stayIn(e){e.preventDefault();var n=document.getElementById('sn').value.trim(),m=document.getElementById('se').value.trim(),b=document.getElementById('sbtn'),er=document.getElementById('stayerr');if(b.disabled)return;b.disabled=true;er.hidden=true;
+var d={'form-name':'ready-to-open',source:'Stay in touch · quiz page',brand:'Ready2Open','form-purpose':'stay-in-touch',subject:'New contact — Ready2Open — stay in touch (quiz page) — '+(n||m),name:n,email:m};
+fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams(d).toString()}).then(function(r){if(!r.ok)throw 0;document.getElementById('stayf').hidden=true;document.getElementById('stayok').hidden=false;}).catch(function(){b.disabled=false;er.hidden=false;});}
 </script>
 <script src="/contact-form.js?v=20261111c"></script>
 </body>
