@@ -370,6 +370,35 @@ body[data-screen]:not([data-screen="landing"]) .nav-start{display:none}
 @media (max-width:860px){.vid-grid{grid-template-columns:minmax(0,1fr);gap:24px}}
 @media (max-width:900px){.stay-box{grid-template-columns:1fr}.stay-f{grid-template-columns:1fr}}
 @media (max-width:560px){.how-vid{margin-top:40px}}
+/* Phones: shorter page, as on the Ask Contracks quiz page. Desktop unchanged. */
+@media (max-width:560px){
+.landing{gap:0;padding:28px 20px 36px}
+.landing h1{font-size:1.85rem}
+.landing .sub{font-size:1rem;margin-bottom:18px}
+.landing .land-note+.land-note,.getbox{display:none}
+.inv{padding:32px 0}
+.inv h2{font-size:1.75rem}
+.inv-lead{display:none}
+.inv-sub{display:none}
+.inv-fix p.inv-diy{margin-top:0}
+.inv-keep{padding:28px 0}
+.inv-keep h3{font-size:1.4rem}
+.inv-k p{display:none}
+.inv-k{padding:12px}.inv-k h4{margin:8px 0 0}
+.how{padding-bottom:40px}
+.how-block{padding:30px 0}
+.how h2{font-size:1.55rem;margin:10px 0 8px}
+.how .lead,.how-step span,.how-cs small,.how-cs li>span:not(.cpct),.how-stats{display:none}
+.how-steps{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:16px}.how-step{padding:14px}.how-step i{width:28px;height:28px;margin-bottom:8px}
+.how-cs{gap:10px;margin-top:16px}.how-cs li{display:grid;grid-template-columns:120px minmax(0,1fr) 44px;align-items:center;gap:10px;border-top:0;padding-top:0}.how-cs b{font-size:.8rem}.how-cs .cbar{margin-top:0}.how-cs .cpct{margin-top:0;text-align:right}
+.how-cs.how-5c li{display:flex;gap:8px;align-items:baseline;border-top:1px solid var(--line);padding-top:8px}
+.how-cs.how-5c li>span{display:inline!important;font-size:.85rem}
+.how-cs-note{margin-top:8px}
+.how-faq{gap:14px;margin-top:16px}.how-faq h3{font-size:1rem;margin-bottom:2px}.how-faq p{font-size:.92rem}
+.how-end{padding:30px 18px}.how-end>div[aria-hidden]{display:none}.how-end h2{font-size:1.45rem}.how-end p{margin-bottom:18px}
+.how-vid{margin-top:0}.vid-grid{gap:16px;margin-top:14px}.vid-note{display:none}.vid-bio p{font-size:.92rem}
+.stay{padding-bottom:40px}.stay-box{padding:20px}
+}
 </style>
 <link rel="stylesheet" href="/contact-form.css?v=20261111c">
 </head>
