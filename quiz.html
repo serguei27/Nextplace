@@ -184,8 +184,20 @@ input:focus,select:focus,textarea:focus{outline:2px solid var(--gold);border-col
 }
 .rbtns{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:22px}
 @media (max-width:560px){.rbtns{grid-template-columns:1fr}}
-footer{border-top:1px solid var(--line);padding:26px 20px;text-align:center;color:var(--muted);font-size:.86rem}
-footer a{text-decoration:none;color:var(--navy);font-weight:600}
+footer{background:var(--navy);color:rgba(255,255,255,.65);padding:44px 20px 36px;font-size:.92rem}
+footer .fwrap{max-width:1160px;margin:0 auto;display:flex;flex-wrap:wrap;justify-content:space-between;gap:24px;align-items:center}
+footer .copy{margin-top:24px;padding-top:20px;border-top:1px solid rgba(255,255,255,.1);font-size:.84rem}
+footer .flogo b{font-family:'Playfair Display',serif;font-weight:900;font-size:1.2rem;color:#fff}
+footer .flogo b span{color:var(--gold)}
+footer .fbtns{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+footer .fnav{display:flex;flex-wrap:wrap;gap:20px}
+footer a{color:rgba(255,255,255,.8);text-decoration:none}
+footer a:hover{color:var(--gold-2)}
+footer a.btn-gold{color:var(--navy)}
+/* Top button starts the quiz; hidden once the quiz is running, as on Ask Contracks */
+body[data-screen]:not([data-screen="landing"]) .nav-start{display:none}
+@media (max-width:480px){nav.top .wrap{gap:10px;padding:0 14px}.nav-start{white-space:nowrap;font-size:.74rem;padding:9px 12px}}
+@media (max-width:350px){nav.top .logo b{font-size:1rem}.nav-start{font-size:.68rem;padding:8px 10px}}
 /* Opening Score invite and "You leave with this" (home score-section brief, adapted; placed on the quiz landing) */
 .inv .wrap,.inv-keep .wrap{max-width:1160px;margin:0 auto;padding:0 20px}
 .inv{background:var(--navy);color:#fff;padding:80px 0}
@@ -203,6 +215,7 @@ footer a{text-decoration:none;color:var(--navy);font-weight:600}
 .inv-act{margin-top:30px}
 .inv-cta{animation:ropulse 2.2s ease-out infinite}
 .inv-cta:hover,.inv-cta:focus-visible{animation:none}
+.landing .start-wrap .btn.flash{animation:ropulse .9s ease-out 3}
 .inv-note{font-size:.84rem;color:rgba(255,255,255,.72);margin-top:14px}
 .inv-stats{display:flex;gap:28px;flex-wrap:wrap;margin-top:26px;padding-top:20px;border-top:1px solid rgba(255,255,255,.15)}
 .inv-stats[hidden]{display:none}
@@ -363,7 +376,7 @@ footer a{text-decoration:none;color:var(--navy);font-weight:600}
 <nav class="top">
   <div class="wrap">
     <a href="/" class="logo"><b>Ready2Open<span>.</span></b></a>
-    <a href="/#book" class="btn btn-gold btn-sm nav-cta"><span class="lg">Book your free 45-min call</span><span class="sm">Free call</span></a>
+    <button type="button" class="btn btn-navy btn-sm ro-pulse nav-start" onclick="start()">Start my Opening Score</button>
   </div>
 </nav>
 
@@ -407,7 +420,7 @@ footer a{text-decoration:none;color:var(--navy);font-weight:600}
         <button type="button" class="inv-chip" data-k="rollout" aria-pressed="false">Several sites</button>
       </div>
       <div class="inv-act">
-        <button type="button" class="btn btn-navy inv-cta">Start my Opening Score</button>
+        <a href="#screen-landing" class="btn btn-gold inv-cta">Get my Opening Score — free →</a>
         <p class="inv-note">About 3 minutes · No documents needed · Score on screen · No sales call unless you ask</p>
         <div class="inv-stats" hidden><div><b>[N]</b><span>openings scored</span></div><div><b>[AVG]</b><span>average score</span></div><div><b>[GAP]</b><span>most common gap</span></div></div>
       </div>
@@ -689,7 +702,16 @@ footer a{text-decoration:none;color:var(--navy);font-weight:600}
   </div>
 </div>
 
-<footer><a href="/">Ready2Open</a> · Better contracts. Better companies. Better communities. · <a href="/privacy.html">Privacy</a></footer>
+<footer>
+  <div class="fwrap">
+    <div class="flogo"><b>Ready2Open<span>.</span></b><br><span>Better contracts. Better companies. Better communities.</span></div>
+    <div class="fbtns"><a href="/#book" class="btn btn-gold">Book a Free 45-Minute Call →</a></div>
+  </div>
+  <div class="fwrap copy">
+    <span>© 2026 Ready2Open · Europe · Africa · Gulf</span>
+    <nav class="fnav" aria-label="Footer"><a href="/">Home</a><a href="/join.html">Join us</a><a href="/privacy.html">Privacy</a></nav>
+  </div>
+</footer>
 
 <script>
 const AREAS=[
@@ -753,7 +775,7 @@ const N=Q.length+SIT.length;
 let i=0,ans=new Array(Q.length).fill(null),sv=freshSit(),lead={};
 function freshSit(){return [null,[],{i:null,other:''},null,''];}
 
-function ss(id){document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));document.getElementById('screen-'+id).classList.add('active');window.scrollTo(0,0);}
+function ss(id){document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));document.getElementById('screen-'+id).classList.add('active');document.body.dataset.screen=id;window.scrollTo(0,0);}
 function ok(k){const v=ans[k];if(v===null)return 0;return Q[k].neg?(v===0?1:0):(v===1?1:0);}
 function areaS(a){const ks=Q.map((q,k)=>k).filter(k=>Q[k].a===a);return Math.round(ks.reduce((s,k)=>s+ok(k),0)/ks.length*100);}
 function score(){return Math.round(Q.reduce((s,q,k)=>s+ok(k),0)/Q.length*100);}
@@ -964,11 +986,15 @@ function savePdf(){document.querySelectorAll('#rfull details').forEach(d=>d.open
   sec.addEventListener('pointerleave',function(){paused=false;run();});
   sec.addEventListener('focusin',function(){paused=true;run();});
   sec.addEventListener('focusout',function(e){if(!sec.contains(e.relatedTarget)){paused=false;run();}});
-  cta.addEventListener('click',function(){
+  /* Takes the visitor up to the hero, with the picked situation shown there */
+  cta.addEventListener('click',function(e){
+    e.preventDefault();
     track('Quiz invite CTA clicked: '+(picked||'none'));
-    if(picked){ENTRY.situation=S[picked].label;}
+    if(picked){ENTRY.situation=S[picked].label;var t=document.getElementById('told');t.textContent='You told us: '+ENTRY.situation+'. Let\'s see where you stand.';t.hidden=false;}
     if(!ENTRY.src)ENTRY.src='quiz-invite';
-    start();
+    window.scrollTo({top:0,behavior:reduce?'auto':'smooth'});
+    var b=document.querySelector('.landing .start-wrap .btn');
+    setTimeout(function(){b.classList.remove('flash');void b.offsetWidth;b.classList.add('flash');setTimeout(function(){b.classList.remove('flash');},2800);try{b.focus({preventScroll:true});}catch(x){}},reduce?0:600);
   });
   if('IntersectionObserver' in window){
     var viewed=false;
