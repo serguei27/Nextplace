@@ -45,7 +45,7 @@
       var m=method(),d=new URLSearchParams(new FormData(f));
       boxes.forEach(function(b){if(b.hidden)d.delete(b.querySelector('input').name);});
       var fit=d.get('fit')==='BEST FIT'?'BEST FIT — ':'',rev=d.get('review-flag')?'REVIEW — ':'';
-      d.set('subject','New call request — Ready to Open — '+fit+rev+d.get('name')+' ('+d.get('company')+') — via '+m);
+      d.set('subject','New call request — Ready2Open — '+fit+rev+d.get('name')+' ('+d.get('company')+') — via '+m);
       f.setAttribute('data-busy','1');btn.disabled=true;btn.textContent='Sending…';err.hidden=true;
       fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:d.toString()})
         .then(function(r){

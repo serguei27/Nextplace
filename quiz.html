@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Opening Score — Ready to Open</title>
+<title>Opening Score — Ready2Open</title>
 <meta name="description" content="Opening an office, shop or showroom abroad? 12 Yes/No questions across the four stages of an opening, 3 minutes. Your Opening Score, your two biggest gaps and the support that fits.">
-<meta property="og:title" content="Opening Score — Ready to Open">
+<meta property="og:title" content="Opening Score — Ready2Open">
 <meta property="og:description" content="Opening abroad? How ready is your project? Find out in 3 minutes.">
 <meta property="og:url" content="https://nextplaces.netlify.app/quiz">
 <link rel="canonical" href="https://nextplaces.netlify.app/quiz">
@@ -180,7 +180,7 @@ input:focus,select:focus,textarea:focus{outline:2px solid var(--gold);border-col
   .rtop{border-radius:14px;padding:20px;break-inside:avoid}
   .sec,.gap,.plan,.barrow{break-inside:avoid}
   .bk{border:0}.bk summary{display:none}
-  body::after{content:"Ready to Open · Opening Score report · nextplaces.netlify.app";position:fixed;bottom:-12mm;left:0;right:0;text-align:center;font-size:8.5pt;color:#5A6476}
+  body::after{content:"Ready2Open · Opening Score report · nextplaces.netlify.app";position:fixed;bottom:-12mm;left:0;right:0;text-align:center;font-size:8.5pt;color:#5A6476}
 }
 .rbtns{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:22px}
 @media (max-width:560px){.rbtns{grid-template-columns:1fr}}
@@ -337,7 +337,7 @@ footer a{text-decoration:none;color:var(--navy);font-weight:600}
 
 <nav class="top">
   <div class="wrap">
-    <a href="/" class="logo"><b>Ready to Open<span>.</span></b></a>
+    <a href="/" class="logo"><b>Ready2Open<span>.</span></b></a>
     <a href="/#book" class="btn btn-gold btn-sm nav-cta"><span class="lg">Book your free 45-min call</span><span class="sm">Free call</span></a>
   </div>
 </nav>
@@ -502,7 +502,7 @@ footer a{text-decoration:none;color:var(--navy);font-weight:600}
 <div id="screen-results" class="screen">
   <div class="inner">
     <div class="print-head" aria-hidden="true">
-      <b>Ready to Open<span>.</span></b>
+      <b>Ready2Open<span>.</span></b>
       <h2>Opening Score report</h2>
       <p id="ph-meta"></p>
     </div>
@@ -530,7 +530,7 @@ footer a{text-decoration:none;color:var(--navy);font-weight:600}
           <div><label for="ge">Email *</label><input id="ge" type="email" autocomplete="email" required></div>
           <div><label for="gn">Name <span style="font-weight:400;color:var(--muted)">(optional)</span></label><input id="gn" autocomplete="name"></div>
         </div>
-        <label class="consent"><input type="checkbox" id="gconsent"> Send me occasional field notes from Ready to Open. <span>(Optional — you can unsubscribe at any time.)</span></label>
+        <label class="consent"><input type="checkbox" id="gconsent"> Send me occasional field notes from Ready2Open. <span>(Optional — you can unsubscribe at any time.)</span></label>
         <button type="submit" class="btn btn-navy" id="gbtn">Unlock my report →</button>
         <p class="gerr" id="gerr" role="alert" hidden></p>
       </form>
@@ -576,9 +576,9 @@ footer a{text-decoration:none;color:var(--navy);font-weight:600}
     <div id="callbox" class="sec" hidden>
     <form class="card cform" name="ready-to-open" method="POST" action="/thanks.html" data-netlify="true" netlify-honeypot="bot-field" data-ok="qz-ok" novalidate>
       <input type="hidden" name="form-name" value="ready-to-open">
-      <input type="hidden" name="subject" value="New call request — Ready to Open">
+      <input type="hidden" name="subject" value="New call request — Ready2Open">
       <input type="hidden" name="source" value="Opening Score — call request">
-      <input type="hidden" name="brand" value="Ready to Open">
+      <input type="hidden" name="brand" value="Ready2Open">
       <input type="hidden" name="form-purpose" value="call-request">
       <input type="hidden" name="plan" value="">
       <input type="hidden" name="score-name" value="">
@@ -631,7 +631,7 @@ footer a{text-decoration:none;color:var(--navy);font-weight:600}
   </div>
 </div>
 
-<footer><a href="/">Ready to Open</a> · Better contracts. Better companies. Better communities. · <a href="/privacy.html">Privacy</a></footer>
+<footer><a href="/">Ready2Open</a> · Better contracts. Better companies. Better communities. · <a href="/privacy.html">Privacy</a></footer>
 
 <script>
 const AREAS=[
@@ -725,7 +725,7 @@ function planWhy(k){
 }
 function ctx(){
   const s=score(),L=level(s),pk=planKey(),w=weakest();
-  return Object.assign({brand:'Ready to Open','score-name':'Opening Score','assessment-object':'opening_project_controls',
+  return Object.assign({brand:'Ready2Open','score-name':'Opening Score','assessment-object':'opening_project_controls',
     score:s+'/100',level:L.name,'recommended-plan':PLANS[pk].name,
     'area-scores':AREAS.map((a,k)=>a.name+' '+areaS(k)+'%').join(' · '),
     'weakest-area':AREAS[w].name+' ('+areaS(w)+'%)',

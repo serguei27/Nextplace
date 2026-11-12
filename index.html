@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ready to Open — Office &amp; retail set-up overseas</title>
+<title>Ready2Open — Office &amp; retail set-up overseas</title>
 <meta name="description" content="Opening an office, shop or showroom in a new country? Your move. Your project. One person keeping it together. A named project manager on your side, from property search to handover. Project Review from €500.">
-<meta property="og:title" content="Ready to Open — Your space overseas, ready to open">
+<meta property="og:title" content="Ready2Open — Your space overseas, ready to open">
 <meta property="og:description" content="You run the business. We get your space ready. Your move. Your project. One person keeping it together.">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
@@ -387,7 +387,7 @@ footer a:hover{color:var(--gold-2)}
 .founder-tag{font-size:.74rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);text-align:center;margin-bottom:16px}
 .nav-cta .sm{display:none}@media (max-width:480px){.nav-cta .lg{display:none}.nav-cta .sm{display:inline}}
 
-/* Ready to Open additions */
+/* Ready2Open additions */
 .steps4{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
 @media (max-width:1000px){.steps4{grid-template-columns:1fr 1fr}}
 @media (max-width:640px){.steps4{grid-template-columns:1fr}}
@@ -495,7 +495,7 @@ section.crs{padding:72px 0}
 
 <nav class="top">
   <div class="wrap">
-    <a href="#" class="logo"><b>Ready to Open<span>.</span></b></a>
+    <a href="#" class="logo"><b>Ready2Open<span>.</span></b></a>
     <div class="links" id="menu">
       <a href="#how">How It Works</a>
       <a href="#services">Services</a>
@@ -688,7 +688,7 @@ section.crs{padding:72px 0}
     <div class="head">
       <span class="pill">Results</span>
       <h2>Selected <em>founder experience.</em></h2>
-      <p>Before Ready to Open, our founder delivered offices, lounges, shops and expat housing for global retail brands and consultancies operating far from home — across 30 countries in Africa, Europe, the US and Asia. Client names stay confidential.</p>
+      <p>Before Ready2Open, our founder delivered offices, lounges, shops and expat housing for global retail brands and consultancies operating far from home — across 30 countries in Africa, Europe, the US and Asia. Client names stay confidential.</p>
     </div>
     <div class="case">
       <div class="case-l">
@@ -870,9 +870,9 @@ section.crs{padding:72px 0}
     <div class="cf-wrap">
     <form class="card cform" name="ready-to-open" method="POST" action="/thanks.html" data-netlify="true" netlify-honeypot="bot-field" data-ok="bk-ok" novalidate>
       <input type="hidden" name="form-name" value="ready-to-open">
-      <input type="hidden" name="subject" value="New call request — Ready to Open">
+      <input type="hidden" name="subject" value="New call request — Ready2Open">
       <input type="hidden" name="source" value="Booking form">
-      <input type="hidden" name="brand" value="Ready to Open">
+      <input type="hidden" name="brand" value="Ready2Open">
       <input type="hidden" name="form-purpose" value="call-request">
       <input type="hidden" name="plan" value="">
       <input type="hidden" name="score-name" value="">
@@ -945,11 +945,11 @@ section.crs{padding:72px 0}
 <footer>
   <div class="wrap">
     <div class="fwrap">
-      <div class="flogo"><b>Ready to Open<span>.</span></b><br><span>Better contracts. Better companies. Better communities.</span></div>
+      <div class="flogo"><b>Ready2Open<span>.</span></b><br><span>Better contracts. Better companies. Better communities.</span></div>
       <div class="fbtns"><a href="#book" class="btn btn-gold">Book a Free 45-Minute Call →</a></div>
     </div>
     <div class="fwrap copy">
-      <span>© 2026 Ready to Open · Europe · Africa · Gulf</span>
+      <span>© 2026 Ready2Open · Europe · Africa · Gulf</span>
       <nav class="fnav"><a href="/join.html">Join us</a><a href="/privacy.html">Privacy</a></nav>
     </div>
   </div>
@@ -963,7 +963,7 @@ section.crs{padding:72px 0}
 <script>
 document.querySelectorAll('a[href="#book"]').forEach(function(a){a.addEventListener('click',function(ev){ev.preventDefault();var f=document.querySelector('form.cform');f.scrollIntoView({behavior:(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches)?'auto':'smooth',block:'start'});setTimeout(function(){try{f.querySelector('input[name="name"]').focus({preventScroll:true});}catch(e){}f.classList.remove('flash');void f.offsetWidth;f.classList.add('flash');},650);});});
 function stayIn(e){e.preventDefault();var n=document.getElementById('sn').value.trim(),m=document.getElementById('se').value.trim(),b=document.getElementById('sbtn');b.disabled=true;
-var d={'form-name':'ready-to-open',source:'Stay in touch',brand:'Ready to Open','form-purpose':'stay-in-touch',subject:'New contact — Ready to Open — stay in touch — '+(n||m),name:n,email:m};
+var d={'form-name':'ready-to-open',source:'Stay in touch',brand:'Ready2Open','form-purpose':'stay-in-touch',subject:'New contact — Ready2Open — stay in touch — '+(n||m),name:n,email:m};
 fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams(d).toString()}).then(function(r){if(!r.ok)throw 0;var ok=document.getElementById('stayok');ok.textContent='Thank you — you\'re on the list.';document.getElementById('stayf').hidden=true;ok.hidden=false;}).catch(function(){b.disabled=false;var ok=document.getElementById('stayok');ok.textContent='Something went wrong — please try again, or use the booking form above.';ok.hidden=false;});}
 function setPlan(v){var f=document.querySelector('form.cform');if(f&&f.setPlan)f.setPlan(v);}
 (function(){try{var m={review:'Project Review — from €500',coordination:'Project Coordination — monthly',full:'Full Project Management — quote'};var k=new URLSearchParams(location.search).get('plan');if(k&&m[k])document.addEventListener('DOMContentLoaded',function(){setPlan(m[k]);});}catch(e){}})();
